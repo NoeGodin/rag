@@ -1,21 +1,8 @@
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_chroma import Chroma
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, BaseLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
-# ── Embedding model ──────────────────────────────────────────────────────────
-EMBEDDING_MODEL = OllamaEmbeddings(model="nomic-embed-text")
-
-# ── Vector store ─────────────────────────────────────────────────────────────
-VECTOR_STORE = Chroma(
-    collection_name="coArchi",
-    embedding_function=EMBEDDING_MODEL,
-    persist_directory="./chroma_langchain_db",
-)
-
-# ── LLM ──────────────────────────────────────────────────────────────────────
-LLM = ChatOllama(model="llama3.1")
-
-# ── System prompt ─────────────────────────────────────────────────────────────
 SYSTEM_PROMPT = """You are an AI assistant.
 
 Answer the question using ONLY the context below.
@@ -28,13 +15,36 @@ Question:
 
 If the answer is not in the context, say you don't know."""
 
-# ── Ingestion settings ────────────────────────────────────────────────────────
-DOCUMENTS_FOLDER = "assets/"
-DOCUMENTS_GLOB = "**/*.pdf"
-DOCUMENT_LOADER_CLS = PyPDFLoader
-
-CHUNK_SIZE = 1000
-CHUNK_OVERLAP = 200
-
-# ── Retrieval settings ────────────────────────────────────────────────────────
 RETRIEVAL_K = 2
+
+
+def get_embeddings() -> OllamaEmbeddings:
+    return OllamaEmbeddings(model="nomic-embed-text")
+
+
+def get_vector_store() -> Chroma:
+    return Chroma(
+        collection_name="coArchi",
+        embedding_function=get_embeddings(),
+        persist_directory="./chroma_langchain_db",
+    )
+
+
+def get_llm() -> ChatOllama:
+    return ChatOllama(model="llama3.1")
+
+
+def get_loader() -> BaseLoader:
+    return DirectoryLoader(
+        "assets/",
+        glob="**/*.pdf",
+        loader_cls=PyPDFLoader,
+    )
+
+
+def get_text_splitter() -> TextSplitter:
+    return RecursiveCharacterTextSplitter(
+        chunk_size=1000,
+        chunk_overlap=200,
+        add_start_index=True,
+    )

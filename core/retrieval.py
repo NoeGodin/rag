@@ -1,15 +1,18 @@
 from typing import Generator
 
-from config import VECTOR_STORE, LLM, SYSTEM_PROMPT, RETRIEVAL_K
+from config import get_vector_store, get_llm, SYSTEM_PROMPT, RETRIEVAL_K
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
+
+_vector_store = get_vector_store()
+_llm = get_llm()
 
 
 def ask_agent(user_query: str, stream: bool = False) -> str | Generator[str, None, None]:
     logger.info(f"User query: {user_query}")
 
-    retrieved_docs = VECTOR_STORE.similarity_search(user_query, k=RETRIEVAL_K)
+    retrieved_docs = _vector_store.similarity_search(user_query, k=RETRIEVAL_K)
     for i, doc in enumerate(retrieved_docs):
         logger.info(f"Document {i+1} | {doc.metadata} | {doc.page_content[:200]}")
 
@@ -21,12 +24,12 @@ def ask_agent(user_query: str, stream: bool = False) -> str | Generator[str, Non
         return _stream(prompt)
 
     logger.info("Generating response...")
-    response = LLM.invoke(prompt)
+    response = _llm.invoke(prompt)
     logger.info(f"Answer: {response.content[:200]}")
     return response.content
 
 
 def _stream(prompt: str) -> Generator[str, None, None]:
-    for chunk in LLM.stream(prompt):
+    for chunk in _llm.stream(prompt):
         if chunk.content:
             yield chunk.content

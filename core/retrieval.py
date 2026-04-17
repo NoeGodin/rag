@@ -14,7 +14,9 @@ def ask_agent(user_query: str, stream: bool = False) -> str | Generator[str, Non
 
     retrieved_docs = _vector_store.similarity_search(user_query, k=RETRIEVAL_K)
     for i, doc in enumerate(retrieved_docs):
-        logger.info(f"Document {i+1} | {doc.metadata} | {doc.page_content[:200]}")
+        source = doc.metadata.get("source", "inconnu")
+        page = doc.metadata.get("page", "?")
+        logger.info(f"Document {i+1} | {source} p.{page} | {doc.page_content[:200]}")
 
     context = "\n\n".join(doc.page_content for doc in retrieved_docs)
     prompt = SYSTEM_PROMPT.format(context=context, question=user_query)

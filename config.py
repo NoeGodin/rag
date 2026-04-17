@@ -1,6 +1,6 @@
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_chroma import Chroma
-from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, BaseLoader
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
 SYSTEM_PROMPT = """You are an AI assistant.
@@ -34,7 +34,7 @@ def get_llm() -> ChatOllama:
     return ChatOllama(model="llama3.1")
 
 
-def get_loader() -> BaseLoader:
+def get_loader() -> DirectoryLoader:
     return DirectoryLoader(
         "assets/",
         glob="**/*.pdf",

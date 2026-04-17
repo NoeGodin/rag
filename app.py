@@ -1,5 +1,5 @@
 import streamlit as st
-from retrieval_generation import ask_agent
+from core.retrieval import ask_agent
 
 st.title("ChatGPT-like clone")
 

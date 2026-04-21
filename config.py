@@ -5,6 +5,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
 RETRIEVAL_K = 2
+RETRIEVAL_K_FETCH = 10
+RERANK_ENABLED = True
+RETRIEVAL_TYPE = "similarity"  # "similarity" | "mmr"
 
 
 def get_prompt() -> ChatPromptTemplate:

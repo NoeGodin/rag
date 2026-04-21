@@ -1,21 +1,23 @@
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
-SYSTEM_PROMPT = """You are an AI assistant.
-
-Answer the question using ONLY the context below.
-
-Context:
-{context}
-
-Question:
-{question}
-
-If the answer is not in the context, say you don't know."""
-
 RETRIEVAL_K = 2
+
+
+def get_prompt() -> ChatPromptTemplate:
+    return ChatPromptTemplate.from_messages([
+        (
+            "system",
+            "You are an AI assistant.\n\n"
+            "Answer the question using ONLY the context below.\n\n"
+            "Context:\n{context}\n\n"
+            "If the answer is not in the context, say you don't know.",
+        ),
+        ("human", "{question}"),
+    ])
 
 
 def get_embeddings() -> OllamaEmbeddings:

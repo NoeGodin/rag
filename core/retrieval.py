@@ -1,12 +1,14 @@
 from typing import Generator
 
-from config import get_vector_store, get_llm, SYSTEM_PROMPT, RETRIEVAL_K
+from config import get_vector_store, get_llm, get_prompt, RETRIEVAL_K
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 _vector_store = get_vector_store()
 _llm = get_llm()
+_prompt = get_prompt()
+_chain = _prompt | _llm
 
 
 def ask_agent(user_query: str, stream: bool = False) -> str | Generator[str, None, None]:
@@ -19,19 +21,18 @@ def ask_agent(user_query: str, stream: bool = False) -> str | Generator[str, Non
         logger.info(f"Document {i+1} | {source} p.{page} | {doc.page_content[:200]}")
 
     context = "\n\n".join(doc.page_content for doc in retrieved_docs)
-    prompt = SYSTEM_PROMPT.format(context=context, question=user_query)
 
     if stream:
         logger.info("Streaming response...")
-        return _stream(prompt)
+        return _stream(context, user_query)
 
     logger.info("Generating response...")
-    response = _llm.invoke(prompt)
+    response = _chain.invoke({"context": context, "question": user_query})
     logger.info(f"Answer: {response.content[:200]}")
     return response.content
 
 
-def _stream(prompt: str) -> Generator[str, None, None]:
-    for chunk in _llm.stream(prompt):
+def _stream(context: str, question: str) -> Generator[str, None, None]:
+    for chunk in _chain.stream({"context": context, "question": question}):
         if chunk.content:
             yield chunk.content

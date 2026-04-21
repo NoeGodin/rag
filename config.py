@@ -4,10 +4,12 @@ from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
+from core.retrieval_strategies import RetrievalType
+
 RETRIEVAL_K = 2
 RETRIEVAL_K_FETCH = 10
 RERANK_ENABLED = True
-RETRIEVAL_TYPE = "similarity"  # "similarity" | "mmr"
+RETRIEVAL_TYPE = RetrievalType.SIMILARITY
 
 
 def get_prompt() -> ChatPromptTemplate:

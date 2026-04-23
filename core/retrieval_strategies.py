@@ -9,17 +9,23 @@ class RetrievalType(str, Enum):
     MMR = "mmr"
 
 
-def build_retriever(store: Chroma, retrieval_type: RetrievalType, k_fetch: int) -> BaseRetriever:
+def build_retriever(
+    store: Chroma,
+    retrieval_type: RetrievalType,
+    k_fetch: int,
+    extra_search_kwargs: dict | None = None,
+) -> BaseRetriever:
+    extra = extra_search_kwargs or {}
     match retrieval_type:
         case RetrievalType.SIMILARITY:
             return store.as_retriever(
                 search_type="similarity",
-                search_kwargs={"k": k_fetch},
+                search_kwargs={"k": k_fetch, **extra},
             )
         case RetrievalType.MMR:
             return store.as_retriever(
                 search_type="mmr",
-                search_kwargs={"k": k_fetch, "fetch_k": k_fetch * 2},
+                search_kwargs={"k": k_fetch, "fetch_k": k_fetch * 2, **extra},
             )
         case _:
             raise ValueError(f"Unknown retrieval type: {retrieval_type}")

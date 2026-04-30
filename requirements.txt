@@ -8,3 +8,4 @@ langchain-ollama
 chromadb
 pypdf
 flashrank
+rank_bm25

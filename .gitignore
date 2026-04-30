@@ -366,3 +366,4 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,visualstudiocode,python,jetbrains+all
 
 chroma_langchain_db/
+.aider*

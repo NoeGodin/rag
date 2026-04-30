@@ -31,7 +31,7 @@ def get_embeddings() -> OllamaEmbeddings:
 
 def get_vector_store() -> Chroma:
     return Chroma(
-        collection_name="coArchi",
+        collection_name="arb",
         embedding_function=get_embeddings(),
         persist_directory="./chroma_langchain_db",
     )

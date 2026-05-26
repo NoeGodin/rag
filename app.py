@@ -20,6 +20,9 @@ if prompt := st.chat_input("What is up?"):
         full_response = ""
 
         for chunk in ask_agent(prompt, stream=True):
+            if isinstance(chunk, list):
+                chunk = "".join(item["text"] for item in chunk if "text" in item)
+
             full_response += chunk
             response_container.markdown(full_response)
 

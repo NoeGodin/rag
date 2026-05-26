@@ -1,12 +1,12 @@
 from typing import Generator
 
-from config import get_llm, get_prompt
+from config import get_gemini_llm, get_prompt
 from utils.logger import get_logger
 from utils.timer import timer
 
 logger = get_logger(__name__)
 
-_chain = get_prompt() | get_llm()
+_chain = get_prompt() | get_gemini_llm()
 
 
 def generate(context: str, question: str) -> str:

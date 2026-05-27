@@ -1,7 +1,6 @@
 from config import get_vector_store, get_loader, get_text_splitter
 from utils.logger import get_logger
 from utils.pdf_to_txt import pdf_to_txt
-from utils.project_filter import get_source_stem
 from utils.timer import timer
 
 logger = get_logger(__name__)
@@ -18,10 +17,6 @@ def ingest() -> None:
     with timer("split"):
         all_splits = get_text_splitter().split_documents(docs)
     logger.debug(f"{len(all_splits)} chunks créés")
-
-    for doc in all_splits:
-        source = doc.metadata.get("source", "")
-        doc.metadata["source_stem"] = get_source_stem(source)
 
     with timer("embedding + stockage"):
         vector_store = get_vector_store()

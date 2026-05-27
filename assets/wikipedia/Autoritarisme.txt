@@ -1,0 +1,123 @@
+# Autoritarisme
+Source: Wikipedia (fr)
+URL: https://fr.wikipedia.org/wiki/Autoritarisme
+
+L'autoritarisme désigne au sens large le comportement individuel d'une personne dominatrice, ou le comportement d'une organisation entretenue par la domination, la répression ou l'intolérance à la contestation. Dans le champ des sciences politiques, il désigne un mode de fonctionnement politique autocratique (éventuellement dictatorial), c'est-à-dire un mode d'exercice du pouvoir fondé sur la concentration de l'autorité entre les mains d'un individu, d'une famille ou d'un groupe restreint, au détriment du bien commun, des libertés individuelles, du pluralisme politique et médiatique, et des mécanismes de contrôle démocratique. Dans les deux cas, l'autoritarisme implique une prééminence, voire une hypertrophie, de la volonté de pouvoir et d'autorité. L’autoritarisme est l'un des concepts centraux utilisés pour expliquer les attitudes sociales, politiques et intergroupes.
+Les régimes autoritaires traditionnels reposaient sur une obéissance imposée par la répression, la surveillance et la propagande. Aujourd’hui, l’essor des technologies numériques puis de l'IA a permis l’émergence d’« autocraties informationnelles », fondées sur la manipulation de l’opinion plutôt que sur la violence. Ces dirigeants censurent ou cooptent les élites, diffusent une image de compétence et prétendent être démocratiques. Ce modèle semble bien adapté à un monde globalisé et connecté, où la répression visible devient moins efficace[réf. nécessaire].
+
+## Types et degré d'autoritarismes
+Si certains chercheurs et professeurs en science politique définissent l'autoritarisme comme un des trois grands types de systèmes politiques avec la démocratie et le totalitarisme, beaucoup d'autres considèrent cette classification comme trop formelle et ne correspondant pas à la réalité. 
+Au début des années 2000, le politologue Andreas Schedler a forgé le terme « d'autoritarisme électoral » pour décrire des régimes qui organisent des élections manipulées ou sans réelle compétition, et les chercheurs Steven Levitsky et Lucan Way ont forgé celle « d'autoritarisme compétitif », pour qualifier les systèmes politiques où des partis d'opposition existent, mais où ils sont affaiblis par la censure, la fraude électorale ou divers moyens de manipuler l'opinion publique, de plus en plus via les réseaux sociaux. 
+Longtemps, les régimes politiques autoritaires ont été basé sur la coercition, sur divers moyens de propagande, de surveillance et d'encadrement de la population et de répression pour obtenir la soumission et l'obéissance du corps social, c'est-à-dire à la fois des individus et de la société. Plus récemment, l'émergence conjointe des NTIC, des réseaux sociaux et de l'intelligence artificielle, a permis l'apparition de nouvelles formes d'autoritarismes, plus discrètes car basées sur la manipulation des esprits (« autocratie informationnelle » ou « dictature de la manipulation » ) : selon deux chercheurs en sciences politiques, Guriev et Treisman (2020), contrairement à la majorité des dictateurs précédents, la plupart des dirigeants non démocratiques d'aujourd'hui n'ont plus besoin de répressions sanglantes, très visibles, et de masse. Au lieu de cela,  tout en intensifiant leur engagement international à des fins financières et de réputation, ils manipulent l'information. En cooptant ou censurant les élites et en utilisant la propagande pour renforcer leur popularité auprès des citoyens ordinaires, ils sont en mesure de supprimer les contraintes sur leur pouvoir tout en prétendant être démocratiques ; comme Lee Kuan Yew à Singapour et Alberto Fujimori au Pérou, qui se distinguent fortement de Kim Jong-un ou de Bachar el-Assad, ainsi que des maîtres de la « répression high-tech » comme Xi Jinping selon Treisman et Guriev. Selon Treisman, ce nouveau type de régime autoritaire peut survivre dans un monde d'ouverture internationale et de forces du marché.
+Pour Sergei Guriev et Daniel Treisman (2020), ces dirigeants, parfois dits « soft autocrats » cherchent à convaincre la population de leur compétence et de leur légitimité en utilisant la propagande, la censure des médias indépendants et en cooptant des élites informées ou nommant des proches dans les institutions clé. Ainsi, les nouvelles autocraties informationnelles dissimulent la répression et adoptent les codes du discours juridique et démocratique, préférant mettre en avant des performances économiques et une gestion publique présentées comme meilleures, en comparaison des autocraties « classiques » du XXe siècle.
+Guriev et Treisman identifient par la suite trois équilibres possibles et plus ou moins provisoires pour un régime : 
+1- la dictature violente,
+2- la démocratie, fondée sur des signaux fiables,
+3- l'autoritarisme informationnel, fondé sur la manipulation mentale et de l'opinion publique. 
+La survie de de dernier (autocratie informationnelle) dépend de quelques facteurs, dont : 
+
+la taille de l'élite informée : trop petite, elle peut être facilement achetée ou réduite au silence ; trop grande, elle devient impossible à contrôler, rendant le régime instable et ouvrant la voie à la démocratie. Ceci pourrait expliquer la résilience de certains régimes autoritaires dans un monde globalisé, tout en soulignant les limites de leur durabilité/soutenabilité face à l'expansion des élites éduquées et connectées ;
+les coûts liés au contrôle, au discrédit ou à la censure des médias indépendants ;
+la crédibilité de la propagande diffusée.
+Jusque dans les années 1990, les coûts variaient surtout en fonction de de l'héritage médiatique du dirigeant : plus les médias indépendants sont puissants, plus il est coûteux de les museler ou de les acheter ; inversement une domination préalable des médias d'État facilite la manipulation de l'opinion publique. Le scandale Facebook-Cambridge Analytica/AggregateIQ et le rôle de la plateforme Ripon a montré ou confirmé l'importance et de la manipulation des réseaux sociaux, et depuis 2023 (amélioration spectaculaire et accessibilité de l'IA générative), l'apparition des fake news à la crédibilité de plus en plus améliorée par l'IA vient encore compliquer les choses. 
+Guriev et Treisman (2020) notent que l'apparente non-violence d'une autocratie informationnelle peut rapidement basculer vers la violence ou une dictature violente (comme en Turquie après le coup d’État manqué de 2016).
+Certains travaux récents soulignent que certains régimes autoritaires contemporains ne se stabilisent pas uniquement par la coercition ou la performance institutionnelle, mais par une moralisation du civisme, dans laquelle la loyauté au récit officiel tend à primer sur la vérification factuelle. Cette configuration a notamment été analysée à travers la théorie de l'inversion morale de l’État, qui décrit la transformation de la conformité narrative en critère de vertu civique dans des contextes de crise prolongée[pas clair].
+
+### Outils de mesure
+Des chercheurs ont développé des outils de mesure du degré et du type d'autoritarisme, dont une échelle abrégée en six items, dite Very Short Authoritarianism (VSA) qui prend en compte trois sous-dimensions et deux orientations de formulation de la célèbre échelle d’autoritarisme de droite (RWA) d’Altemeyer. Testée sur quatre échantillons issus de trois pays, elle a montré une cohérence interne satisfaisante et une structure factorielle hiérarchique attendue. Elle prédit efficacement des variables telles que le nationalisme, l’ethnocentrisme, l’orientation politique, le soutien partisan, les attitudes envers les groupes sociaux et les biais anti-minorités, avec des effets comparables à ceux des instruments plus larges. Et elle surpasse en fiabilité et validité une mesure courte des valeurs parentales autoritaires, confirmant son utilité pour les recherches en psychologie sociale et politique. Une échelle évaluative et un modèle ont aussi été spécifiquement développés pour mieux comprendre l’« autoritarisme groupal » (AG), c'est-à-dire « à l’échelle des groupes ». Construit à partir du cadre théorique de Duckitt (relations jugées appropriées entre les groupes sociaux et leurs membres), il articule les théories classiques de l’autoritarisme avec celles de l’identité sociale, en postulant que les dispositions autoritaires s’activent dans les contextes de situations intergroupes. L’AG permet ainsi d’expliquer l’hostilité et la discrimination intergroupes par l’interaction entre les traits de personnalité et les mécanismes psychologiques généraux décrits par la théorie de l’identité sociale (SIT) et la théorie de l’auto-catégorisation (SCT).
+
+## Personnalité autoritaire
+Une personnalité autoritaire se caractérise par une dérive de l'autorité vers une tentative de domination d'autres personnes. La psychologie s'intéresse généralement à cette question sous l'angle de la soumission à l'autorité mise en perspective par l'expérience de Milgram ou de la domination (Theodor Adorno).
+
+## Concept politique
+L’autoritarisme est l'un concept centraux utilisés pour expliquer les attitudes sociales, politiques et intergroupes.
+Pour Juan Linz, qui a été l'un des premiers à théoriser le sujet, les régimes autoritaires sont « des systèmes politiques au pluralisme limité, politiquement non responsables, sans idéologie élaborée et directrice, mais pourvus de mentalités spécifiques, sans mobilisation politique extensive ou intensive, excepté à certaines étapes de leur développement, et dans lesquels un leader ou, occasionnellement, un petit groupe exerce le pouvoir à l'intérieur de limites formellement mal définies mais en fait plutôt prévisibles ». Il convient de retenir quatre composantes principales d'un régime autoritaire :
+
+une apathie et une dépolitisation des populations, qui favorise l'absence de mobilisations collectives ;
+un pouvoir qui est aux mains de peu de personnes, et dont les frontières sont floues (notamment la séparation entre les trois pouvoirs, à savoir législatif, exécutif et judiciaire) .
+D'autres aspects peuvent être présents comme :
+
+le contrôle des pouvoirs par l'autocrate, sa famille ou ses proches, et la suppression des contre-pouvoirs ;
+l'absence de légitimité du principe de souveraineté nationale : le peuple n'a pas le droit de vote, ou le système électif rend les votes sans objet (en cas de parti unique par exemple) ;
+la restriction des libertés fondamentales.
+Lorsqu'une seule personne est à la tête d'un régime autoritaire, on parle d'autocratie.
+
+### Exemples de régimes autoritaires
+L'Estado Novo (Portugal) (État nouveau de Portugal) sous le régime de António de Oliveira Salazar et de Marcelo Caetano[réf. souhaitée] ;
+L'Allemagne nazi de 1933 à 1945 sous Adolf Hitler ;
+L'Espagne franquiste[réf. souhaitée] ;
+La république démocratique du Congo / Congo-Zaïre de 1963 à 1997 par le président Mobutu Sese Seko ;
+Le Cameroun sous Ahidjo (1960-1982) et Paul Biya (1982-) ;
+L'Azerbaïdjan d'Ilham Aliyev ;
+Le Venezuela de Hugo Chávez et Nicolás Maduro sous le Parti socialiste unifié du Venezuela[réf. souhaitée] ;
+Le royaume de Hongrie sous la régence de Miklós Horthy[réf. souhaitée] ;
+Le Burundi sous le CNFDD;
+La république du Zimbabwe sous le ZANU-PF ;
+L'Arabie saoudite ;
+La Côte d'Ivoire sous Alassane Ouattara, depuis 2011 ;
+La République arabe syrienne de Bachar el-Assad ;
+La Libye sous le régime de Mouammar Kadhafi ;
+La Tunisie sous l'ère Ben Ali ;
+Le Nicaragua de Daniel Ortega ;
+Le Cuba de Fidel Castro avec le Parti communiste de Cuba ;
+La république socialiste de Roumanie de Nicolae Ceaușescu[réf. souhaitée] ;
+La Russie de Vladimir Poutine ;
+La Corée du Nord de Kim Jong-un, voire régime totalitaire ;
+L'Ouganda de Yoweri Museveni ;
+La Biélorussie d'Alexandre Loukatchenko[réf. souhaitée] ;
+Les pays d'Asie centrale de nos jours : Kazakhstan, Ouzbékistan, Tadjikistan et Turkménistan ;
+Les Maldives d'Abdulla Yameen Abdul Gayoom[réf. souhaitée] ;
+La Birmanie avant 2011 et depuis 2021[réf. souhaitée] ;
+L'Érythrée de Isaias Afwerki ;
+La république populaire de Chine[réf. souhaitée] de Xi Jinping ;
+La république de Liberia de Samuel Doe (1980-1990)[réf. souhaitée] ;
+Le Tchad sous Hissène Habré (1982-1990) et Idriss Déby (1990-2021)[réf. souhaitée].
+Le Togo sous Faure Gnassingbé depuis 2005
+
+#### Rapport à la démocratie et au parlementarisme
+Les régimes autoritaires ne présentent que rarement des caractéristiques démocratiques. Ils s'opposent profondément au parlementarisme et prospèrent généralement sur la perte de crédibilité de ce système politique. Ni la population dans son ensemble ni une de ses composantes ne peut destituer le pouvoir en place, le critiquer ou exiger de lui une décision favorable à l'ensemble du peuple.
+En conséquence, les citoyens (ou sujets) de ces régimes disposent généralement de moins de droits que ceux des régimes démocratiques.
+
+#### Rapport au totalitarisme
+D'après Juan Linz, les régimes non démocratiques (ou autoritaires) ne sont rattachables ni aux régimes démocratiques, ni aux régimes totalitaires. La comparaison avec un régime totalitaire est facile, néanmoins il existe des nuances entre ces deux types de régimes. L'autoritarisme est plus général. Un régime dictatorial se veut autoritaire mais ce dernier peut ne pas être une dictature au sens propre. Tout comme il peut ne pas être totalitaire.
+Cela se voit souvent, par exemple, lorsqu'une ethnie minoritaire prend pouvoir dans un pays et qu'elle exerce des lois que doivent suivre la majorité n'étant pas au pouvoir. Ainsi ces lois devront encadrer toutes les sphères d'activités de manière à soumettre la population.
+Ainsi, le totalitarisme se veut autoritaire sur l'ensemble de la population alors que la dictature se veut autoritaire de manière à « unifier le chef, l'État et le peuple », sous le bon vouloir du chef d'État, suivant ses caprices.
+La principale différence entre un régime totalitaire et un régime autoritaire c'est que dans ce dernier on ne trouve aucune trace de la volonté des gouvernants d'obliger les citoyens à adhérer à une idéologie.
+Paul C. Sondrol, professeur à l'université du Colorado à Colorado Springs a recherché les caractéristiques des dictateurs totalitaires et des dictateurs autoritaires. Le tableau ci-dessous résume ses conclusions :
+
+#### Rapport à la théocratie et à la religion
+Les régimes autoritaires s'appuient parfois sur la religion pour justifier leur légitimité. 
+On peut généralement considérer les théocraties, même autoproclamées « démocratiques » (Iran ou Florence de Savonarole), comme des exemples d'autoritarisme puisque l'autorité religieuse, au sommet de la hiérarchie politique, ne peut être contestée, souvent sous peine de mort.
+
+#### Rapport à l'anarchisme
+Autoritarisme et anarchisme s'opposent sur leur présupposé fondamental, le premier érigeant l'autorité en valeur suprême et le second rejetant toute autorité. Les anarchistes ont donc généralement tendance à utiliser le terme d'autoritarisme à l'égard de leurs adversaires dans un sens infamant.
+
+### Possibilité de transition démocratique
+Les régimes autoritaires ont souvent été associés à un état particulier de la société ou, plus exactement, aux sociétés fermées. Cette analyse a amené à croire que l'ouverture au marché et aux échanges économiques, en apportant avec elles les idées et l'image du mode de vie des sociétés démocratiques permettrait une transition démocratique « douce ».
+Néanmoins, l'exemple de la Chine et de sa non-démocratisation, malgré les pressions diplomatiques et son adoption de l'économie de marché, semble aujourd'hui remettre profondément en question ce point de vue. Ainsi, de plus en plus de responsables politiques et d'universitaires considèrent cette transition comme un mythe bien que la question reste très débattue.
+
+## Un type de régime prépondérant
+Selon le rapport de 2021 du projet V-Dem (pour Varieties of Democracy) conduit par une équipe de chercheurs hébergée à l'université de Göteborg, 68 % de la population mondiale vit en 2020 dans des régimes autoritaires, et 34 % dans des pays où le degré d'autoritarisme, tous types de régimes confondus, s'est récemment aggravé. Selon ce même rapport, « les droits et libertés démocratiques du citoyen moyen en 2020 sont similaires au niveau trouvé en 1990 ». Les principales zones des reculs enregistrés sont l'Amérique latine, l'Asie-Pacifique, l'Asie centrale ainsi que l'Europe centrale et orientale. Selon la distinction proposée par le rapport entre « démocraties libérales », « démocraties électorales », « autocraties électorales » et « autocraties fermées », les autocraties électorales (c'est-à-dire des régimes à pluralisme limité, biaisé, sans État de droit digne de ce nom) — groupe au sein duquel l'Inde se voit déclassée — sont désormais le type de régime le plus répandu sur la planète et administrent 43 % des individus dans le monde. Le rapport de l'année 2025 indique que 72 % de la population mondiale vit désormais dans des régimes autoritaires.
+Néanmoins, le politiste Christian Welzel estime, sur la base d'une analyse des opinions publiques mondiales au fil des décennies, que plus les générations se renouvellent, plus « les valeurs émancipatrices – qui priorisent l'universalité des droits humains, les choix individuels et une compréhension égalitaire de l'égalité des opportunités – remplacent les valeurs autoritaires qui mettent l'accent sur la déférence et le conformisme ».
+
+### Bibliographie
+Michel Duclos, Le Monde des nouveaux autoritaires, éditions de L'Observatoire, 2019.
+Xavier Pérez, L'Autoritarisme ou le Partage : le choix d'un monde face aux enjeux de la planète, Canéjan, 2018.
+Guy Hermet, Démocratie et Autoritarisme, Paris : les Éd. du Cerf, 2012.
+
+### Articles connexes
+Antiautoritarisme
+Dictature et les régimes associés | Dictateur (sens moderne)
+État policier
+Indice de démocratie
+Personnalité autoritaire
+Ploutocratie
+Volonté de puissance
+Censure d'Internet
+
+### Liens externes
+
+Ressource relative à la santé : Medical Subject Headings  
+
+ Portail de la politique                     
+app-undo

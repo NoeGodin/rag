@@ -1,0 +1,181 @@
+# Academic Papers on Dictatorships and Authoritarianism
+
+## Institutions as the Fundamental Cause of Long-Run Growth
+Authors: Daron Acemoğlu, Simon Johnson, James A. Robinson
+Year: 2004 | Citations: 2031
+DOI: https://doi.org/10.3386/w10481
+
+This paper develops the empirical and theoretical case that differences in economic institutions are the fundamental cause of differences in economic development. We first document the empirical importance of institutions by focusing on two "quasi-natural experiments" in history, the division of Korea into two parts with very different economic institutions and the colonization of much of the world by European powers starting in the fifteenth century. We then develop the basic outline of a framework for thinking about why economic institutions differ across countries. Economic institutions determine the incentives of and the constraints on economic actors, and shape economic outcomes. As such, they are social decisions, chosen for their consequences. Because different groups and individuals typically benefit from different economic institutions, there is generally a conflict over these social choices, ultimately resolved in favor of groups with greater political power. The distribution of political power in society is in turn determined by political institutions and the distribution of resources. Political institutions allocate de jure political power, while groups with greater economic might typically possess greater de facto political power. We therefore view the appropriate theoretical framework as a dynamic one with political institutions and the distribution of resources as the state variables. These variables themselves change over time because prevailing economic institutions affect the distribution of resources, and because groups with de facto political power today strive to change political institutions in order to increase their de jure political power in the future. Economic institutions encouraging economic growth emerge when political institutions allocate power to groups with interests in broad-based property rights enforcement, when they create effective constraints on power-holders, and when there are relatively few rents to be captured by power-holders. We illustrate the assumptions, the workings and the implications of this framework using a number of historical examples.
+
+---
+
+## Culture and Institutions
+Authors: Alberto Alesina, Paola Giuliano
+Year: 2015 | Citations: 1437
+DOI: https://doi.org/10.1257/jel.53.4.898
+
+A growing body of empirical work measuring different types of cultural traits has shown that culture matters for a variety of economic outcomes. This paper focuses on one specific aspect of the relevance of culture: its relationship to institutions. We review work with a theoretical, empirical, and historical bent to assess the presence of a two-way causal effect between culture and institutions. ( JEL D02, D72, I32, J12, Z13)
+
+---
+
+## The nature of social dominance orientation: Theorizing and measuring preferences for intergroup inequality using the new SDO₇ scale.
+Authors: Arnold K. Ho, Jim Sidanius, Nour Kteily
+Year: 2015 | Citations: 1116
+DOI: https://doi.org/10.1037/pspi0000033
+
+A new conceptualization and measurement of social dominance orientation-individual differences in the preference for group based hierarchy and inequality-is introduced. In contrast to previous measures of social dominance orientation that were designed to be unidimensional, the new measure (SDO7) embeds theoretically grounded subdimensions of SDO-SDO-Dominance (SDO-D) and SDO-Egalitarianism (SDO-E). SDO-D constitutes a preference for systems of group-based dominance in which high status groups forcefully oppress lower status groups. SDO-E constitutes a preference for systems of group-based inequality that are maintained by an interrelated network of subtle hierarchy-enhancing ideologies and social policies. Confirmatory factor and criterion validity analyses confirmed that SDO-D and SDO-E are theoretically distinct and dissociate in terms of the intergroup outcomes they best predict. For the first time, distinct personality and individual difference bases of SDO-D and SDO-E are outlined. We clarify the construct validity of SDO by strictly assessing a preference for dominance hierarchies in general, removing a possible confound relating to support for hierarchy benefitting the ingroup. Consistent with this, results show that among members of a disadvantaged ethnic minority group (African Americans), endorsement of SDO7 is inversely related to ingroup identity. We further demonstrate these effects using nationally representative samples of U.S. Blacks and Whites, documenting the generalizability of these findings. Finally, we introduce and validate a brief 4-item measure of each dimension. This article importantly extends our theoretical understanding of one of the most generative constructs in social psychology, and introduces powerful new tools for its measurement.
+
+---
+
+## What Have We Learned about the Resource Curse?
+Authors: Michael L. Ross
+Year: 2014 | Citations: 1094
+DOI: https://doi.org/10.1146/annurev-polisci-052213-040359
+
+Since 2001, hundreds of academic studies have examined the “political resource curse,” meaning the claim that natural resource wealth tends to adversely affect a country's governance. There is now robust evidence that one type of mineral wealth, petroleum, has at least three harmful effects: It tends to make authoritarian regimes more durable, to increase certain types of corruption, and to help trigger violent conflict in low- and middle-income countries. Scholars have also made progress toward understanding the mechanisms that lead to these outcomes and the conditions that make them more likely. This essay reviews the evidence behind these claims, the debates over their validity, and some of the unresolved puzzles for future research.
+
+---
+
+## How the Chinese Government Fabricates Social Media Posts for Strategic Distraction, Not Engaged Argument
+Authors: Gary King, Jennifer Pan, Margaret E. Roberts
+Year: 2017 | Citations: 1019
+DOI: https://doi.org/10.1017/s0003055417000144
+
+The Chinese government has long been suspected of hiring as many as 2 million people to surreptitiously insert huge numbers of pseudonymous and other deceptive writings into the stream of real social media posts, as if they were the genuine opinions of ordinary people. Many academics, and most journalists and activists, claim that these so-called 50c party posts vociferously argue for the government’s side in political and policy debates. As we show, this is also true of most posts openly accused on social media of being 50c. Yet almost no systematic empirical evidence exists for this claim or, more importantly, for the Chinese regime’s strategic objective in pursuing this activity. In the first large-scale empirical analysis of this operation, we show how to identify the secretive authors of these posts, the posts written by them, and their content. We estimate that the government fabricates and posts about 448 million social media comments a year. In contrast to prior claims, we show that the Chinese regime’s strategy is to avoid arguing with skeptics of the party and the government, and to not even discuss controversial issues. We show that the goal of this massive secretive operation is instead to distract the public and change the subject, as most of these posts involve cheerleading for China, the revolutionary history of the Communist Party, or other symbols of the regime. We discuss how these results fit with what is known about the Chinese censorship program and suggest how they may change our broader theoretical understanding of “common knowledge” and information control in authoritarian regimes.
+
+---
+
+## The three pillars of stability: legitimation, repression, and co-optation in autocratic regimes
+Authors: Johannes Gerschewski
+Year: 2013 | Citations: 1001
+DOI: https://doi.org/10.1080/13510347.2013.738860
+
+Why do some autocracies remain stable while others collapse? This article presents a theoretical framework that seeks to explain the longevity of autocracies by referring to three pillars of stability: legitimation, repression, and co-optation. These three causal factors are derived by distilling and synthesizing the main arguments of classic and more recent research efforts. Particular emphasis is paid to re-incorporate legitimation in the explanation of stable autocracies. The article conceptionalizes the three pillars and discusses methods of concrete measurement. It then moves on to explain the stabilization process. How do these pillars develop their stabilizing effect? It is argued that reinforcement processes take place both within and between the pillars. They take the form of exogenous reinforcement, self-reinforcement, and reciprocal reinforcement. To illustrate the inner logic of these processes, I draw on empirical examples. I also state what we would need to observe empirically and how we can approach the three pillars methodically. A theoretical framework of this nature has two advantages: it is able to take the complexity of autocratic regimes into account while remaining parsimonious enough to be applicable to all autocratic regimes, irrespective of their subtype; and it integrates a static view to explain stability, with the emphasis on the underlying stabilization mechanisms and facilitates within-case and cross-case comparisons.
+
+---
+
+## Autocratic Audience Costs: Regime Type and Signaling Resolve
+Authors: Jessica Weeks
+Year: 2008 | Citations: 822
+DOI: https://doi.org/10.1017/s0020818308080028
+
+Scholars of international relations usually argue that democracies are better able to signal their foreign policy intentions than nondemocracies, in part because democracies have an advantage in generating audience costs that make backing down in international crises costly to the leader. This article argues that the conventional hypothesis underestimates the extent to which nondemocratic leaders can be held accountable domestically, allowing them to generate audience costs. First, I identify three factors contributing to audience costs: whether domestic political groups can and will coordinate to punish the leader; whether the audience views backing down negatively; and whether outsiders can observe the possibility of domestic sanctions for backing down. The logic predicts that democracies should have no audience costs advantage over autocracies when elites can solve their coordination dilemma, and the possibility of coordination is observable to foreign decision makers. Empirical tests show that democracies do not in fact have a significant signaling advantage over most autocracies. This finding has important implications for understanding the relationship between regime type and international relations.I am grateful to Emanuel Adler, Eduardo Bruera, Dara Kay Cohen, Luke Condra, James Fearon, Miriam Golden, Steve Haber, Alex Kuo, Bethany Lacina, David Laitin, Yotam Margalit, Lisa Martin, Kenneth McElwain, Victor Menaldo, Louis Pauly, Maggie Peters, Scott Sagan, Kenneth Schultz, Jake Shapiro, Michael Tomz, three anonymous reviewers, and participants in various Stanford University courses and workshops for their helpful comments. Replication files can be downloaded at 〈www.stanford.edu/∼jweeks/research〉.
+
+---
+
+## Information Avoidance
+Authors: Russell Golman, David Hagmann, George Loewenstein
+Year: 2017 | Citations: 805
+DOI: https://doi.org/10.1257/jel.20151245
+
+We commonly think of information as a means to an end. However, a growing theoretical and experimental literature suggests that information may directly enter the agent's utility function. This can create an incentive to avoid information, even when it is useful, free, and independent of strategic considerations. We review research documenting the occurrence of information avoidance, as well as theoretical and empirical research on reasons why people avoid information, drawing from economics, psychology, and other disciplines. The review concludes with a discussion of some of the diverse (and often costly) individual and societal consequences of information avoidance. (JEL D82, D83)
+
+---
+
+## Do Democracies Have Different Public Policies than Nondemocracies?
+Authors: Casey B. Mulligan, Ricard Gil, Xavier Sala-i-Martín
+Year: 2004 | Citations: 669
+DOI: https://doi.org/10.1257/089533004773563430
+
+Estimates of democracy's effect on the public sector are obtained from comparisons of 142 countries over the years 1960–90. Based on three tenets of voting theory – that voting mutes policy preference intensity, political power is equally distributed in democracies, and the form of voting processes is important—we expect democracy to affect policies that redistribute, or economically favor the political leadership, or enhance efficiency. We do not find such differences. Instead democracy is correlated with policies that limit competition for public office. Alternative modeling approaches emphasize the degree of competition, and deemphasize the form or even existence of voting processes.
+
+---
+
+## Power Sharing and Leadership Dynamics in Authoritarian Regimes
+Authors: Milan W. Svolik
+Year: 2009 | Citations: 575
+DOI: https://doi.org/10.1111/j.1540-5907.2009.00382.x
+
+I examine a fundamental problem of politics in authoritarian regimes: the dictator and the ruling coalition must share power and govern in an environment where political influence must be backed by a credible threat of violence. I develop a model of authoritarian politics in which power sharing is complicated by this conflict of interest: by exploiting his position, the dictator may acquire more power at the expense of the ruling coalition, which may attempt to deter such opportunism by threatening to stage a coup. Two power‐sharing regimes, contested and established dictatorships, may emerge as a result of strategic behavior by the dictator and the ruling coalition. This theory accounts for the large variation in the duration of dictators' tenures and the concentration of power in dictatorships over time, and it contributes to our understanding of the dynamics of power sharing and accountability in authoritarian regimes.
+
+---
+
+## Regimes of the World (RoW): Opening New Avenues for the Comparative Study of Political Regimes
+Authors: Anna Lührmann, Marcus Tannenberg, Staffan I. Lindberg
+Year: 2018 | Citations: 571
+DOI: https://doi.org/10.17645/pag.v6i1.1214
+
+Classifying political regimes has never been more difficult. Most contemporary regimes hold &lt;em&gt;de-jure&lt;/em&gt; multiparty elections with universal suffrage. In some countries, elections ensure that political rulers are—at least somewhat—accountable to the electorate whereas in others they are a mere window dressing exercise for authoritarian politics. Hence, regime types need to be distinguished based on the&lt;em&gt; de-facto&lt;/em&gt; implementation of democratic institutions and processes. Using V-Dem data, we propose with Regimes of the World (RoW) such an operationalization of four important regime types—closed and electoral autocracies; electoral and liberal democracies—with vast coverage (almost all countries from 1900 to 2016). We also contribute a solution to a fundamental weakness of extant typologies: The unknown extent of misclassification due to uncertainty from measurement error. V-Dem’s measures of uncertainty (Bayesian highest posterior densities) allow us to be the first to provide a regime typology that distinguishes cases classified with a high degree of certainty from those with “upper” and “lower” bounds in each category. Finally, a comparison of disagreements with extant datasets (7%–12% of the country-years), demonstrates that the RoW classification is more conservative, classifying regimes with electoral manipulation and infringements of the political freedoms more frequently as electoral autocracies, suggesting that it better captures the opaqueness of contemporary autocracies.
+
+---
+
+## Populist Mobilization: A New Theoretical Approach to Populism
+Authors: Robert S. Jansen
+Year: 2011 | Citations: 527
+DOI: https://doi.org/10.1111/j.1467-9558.2011.01388.x
+
+Sociology has long shied away from the problem of populism. This may be due to suspicion about the concept or uncertainty about how to fit populist cases into broader comparative matrices. Such caution is warranted: the existing interdisciplinary literature has been plagued by conceptual confusion and disagreement. But given the recent resurgence of populist politics in Latin America and elsewhere, sociology can no longer afford to sidestep such analytical challenges. This article moves toward a political sociology of populism by identifying past theoretical deficiencies and proposing a new, practice-based approach that is not beholden to pejorative common sense understandings. This approach conceptualizes populism as a mode of political practice—as populist mobilization. Its utility is demonstrated through an application to mid-twentieth-century Latin American politics. The article concludes by sketching an agenda for future research on populist mobilization in Latin America and beyond.
+
+---
+
+## Self-Enforcing Democracy
+Authors: James D. Fearon
+Year: 2011 | Citations: 510
+DOI: https://doi.org/10.1093/qje/qjr038
+
+If democracy is to have any of the good effects said to justify it, it must be self-enforcing. Those who control the government must choose to hold regular, competitive elections for the highest offices, and all parties must be willing to comply with the results. I consider simple models of electoral accountability along the lines of Barro (1973) and Ferejohn (1986), but allowing rulers to chose whether to hold elections and citizens whether to rebel or protest. When individuals privately observe a signal of government’s performance (e.g., their own welfare), they face a difficult problem of how to coordinate to pose a credible threat of rebellion necessary to induce the ruler to provide public goods. The convention of holding elections according to a known schedule and rules can provide a public signal for coordinating rebellion in the event that elections are suspended or blatantly rigged, while the elections themselves aggregate private observations of performance. Two threats to this solution to political moral hazard are also considered. First, when the ruling faction controls the army, it may prefer to fight rather step down after losing an election, and ex post transfers may be incredible. A party system where parties can return to office in the future is shown to be able to restore self-enforcing democracy, though at the expense of weaker electoral control. Second, subtle or piecemeal electoral fraud may undermine the ability of the citizens to credibly threaten the opposition that maintains elections. I show that when there are organizations in society that can privately (though noisily) observe and announce fraud or the state of popular discontent (such as an opposition party), under some conditions the incumbent prefers to commit to fair elections over an “accountable autocratic ” equilibrium in which public goods are provided but costly rebellions periodically occur. 1
+
+---
+
+## Informational Autocrats
+Authors: Sergei Guriev, Daniel Treisman
+Year: 2019 | Citations: 473
+DOI: https://doi.org/10.1257/jep.33.4.100
+
+In recent decades, dictatorships based on mass repression have largely given way to a new model based on the manipulation of information. Instead of terrorizing citizens into submission, “informational autocrats” artificially boost their popularity by convincing the public they are competent. To do so, they use propaganda and silence informed members of the elite by co-optation or censorship. Using several sources, including a newly created dataset on authoritarian control techniques, we document a range of trends in recent autocracies consistent with this new model: a decline in violence, efforts to conceal state repression, rejection of official ideologies, imitation of democracy, a perceptions gap between the masses and the elite, and the adoption by leaders of a rhetoric of performance rather than one aimed at inspiring fear.
+
+---
+
+## The Enemy Within: Personal Rule, Coups, and Civil War in Africa
+Authors: Philip Roessler
+Year: 2011 | Citations: 470
+DOI: https://doi.org/10.1017/s0043887111000049
+
+Why do rulers employ ethnic exclusion at the risk of civil war? Focusing on the region of sub-Saharan Africa, the author attributes this costly strategy to the commitment problem that arises in personalist regimes between elites who hold joint control of the state's coercive apparatus. As no faction can be sure that others will not exploit their violent capabilities to usurp power, elites maneuver to protect their privileged position and safeguard against others' first-a rising internal threat, rulers move to eliminate their rivals to guarantee their personal and political survival. But the cost of such a strategy, especially when carried out along ethnic lines, is that it increases the risk of a future civil war. To test this argument, the author employs the Ethnic Power Relations data set combined with original data on the ethnicity of conspirators of coups and rebellions in Africa. He finds that in Africa ethnic exclusion substitutes civil war risk for coup risk. And rulers are significantly more likely to exclude their coconspirators —the very friends and allies who helped them come to power—than other included groups, but at the cost of increasing the risk of a future civil war with their former allies. In the first three years after being purged from the central government, coconspirators and their coethnics are sixteen times more likely to rebel than when they were represented at the apex of the regime.
+
+---
+
+## International Actors on the Domestic Scene: Membership Conditionality and Socialization by International Institutions
+Authors: Judith G. Kelley
+Year: 2004 | Citations: 456
+DOI: https://doi.org/10.1017/s0020818304583017
+
+International relations scholars increasingly debate when and how international institutions influence domestic policy. This examination of ethnic politics in four Baltic and East European countries during the 1990s shows how European institutions shaped domestic policy, and why these institutions sometimes failed. Comparing traditional rational choice mechanisms such as membership conditionality with more socialization-based efforts, I argue that conditionality motivated most behavior changes, but that socialization-based efforts often guided them. Furthermore, using new case studies, statistics, and counterfactual analysis, I find that domestic opposition posed far greater obstacles to socialization-based methods than it did to conditionality: when used alone, socialization-based methods rarely changed behavior; when they did, the domestic opposition was usually low and the effect was only moderate. In contrast, incentive-based methods such as membership conditionality were crucial in changing policy: As domestic opposition grew, membership conditionality was not only increasingly necessary to change behavior, but it was also surprisingly effective.Many panel and seminar participants have offered useful comments on this work, but my thanks goes in particular to Michael Zürn, Alexandra Gheciu, Frank Schimmelfennig, Jeff Checkel, Robert Keohane, Steven Wilkinson, Robert Putnam, Milada Vachudova, and the editors and anonymous reviewers of International Organization. I also thank Princeton University Press for allowing me to use material from my book Ethnic Politics in Europe: The Power of Norms and Incentives. The usual caveats apply. This research was funded by a grant from the Danish Research Academy (former Forskerakademiet), and by travel support from the Weatherhead Center for International Affairs at Harvard.
+
+---
+
+## Busting the “Princelings”: The Campaign Against Corruption in China’s Primary Land Market*
+Authors: Ting Chen, James Kai‐sing Kung
+Year: 2018 | Citations: 433
+DOI: https://doi.org/10.1093/qje/qjy027
+
+Using data on over a million land transactions during 2004-2016 where local governments are the sole seller, we find that firms linked to members of China's supreme political elites-the Politburo-obtained a price discount ranging from 55.4% to 59.9% compared with those without the same connections. These firms also purchased slightly more land. In return, the provincial party secretaries who provided the discount to these "princeling" firms are 23.4% more likely to be promoted to positions of national leadership. To curb corruption, President Xi Jinping stepped up investigations and strengthened personnel control at the province level. Using a spatially matched sample (e.g., within a 500-meter radius), we find a reduction in corruption of between 42.6% and 31.5% in the provinces either targeted by the central inspection teams or whose party secretary was replaced by one appointed by Xi. Accordingly, this crackdown on corruption has also significantly reduced the promotional prospects of those local officials who rely on supplying a discount to get ahead.
+
+---
+
+## Why was the Arab World Poised for Revolution? Schooling, Economic Opportunities, and the Arab Spring
+Authors: Filipe Campante, Davin Chor
+Year: 2012 | Citations: 412
+DOI: https://doi.org/10.1257/jep.26.2.167
+
+What underlying long-term conditions set the stage for the Arab Spring? In recent decades, the Arab region has been characterized by an expansion in schooling coupled with weak labor market conditions. This pattern is especially pronounced in those countries that saw significant upheaval during the first year of the Arab Spring uprisings. We argue that the lack of adequate economic opportunities for an increasingly educated populace can help us understand episodes of regime instability such as the Arab Spring.
+
+---
+
+## Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa
+Authors: Axel Dreher, Andreas Fuchs, Brad Parks
+Year: 2018 | Citations: 393
+DOI: https://doi.org/10.1093/isq/sqx052
+
+Chinese "aid" is a lightning rod for criticism. Policy-makers, journalists, and public intellectuals claim that Beijing uses its largesse to cement alliances with political leaders, secure access to natural resources, and create exclusive commercial opportunities for Chinese firms-all at the expense of citizens living in developing countries. We argue that much of the controversy about Chinese "aid" stems from a failure to distinguish between China's Official Development Assistance (ODA) and more commercially oriented sources and types of state financing. Using a new database on China's official financing commitments to Africa from 2000 to 2013, we find that the allocation of Chinese ODA is driven primarily by foreign policy considerations, while economic interests better explain the distribution of less concessional flows. These results highlight the need for better measures of an increasingly diverse set of non-Western financial activities.
+
+---
+
+## When Do Governments Resort to Election Violence?
+Authors: Emilie M. Hafner‐Burton, Susan Hyde, Ryan Jablonski
+Year: 2013 | Citations: 390
+DOI: https://doi.org/10.1017/s0007123412000671
+
+When are governments most likely to use election violence, and what factors can mitigate government incentives to resort to violence? How do the dynamics of election violence differ in the pre- and post-election periods? The central argument of this article is that an incumbent's fear of losing power as the result of an election, as well as institutionalized constraints on the incumbent's decision-making powers, are pivotal in her decision to use election violence. While it may seem obvious to suggest that incumbents use election violence in an effort to fend off threats to their power, it is not obvious how to gauge these threats. Thus, a central objective of this article is to identify sources of information about the incumbent's popularity that can help predict the likelihood of election violence. The observable implications of this argument are tested using newly available cross-national evidence on elections, government use of pre- and post-election violence, and post-election protests from 1981 to 2004.
+
+---

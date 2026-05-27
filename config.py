@@ -1,7 +1,7 @@
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_chroma import Chroma
-from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 from dotenv import load_dotenv
@@ -24,10 +24,11 @@ def get_prompt() -> ChatPromptTemplate:
     return ChatPromptTemplate.from_messages([
         (
             "system",
-            "You are an AI assistant.\n\n"
-            "Answer the question using ONLY the context below.\n\n"
-            "Context:\n{context}\n\n"
-            "If the answer is not in the context, say you don't know.",
+            "Tu es un assistant spécialisé en histoire politique et régimes autoritaires.\n\n"
+            "Réponds à la question en te basant UNIQUEMENT sur le contexte ci-dessous.\n"
+            "Cite tes sources quand c'est possible.\n\n"
+            "Contexte :\n{context}\n\n"
+            "Si la réponse n'est pas dans le contexte, dis que tu ne sais pas.",
         ),
         ("human", "{question}"),
     ])
@@ -38,10 +39,10 @@ def get_embeddings() -> HuggingFaceEmbeddings:
         model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
         model_kwargs={"device": "cpu"},
     )
-    
+
 def get_vector_store() -> Chroma:
     return Chroma(
-        collection_name="arb",
+        collection_name="dictateurs",
         embedding_function=get_embeddings(),
         persist_directory="./chroma_langchain_db",
     )
@@ -57,13 +58,13 @@ def get_llm() -> ChatOpenAI:
         streaming=True,
         default_headers={"Authorization": f"Key {fal_key}"},
     )
-    
 
 def get_loader() -> DirectoryLoader:
     return DirectoryLoader(
         "assets/",
-        glob="**/*.pdf",
-        loader_cls=PyPDFLoader,
+        glob="**/*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
     )
 
 

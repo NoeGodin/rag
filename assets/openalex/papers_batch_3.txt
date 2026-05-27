@@ -1,0 +1,181 @@
+# Academic Papers on Dictatorships and Authoritarianism
+
+## Transnational Information Politics: NGO Human Rights Reporting, 1986-2000
+Authors: James Ron, Howard Ramos, Kathleen Rodgers
+Year: 2005 | Citations: 330
+DOI: https://doi.org/10.1111/j.1468-2478.2005.00377.x
+
+What shapes the transnational activist agenda? Do non-governmental organizations with a global mandate focus on the world's most pressing problems, or is their reporting also affected by additional considerations? To address these questions, we study the determinants of country reporting by an exemplary transnational actor, Amnesty International, during 1986-2000. We find that while human rights conditions are associated with the volume of their country reporting, other factors also matter, including previous reporting efforts, state power, U.S. military assistance, and a country's media profile. Drawing on interviews with Amnesty and Human Rights Watch staff, we interpret our findings as evidence of Amnesty International's social movement-style ''information politics.'' The group produces more written work on some countries than others to maximize advocacy opportunities, shape international standards, promote greater awareness, and raise its profile. This approach has both strengths and weaknesses, which we consider after extending our analysis to other transnational sectors.
+
+---
+
+## The Moral Hazard of Humanitarian Intervention: Lessons from the Balkans
+Authors: Alan J. Kuperman
+Year: 2008 | Citations: 325
+DOI: https://doi.org/10.1111/j.1468-2478.2007.00491.x
+
+This article explores a perverse consequence of the emerging norm of humanitarian intervention, or ''Responsibility to Protect,'' contrary to its intent of protecting civilians from genocide and ethnic cleansing. The root of the problem is that such genocidal violence often represents state retaliation against a substate group for rebellion (such as an armed secession) by some of its members. The emerging norm, by raising expectations of diplomatic and military intervention to protect these groups, unintentionally fosters rebellion by lowering its expected cost and increasing its likelihood of success. In practice, intervention does sometimes help rebels attain their political goals, but usually it is too late or inadequate to avert retaliation against civilians. Thus, the emerging norm resembles an imperfect insurance policy against genocidal violence. It creates moral hazard that encourages the excessively risky or fraudulent behavior of rebellion by members of groups that are vulnerable to genocidal retaliation, but it cannot fully protect against the backlash. The emerging norm thereby causes some genocidal violence that otherwise would not occur. Bosnia and Kosovo illustrate that in at least two recent cases the moral-hazard hypothesis explains why members of a vulnerable group rebelled and thereby triggered genocidal retaliation. The article concludes by exploring whether potential interveners could mitigate genocidal violence by modifying their intervention policies to reduce moral hazard.
+
+---
+
+## Towards a feminist geopolitics
+Authors: Jennifer Hyndman
+Year: 2001 | Citations: 318
+DOI: https://doi.org/10.1111/j.1541-0064.2001.tb01484.x
+
+The intersections and conversations between feminist geography and political geography have been surprisingly few. The notion of a feminist geopolitics remains undeveloped in geography. This paper aims to create a theoretical and practical space in which to articulate a feminist geopolitics. Feminist geopolitics is not an alternative theory of geopolitics, nor the ushering in of a new spatial order, but is an approach to global issues with feminist politics in mind. ‘Feminist’ in this context refers to analyses and political interventions that address the unequal and often violent relationships among people based on real or perceived differences. Building upon the literature from critical geopolitics, feminist international relations, and transnational feminist studies, I develop a framework for feminist political engagement. The paper interrogates concepts of human security and juxtaposes them with state security, arguing for a more accountable, embodied, and responsive notion of geopolitics. A feminist geopolitics is sought by examining politics at scales other than that of the nation‐state; by challenging the public/private divide at a global scale; and by analyzing the politics of mobility for perpetrators of crimes against humanity. As such, feminist geopolitics is a critical approach and a contingent set of political practices operating at scales finer and coarser than the nation‐state.
+
+---
+
+## J’accuse! Does Naming and Shaming Perpetrators Reduce the Severity of Genocides or Politicides?1
+Authors: Matthew Krain
+Year: 2012 | Citations: 305
+DOI: https://doi.org/10.1111/j.1468-2478.2012.00732.x
+
+This study tests the effectiveness of naming and shaming by transnational advocacy networks in reducing the severity of ongoing instances of genocide or politicide. I argue that naming and shaming should force perpetrators to reduce the severity of these ongoing atrocities in order to shift the spotlight, save their reputation, reframe their identity, maintain international legitimacy and domestic viability, and ease pressure placed on them by states or IOs. I test whether naming and shaming by NGOs, the media, and IOs significantly reduces the severity of the killing. Ordered logit analyses of ongoing genocides and politicides from 1976 to 2008 reveal that naming and shaming by Amnesty International, the Northern media, and the UNCHR have significant ameliorative effects on the severity of the most extreme atrocities. Transnational advocacy networks have the potential, through naming and shaming, to lead to life-saving changes in these murderous policies.
+
+---
+
+## Of sweatshops and subsistence: Habermas on human rights
+Authors: David Ingram
+Year: 2009 | Citations: 221
+DOI: https://doi.org/10.3402/egp.v2i3.2045
+
+In this paper I argue that the discourse theoretic account of human rights defended by Jürgen Habermas contains a fruitful tension that is obscured by its dominant tendency to identify rights with legal claims. This weakness in Habermas's account becomes manifest when we examine how sweatshops diminish the secure enjoyment of subsistence, which Habermas himself (in recognition of the Universal Declaration of Human Rights (UDHR)) recognizes as a human right. Discourse theories of human rights are unique in tying the legitimacy of human rights to democratic deliberation and consensus. So construed, their specific meaning and force is the outcome of historical political struggle. However, unlike other legal rights, they possess universal moral validity. In this paper I argue that this tension between the legal and moral aspects of human rights can be resolved if and only if human rights are conceived as moral aspirations and not simply as legal claims. In particular, I shall argue that there are two reasons why human rights must be understood as moral aspirations that function non-juridically: First, the basic human goods to which human rights provide secure access are determinable only in relation to basic human capabilities that are progressively revealed in the course of an indefinite (fully inclusive and universal) process of collective learning; second, the institutional impediments to enjoying human rights are cultural in nature and cannot be remedied by means of legal coercion.
+
+---
+
+## Transnational Public Law Litigation
+Authors: Harold Hongju Koh
+Year: 1991 | Citations: 187
+DOI: https://doi.org/10.2307/796897
+
+Several years ago, I called attention to the burgeoning of "transnational public law litigation": suits brought in United States courts by individual and governmental litigants challenging violations of international law. As recent examples of this phenomenon, I included international human rights suits brought by aliens against foreign and United States governments and officials under the Alien Tort Statute, as well as actions by foreign governments against individual, American government, and corporate defendants.
+
+---
+
+## ‘The Lady Doth Protest Too Much’ Kosovo, and the Turn to Ethics in International Law
+Authors: Martti Koskenniemi
+Year: 2002 | Citations: 187
+DOI: https://doi.org/10.1111/1468-2230.00373
+
+Most international lawyers approved of the 1999 bombing of Serbia by the members of the North Atlantic alliance. But most of them also felt that it was not compatible with a strict reading of the UN Charter. The article describes the argumentative techniques through which international lawyers tried to accommodate their moral intuitions with their professional competence. The urge to achieve this, the article argues, arose from a general turn to ethics in the profession that has been evident since the end of the Cold War. This has often involved a shallow and dangerous moralisation which, if generalised, transforms international law into an uncritical instrument for the foreign policy choices of those whom power and privilege has put into decision‐making positions.
+
+---
+
+## Donor‐Driven Justice and its Discontents: The Case of Rwanda
+Authors: Barbara Oomen
+Year: 2005 | Citations: 183
+DOI: https://doi.org/10.1111/j.0012-155x.2005.00440.x
+
+Abstract Never before was a process of doing justice driven so strongly from the outside as in post‐genocide Rwanda. Not only did the 1994 genocide lead to the founding of the International Tribunal, but it also induced intensive donor involvement in domestic attempts to ‘break the cycle of hatred’— from the work done by the national courts and the Unity Commission to the gacaca . In this sense, Rwanda became the forerunner of a much wider trend, towards a judicialization of international relations, for instance through an emphasis on international criminal law. However, the past decade of donor involvement in Rwanda in general, and the case of the gacaca in particular, show us how this specific — technocratic, de‐contextualized — emphasis on justice might seem innocuous at first glance, but carries dangers within it, particularly if it takes place in an increasingly autocratic and oppressive political environment like that of contemporary Rwanda.
+
+---
+
+## Making states work: state failure and the crisis of governance
+Authors: Unknown
+Year: 2006 | Citations: 178
+DOI: https://doi.org/10.5860/choice.44-0599
+
+&lt;p&gt;This publication is the result of a joint interdisciplinary project of the International Peace Academy and the United Nations University. It focuses on situations when state structures begin to break down or collapse, encompassing a range of crises from states in which basic public services are neglected to the total collapse of governance. It looks at the roles and responsibilities of key actors in the situation in relation to their own populations and the international community, and considers the lessons that can be drawn from a range of countries to develop effective strategies to address such situations.&lt;/p&gt;
+
+---
+
+## Moral enhancement, freedom, and what we (should) value in moral behaviour
+Authors: David DeGrazia
+Year: 2013 | Citations: 176
+DOI: https://doi.org/10.1136/medethics-2012-101157
+
+The enhancement of human traits has received academic attention for decades, but only recently has moral enhancement using biomedical means--moral bioenhancement (MB)--entered the discussion. After explaining why we ought to take the possibility of MB seriously, the paper considers the shape and content of moral improvement, addressing at some length a challenge presented by reasonable moral pluralism. The discussion then proceeds to this question: Assuming MB were safe, effective, and universally available, would it be morally desirable? In particular, would it pose an unacceptable threat to human freedom? After defending a negative answer to the latter question--which requires an investigation into the nature and value of human freedom--and arguing that there is nothing inherently wrong with MB, the paper closes with reflections on what we should value in moral behaviour.
+
+---
+
+## Is It Ethical to Study Africa? Preliminary Thoughts on Scholarship and Freedom
+Authors: Amina Mama
+Year: 2007 | Citations: 171
+DOI: https://doi.org/10.1353/arw.2005.0122
+
+Abstract: This article explores the manner in which ethical concerns have been addressed within Africa's progressive intellectual tradition through the eras of anti-colonial, pan-African, and nationalist struggles for freedom, and into the era of globalization. Africa is characterized as the region bearing the most negative con-sequences of globalization, a reality that offers a critical vantage point well-attuned to the challenge of demystifying the global policy dictates currently dominating the global landscape. Ethical considerations are conceptualized as being framed by considerations of identity, epistemology, and methodology. It is suggested that Africa's radical intellectuals have effectively pursued anti-imperialist ethics, and developed regional and national intellectual communities of scholars who have worked for freedom, often challenging and subverting the constraints of dominant and received disciplinary approaches and paradigms. However, it is suggested that the liberatory promise of the anticolonial nationalist eras has not been fulfilled. While the fortunes of higher education and research in Africa have declined, scholars have established independent research networks in and beyond the campuses to keep African intellectual life alive. However, it is argued that Africa's intellectuals need to engage more proactively with the methodological implications of their own liberatory intellectual ethics. To do so requires that we address the intellectual challenges of Africa's complicated and contradictory location in the world and ensure that our unique vantage points inform methodological and pedagogical strategies that pursue freedom.
+
+---
+
+## Dilemmas of Expanding Transitional Justice, or Forging the Nexus between Transitional Justice and Development
+Authors: Ramakrishnan Mani
+Year: 2008 | Citations: 169
+DOI: https://doi.org/10.1093/ijtj/ijn030
+
+∗It is timely that in just its second year of publication, the International Journal of Transitional Justice (IJTJ) has chosen to focus this special issue on the nexus between transitional justice and development. This is an indication of the salience of the issues of development generally and social justice specifically to the process of seeking transitional justice in societies moving out of conflict or other forms of crisis and repression. The number of articles received for consideration in this special issue and the range of seminal topics they raise serve to underline the pressing need to consider concerns of development and social justice as experienced and expressed by both scholars and practitioners. In introducing this special issue, I want to highlight four areas of inquiry that scholars, advocates and practitioners of both transitional justice and development must consider if either field is to achieve its intended goals. The articles in this issue explore many of these four areas in greater depth, with potent illustrative examples that draw on a range of cases, as outlined below. Thefirstthornyquestionis:Cantransitionaljustice(TJ)todayaffordnottoconcern itself directly with social injustice and patterns of inequality, discrimination and marginalization that were underlying causes of a conflict and that inflicted major suffering and victimization on vast swathes of a population? How can (or should) TJ have a more direct impact on reducing social and economic inequality? Second, should TJ measures cost less and deliver more? For impoverished countries, TJ often represents a costly luxury in a highly resource-constrained environment where all aspects of social, economic and political life need to be rebuilt and development is a priority. In this context, TJ often comes to represent a trade-off of sorts between justice or development, rather than promoting development with justice. Third, should TJ concern itself directly with war economies and corruption, particularly the exploitation of natural and mineral resources, as these are often perpetrated by the same war criminals ‐ and with the same abusive, violent and exploitative means and devastating effect on victims ‐ as the war crimes that historically fall within the purview of TJ?
+
+---
+
+## Globalization, Economic Freedom, and Human Rights
+Authors: Axel Dreher, Martin Gassebner, Lars-H. R. Siemers
+Year: 2011 | Citations: 164
+DOI: https://doi.org/10.1177/0022002711420962
+
+Using the KOF Index of Globalization and two indices of economic freedom, the authors empirically analyze whether globalization and economic liberalization affect governments’ respect for human rights in a panel of 106 countries over the 1981–2004 period. According to their results, physical integrity rights significantly and robustly increase with globalization and economic freedom, while empowerment rights are not robustly affected. Due to the lack of consensus about the appropriate level of empowerment rights as compared to the outright rejection of any violation of physical integrity rights, the global community is presumably less effective in promoting empowerment rights.
+
+---
+
+## Media and Politics
+Authors: David Strömberg
+Year: 2015 | Citations: 156
+DOI: https://doi.org/10.1146/annurev-economics-080213-041101
+
+This article provides a review of recent literature in economics on the effect of mass media on politics. The focus is on the welfare effects of mass media. I also discuss the likely implications of existing behavioral theories of media effects, developed outside of economics.
+
+---
+
+## Review of Disability Studies
+Authors: R., Roshini, V., Rajasekaran, Mani, Manimangai
+Year: 2013 | Citations: 151
+DOI: https://doi.org/10.3828/jlcds.2013.33
+
+Indonesia is a vast Southeast Asian country boasting a rich cultural and linguistic heritage, with a staggering 726 local languages. However, English is essential in Indonesian, especially in media, politics, and education. Recognizing its significance, the Indonesian government has incorporated English as a subject in the educational sector and included it in the national examination from elementary to high school levels. Despite these efforts, Indonesia's English Proficiency Index (EPI) remains low, with a score of 469 out of 502 compared to the global average. This paper investigates implementing Information and Communication Technology (ICT) in Indonesian English classes. The authors have explored the perceptions of both teachers and students concerning ICT, how they react to its presence, and the common types of technology used in these classes. The study's participants consisted of university-level students and teachers from the English department in Indonesia. Data collection was carried out through the distribution of questionnaires and conducting interviews with the teachers. The results revealed that incorporating ICT in the classroom benefits teachers and students. Interestingly, despite the technology's benefits, the teachers and students expressed confidence in their ability to perform well even without relying heavily on technology during their lessons.
+
+---
+
+## Prescribing Institutions Without Ideal Theory*
+Authors: David Wiens
+Year: 2011 | Citations: 150
+DOI: https://doi.org/10.1111/j.1467-9760.2010.00387.x
+
+P OLITICAL philosophers are not shy to prescribe ways to design social and political institutions so as to eradicate or at least mitigate various actual injustices. The conventional wisdom is that such prescriptions are the province of nonideal theory but that ideal theory is required as a guide for nonideal theory. On this view, our first task is to specify fully just principles of regulation-that is, principles that regulate the constitution of fully just institutional arrangements. 1 These principles subsequently guide and constrain our attempts to prescribe institutional solutions to address actual injustices. 2 Call this the ideal guidance approach to institutional design. This view is mistaken, or so I will argue. Ideal theory does not yield guiding principles that actual institutions must aim to realize, even if only approximately. Fortunately, the conventional wisdom is also avoidable.
+
+---
+
+## Slum Wars of the 21st Century: Gangs, <i>Mano Dura</i> and the New Urban Geography of Conflict in Central America
+Authors: Dennis Rodgers
+Year: 2009 | Citations: 144
+DOI: https://doi.org/10.1111/j.1467-7660.2009.01590.x
+
+ABSTRACT The political economy of violence in Central America is widely perceived as having undergone a critical shift during the past two decades, often pithily summarized as a movement from ‘political’ to ‘social’ violence. Although such an analysis is plausible, it also offers a depoliticized vision of the contemporary Central American panorama of violence. Basing itself principally on the example of Nicaragua, the country in the region that is historically perhaps most paradigmatically associated with violence, this article offers an alternative interpretation of the changes that the regional landscape of violence has undergone. It suggests that these are better understood as a movement from ‘peasant wars of the twentieth century’ ( Wolf, 1969 ) to ‘urban wars of the twenty‐first century’ ( Beall, 2006 ), thereby highlighting how present‐day urban violence can in many ways be seen as representing a structural continuation of past political conflicts, albeit in new spatial contexts. At the same time, however, there are certain key differences between past and present violence, as a result of which contemporary conflict has intensified. This is most visible in relation to the changing forms of urban spatial organization in Central American cities, the heavy‐handed mano dura response to gangs by governments, and the dystopian evolutionary trajectory of gangs. Taken together, these processes point to a critical shift in the balance of power between rich and poor in the region, as the new ‘urban wars of the twenty‐first century’ are increasingly giving way to more circumscribed ‘slum wars’ that effectively signal the defeat of the poor.
+
+---
+
+## The Fundamental Institutions of China's Reforms and Development
+Authors: Chenggang Xu
+Year: 2011 | Citations: 2554
+DOI: https://doi.org/10.1257/jel.49.4.1076
+
+China's economic reforms have resulted in spectacular growth and poverty reduction. However, China's institutions look ill-suited to achieve such a result, and they indeed suffer from serious shortcomings. To solve the “China puzzle,” this paper analyzes China's institution—a regionally decentralized authoritarian system. The central government has control over personnel, whereas subnational governments run the bulk of the economy; and they initiate, negotiate, implement, divert, and resist reforms, policies, rules, and laws. China's reform trajectories have been shaped by regional decentralization. Spectacular performance on the one hand and grave problems on the other hand are all determined by this governance structure. (JEL O17, O18, O43, P21, P25, P26)
+
+---
+
+## Understanding Conspiracy Theories
+Authors: Karen M. Douglas, Joseph E. Uscinski, Robbie M. Sutton
+Year: 2019 | Citations: 1475
+DOI: https://doi.org/10.1111/pops.12568
+
+Scholarly efforts to understand conspiracy theories have grown significantly in recent years, and there is now a broad and interdisciplinary literature. In reviewing this body of work, we ask three specific questions. First, what factors are associated with conspiracy beliefs? Our review of the literature shows that conspiracy beliefs result from a range of psychological, political, and social factors. Next, how are conspiracy theories communicated? Here, we explain how conspiracy theories are shared among individuals and spread through traditional and social media platforms. Next, what are the societal risks and rewards associated with conspiracy theories? By focusing on politics and science, we argue that conspiracy theories do more harm than good. We conclude by suggesting several promising avenues for future research.
+
+---
+
+## Human Dignity and Judicial Interpretation of Human Rights
+Authors: Christopher McCrudden
+Year: 2008 | Citations: 959
+DOI: https://doi.org/10.1093/ejil/chn043
+
+The Universal Declaration on Human Rights was pivotal in popularizing the use of ' dignity ' or ' human dignity ' in human rights discourse. This article argues that the use of ' dignity ' , beyond a basic minimum core, does not provide a universalistic, principled basis for judicial decision-making in the human rights context, in the sense that there is little common understanding of what dignity requires substantively within or across jurisdictions. The meaning of dignity is therefore context-specifi c, varying signifi cantly from jurisdiction to jurisdiction and (often) over time within particular jurisdictions. Indeed, instead of providing a basis for principled decision-making, dignity seems open to signifi cant judicial manipulation, increasing rather than decreasing judicial discretion. That is one of its signifi cant attractions to both judges and litigators alike. Dignity provides a convenient language for the adoption of substantive interpretations of human rights guarantees which appear to be intentionally, not just coincidentally, highly contingent on local circumstances. Despite that, however, I argue that the concept of ' human dignity ' plays an important role in the development of human rights adjudication, not in providing an agreed content to human rights but in contributing to particular methods of human rights interpretation and adjudication.
+
+---

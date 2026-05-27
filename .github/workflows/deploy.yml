@@ -30,7 +30,7 @@ jobs:
         run: |
           IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           IMAGE_LOWER=$(echo "$IMAGE" | tr '[:upper:]' '[:lower:]')
-          docker build -t $IMAGE_LOWER:${{ github.sha }} -t $IMAGE_LOWER:latest .
+          docker build --build-arg FAL_KEY=${{ secrets.FAL_KEY }} -t $IMAGE_LOWER:${{ github.sha }} -t $IMAGE_LOWER:latest .
           docker push $IMAGE_LOWER:${{ github.sha }}
           docker push $IMAGE_LOWER:latest
 

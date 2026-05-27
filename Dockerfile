@@ -14,11 +14,18 @@ COPY app.py .
 COPY core/ core/
 COPY utils/ utils/
 COPY assets/ assets/
-COPY startup.sh .
-RUN chmod +x startup.sh
+
+# Ingest at build time so the vector store is baked into the image
+ARG FAL_KEY
+ENV FAL_KEY=$FAL_KEY
+RUN python -c "from core.ingestion import ingest; ingest()"
 
 EXPOSE 8501
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
 
-ENTRYPOINT ["./startup.sh"]
+ENTRYPOINT ["streamlit", "run", "app.py", \
+    "--server.port=8501", \
+    "--server.address=0.0.0.0", \
+    "--server.fileWatcherType=none", \
+    "--browser.gatherUsageStats=false"]

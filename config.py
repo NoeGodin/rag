@@ -1,23 +1,24 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
+import os
+
+from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
-from dotenv import load_dotenv
 
 from core.retrieval_strategies import RetrievalType
 
-import os
-
 load_dotenv()
 
-RETRIEVAL_K = 2
-RETRIEVAL_K_FETCH = 10
+RETRIEVAL_K = 5
+RETRIEVAL_K_FETCH = 20
 RERANK_ENABLED = True
 RETRIEVAL_TYPE = RetrievalType.SIMILARITY
 
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+FAL_KEY = os.environ["FAL_KEY"]
+FAL_BASE_URL = "https://fal.run/openrouter/router/openai/v1"
+FAL_HEADERS = {"Authorization": f"Key {FAL_KEY}"}
 
 
 def get_prompt() -> ChatPromptTemplate:
@@ -34,10 +35,12 @@ def get_prompt() -> ChatPromptTemplate:
     ])
 
 
-def get_embeddings() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        model_kwargs={"device": "cpu"},
+def get_embeddings() -> OpenAIEmbeddings:
+    return OpenAIEmbeddings(
+        model="openai/text-embedding-3-small",
+        base_url=FAL_BASE_URL,
+        api_key="fal",
+        default_headers=FAL_HEADERS,
     )
 
 def get_vector_store() -> Chroma:
@@ -49,14 +52,13 @@ def get_vector_store() -> Chroma:
 
 
 def get_llm() -> ChatOpenAI:
-    fal_key = openrouter_api_key()
     return ChatOpenAI(
         model="meta-llama/llama-4-maverick",
-        base_url="https://fal.run/openrouter/router/openai/v1",
-        api_key="fal",  # placeholder, auth via header
+        base_url=FAL_BASE_URL,
+        api_key="fal",
         temperature=0.1,
         streaming=True,
-        default_headers={"Authorization": f"Key {fal_key}"},
+        default_headers=FAL_HEADERS,
     )
 
 def get_loader() -> DirectoryLoader:
@@ -74,6 +76,3 @@ def get_text_splitter() -> TextSplitter:
         chunk_overlap=200,
         add_start_index=True,
     )
-
-def openrouter_api_key() -> str:
-    return os.getenv("FAL_KEY")

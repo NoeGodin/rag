@@ -1,10 +1,9 @@
-from google import genai
-from langchain_ollama import OllamaEmbeddings, ChatOllama
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from dotenv import load_dotenv
 
 from core.retrieval_strategies import RetrievalType
@@ -17,6 +16,8 @@ RETRIEVAL_K = 2
 RETRIEVAL_K_FETCH = 10
 RERANK_ENABLED = True
 RETRIEVAL_TYPE = RetrievalType.SIMILARITY
+
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 
 def get_prompt() -> ChatPromptTemplate:
@@ -32,30 +33,31 @@ def get_prompt() -> ChatPromptTemplate:
     ])
 
 
-# def get_embeddings() -> OllamaEmbeddings:
-#     return OllamaEmbeddings(model="nomic-embed-text")
-
-def get_gemini_embeddings():
-    API_KEY = gemini_api_key()
-    return GoogleGenerativeAIEmbeddings(api_key=API_KEY, model="models/gemini-embedding-001")
-
+def get_embeddings() -> HuggingFaceEmbeddings:
+    return HuggingFaceEmbeddings(
+        model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        model_kwargs={"device": "cpu"},
+    )
+    
 def get_vector_store() -> Chroma:
     return Chroma(
         collection_name="arb",
-        embedding_function=get_gemini_embeddings(),
+        embedding_function=get_embeddings(),
         persist_directory="./chroma_langchain_db",
     )
 
 
-# def get_llm() -> ChatOllama:
-#     return ChatOllama(model="llama3.1")
-
-def get_gemini_llm():
-    API_KEY = gemini_api_key()
-    return ChatGoogleGenerativeAI(
-        model="gemini-3.5-flash",
-        api_key=API_KEY
+def get_llm() -> ChatOpenAI:
+    fal_key = openrouter_api_key()
+    return ChatOpenAI(
+        model="meta-llama/llama-4-maverick",
+        base_url="https://fal.run/openrouter/router/openai/v1",
+        api_key="fal",  # placeholder, auth via header
+        temperature=0.1,
+        streaming=True,
+        default_headers={"Authorization": f"Key {fal_key}"},
     )
+    
 
 def get_loader() -> DirectoryLoader:
     return DirectoryLoader(
@@ -71,6 +73,6 @@ def get_text_splitter() -> TextSplitter:
         chunk_overlap=200,
         add_start_index=True,
     )
-    
-def gemini_api_key() -> str:
-    return os.getenv("API_KEY")
+
+def openrouter_api_key() -> str:
+    return os.getenv("FAL_KEY")

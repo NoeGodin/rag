@@ -1,7 +1,7 @@
 import streamlit as st
 from core.retrieval import ask_agent
 
-st.title("ChatGPT-like clone")
+st.title("DictateurGPT")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -10,7 +10,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("Demander une information sur les dictateurs."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)

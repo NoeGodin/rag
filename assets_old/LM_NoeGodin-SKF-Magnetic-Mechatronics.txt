@@ -1,0 +1,39 @@
+===== SLIDE 1 =====
+Noé GODIN 
+41 rue Georges Politzer 
+94110 Arcueil 
++33 7 82 54 39 00 
+noegodin2@gmail.com 
+SKF Magnetic Mechatronics 
+27950 Saint Marcel 
+ 
+Objet : Recherche contrat d’apprentissage de 36 mois – Ingénieur développement Software 
+Madame, Monsieur, 
+Actuellement étudiant ingénieur admis à l’UTC, je vous contacte car je suis à la recherche d'un 
+contrat d'alternance de 36 mois débutant à partir de septembre. J’ai découvert votre offre grâce à la 
+plateforme de notre école et j’ai rapidement été séduit par les différents avantages qu’elle propose. 
+Travailler sur le big data, le cloud computing et participer à l’architecture logicielle d’applications sont 
+des aspects très attrayants de votre offre. Je pense que cette expérience correspond parfaitement à 
+mon parcours de développeur et aspirant architecte logiciel. Être en mesure de participer à autant 
+d’étapes du projet, et pas seulement à la programmation, me permettrait de réellement comprendre 
+comment est mis en place un logiciel embarqué. 
+Même si je n’ai pas d’expérience dans la programmation embarquée, c’est un domaine qui m’a 
+toujours inspiré et il me semble que mon profil pourrait correspondre à vos attentes. Au cours de ma 
+formation, j’ai mené à bien de nombreux projets web/logiciel et je suis actuellement en stage pour 5 
+mois en tant que développeur full stack chez Redpill, où je travaille principalement avec React, 
+Node.js et MongoDB. Je suis quelqu’un de curieux, qui aime les défis, et j’apprends vite. Par 
+conséquent, je suis certain de pouvoir répondre à vos attentes. Concernant mes compétences 
+relationnelles, je sais travailler en équipe mais aussi être autonome, et je n’ai aucun mal à 
+communiquer en anglais (Baccalauréat « section européenne anglais », niveau C2). 
+Cette alternance me permettrait de me consolider sur une stack technique avec laquelle je suis déjà 
+familier. J’ai pu, par exemple, programmer une API complète pour une fausse plateforme de e-
+commerce à l’aide de Python et de son framework web Django, ainsi qu’un chatbot simple à l’aide de 
+PyTorch. J’ai également développé un logiciel permettant de gérer un tournoi de tennis en C et je 
+travaille avec JavaScript en ce moment chez Redpill. Cette alternance constituerait une expérience 
+significative pour mon projet professionnel et personnel. C’est pourquoi je souhaiterais vivement 
+poursuivre mon parcours de développeur à vos côtés. 
+En espérant que ma candidature retiendra votre attention, je me tiens à votre disposition pour tout 
+renseignement complémentaire ou une rencontre afin de vous faire part de vive voix de ma 
+motivation. 
+Cordialement, 
+Noé Godin

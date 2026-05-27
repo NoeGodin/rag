@@ -1,0 +1,10 @@
+.venv
+__pycache__
+*.pyc
+.git
+.idea
+.env
+.DS_Store
+chroma_langchain_db
+assets_old
+*.pdf

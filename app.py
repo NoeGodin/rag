@@ -6,12 +6,6 @@ from core.retrieve import retrieve
 from core.generate import generate_stream
 
 
-@cl.on_chat_start
-async def on_chat_start() -> None:
-    await cl.Message(
-        content="Bienvenue, camarade. Pose ta question sur les dictateurs et les regimes autoritaires."
-    ).send()
-
 
 @cl.on_message
 async def on_message(message: cl.Message) -> None:

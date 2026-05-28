@@ -1,0 +1,106 @@
+/* DictateurGPT — red authoritarian theme */
+
+:root {
+  --primary: #b71c1c;
+  --primary-light: #e53935;
+  --bg-dark: #0a0a0a;
+  --surface: #1a1010;
+  --text: #e0d6d6;
+  --border: #3a2020;
+}
+
+/* Global background */
+body,
+.MuiPaper-root,
+main {
+  background-color: var(--bg-dark) !important;
+  color: var(--text) !important;
+}
+
+/* Header / toolbar */
+header,
+.MuiAppBar-root {
+  background-color: var(--surface) !important;
+  border-bottom: 2px solid var(--primary) !important;
+}
+
+/* Chat input */
+.composer-container,
+.MuiOutlinedInput-root {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.MuiOutlinedInput-root:focus-within {
+  border-color: var(--primary-light) !important;
+}
+
+/* Send button */
+button[type="submit"],
+.send-button {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+button[type="submit"]:hover,
+.send-button:hover {
+  background-color: var(--primary-light) !important;
+}
+
+/* Messages */
+.message-container {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+}
+
+/* User message bubble */
+.user-message {
+  background-color: #2a1515 !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Assistant message bubble */
+.assistant-message {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Source elements panel */
+.element-side-view {
+  background-color: var(--surface) !important;
+  border-left: 2px solid var(--primary) !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-light) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Welcome screen */
+.welcome-screen {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Hide "follow system" theme toggle option */
+[data-testid="theme-system"],
+button[value="system"] {
+  display: none !important;
+}

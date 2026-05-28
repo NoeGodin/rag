@@ -1,13 +1,9 @@
+import os
+
 import chainlit as cl
 
 from core.retrieve import retrieve
 from core.generate import generate_stream
-
-_GREETINGS = {"hello", "hi", "hey", "salut", "bonjour", "coucou", "yo", "bonsoir"}
-
-
-def _is_greeting(text: str) -> bool:
-    return text.strip().strip("!?.").lower() in _GREETINGS
 
 
 @cl.on_chat_start
@@ -19,14 +15,8 @@ async def on_chat_start() -> None:
 
 @cl.on_message
 async def on_message(message: cl.Message) -> None:
-    greeting = _is_greeting(message.content)
-
-    if greeting:
-        docs = []
-        context = ""
-    else:
-        docs = retrieve(message.content)
-        context = "\n\n".join(doc.page_content for doc in docs)
+    docs = retrieve(message.content)
+    context = "\n\n".join(doc.page_content for doc in docs)
 
     msg = cl.Message(content="")
     await msg.send()
@@ -34,15 +24,20 @@ async def on_message(message: cl.Message) -> None:
     for token in generate_stream(context, message.content):
         await msg.stream_token(token)
 
-    # Append sources as a footer after the response
     if docs:
-        source_names = set()
+        elements = []
+        seen_sources = set()
         source_lines = []
         for doc in docs:
-            name = doc.metadata.get("source", "inconnu")
-            if name not in source_names:
-                source_names.add(name)
+            name = os.path.basename(doc.metadata.get("source", "inconnu"))
+            if name not in seen_sources:
+                seen_sources.add(name)
                 source_lines.append(f"- {name}")
+                elements.append(
+                    cl.Text(name=name, content=doc.page_content, display="side")
+                )
+
+        msg.elements = elements
         msg.content += "\n\n---\n**Sources :**\n" + "\n".join(source_lines)
 
     await msg.update()

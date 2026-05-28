@@ -1,7 +1,8 @@
+from langchain_openai import ChatOpenAI
 import os
 
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate
@@ -22,17 +23,19 @@ FAL_HEADERS = {"Authorization": f"Key {FAL_KEY}"}
 
 
 def get_prompt() -> ChatPromptTemplate:
-    return ChatPromptTemplate.from_messages([
-        (
-            "system",
-            "Tu es un assistant spécialisé en histoire politique et régimes autoritaires.\n\n"
-            "Réponds à la question en te basant UNIQUEMENT sur le contexte ci-dessous.\n"
-            "Cite tes sources quand c'est possible.\n\n"
-            "Contexte :\n{context}\n\n"
-            "Si la réponse n'est pas dans le contexte, dis que tu ne sais pas.",
-        ),
-        ("human", "{question}"),
-    ])
+    return ChatPromptTemplate.from_messages(
+        [
+            (
+                "system",
+                "Tu es un assistant spécialisé en histoire politique et régimes autoritaires.\n\n"
+                "Réponds à la question en te basant UNIQUEMENT sur le contexte ci-dessous.\n"
+                "Cite tes sources quand c'est possible.\n\n"
+                "Contexte :\n{context}\n\n"
+                "Si la réponse n'est pas dans le contexte, dis que tu ne sais pas.",
+            ),
+            ("human", "{question}"),
+        ]
+    )
 
 
 def get_embeddings() -> OpenAIEmbeddings:
@@ -42,6 +45,7 @@ def get_embeddings() -> OpenAIEmbeddings:
         api_key="fal",
         default_headers=FAL_HEADERS,
     )
+
 
 def get_vector_store() -> Chroma:
     return Chroma(
@@ -61,6 +65,7 @@ def get_llm() -> ChatOpenAI:
         default_headers=FAL_HEADERS,
     )
 
+
 def get_loader() -> DirectoryLoader:
     return DirectoryLoader(
         "assets/",
@@ -76,3 +81,7 @@ def get_text_splitter() -> TextSplitter:
         chunk_overlap=200,
         add_start_index=True,
     )
+
+
+def openrouter_api_key() -> str:
+    return os.getenv("FAL_KEY")

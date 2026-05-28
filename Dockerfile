@@ -1,4 +1,4 @@
-FROM python:3.14-slim
+FROM python:3.13-slim
 
 # Copier uv depuis l'image officielle pour des builds ultra-rapides
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
@@ -17,6 +17,9 @@ RUN uv sync --frozen --no-install-project
 
 COPY config.py .
 COPY app.py .
+COPY chainlit.md .
+COPY .chainlit/ .chainlit/
+COPY public/ public/
 COPY core/ core/
 COPY utils/ utils/
 COPY assets/ assets/
@@ -26,12 +29,10 @@ ARG FAL_KEY
 ENV FAL_KEY=$FAL_KEY
 RUN uv run python -c "from core.ingestion import ingest; ingest()"
 
-EXPOSE 8501
+EXPOSE 8000
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8000/ || exit 1
 
-ENTRYPOINT ["uv", "run", "streamlit", "run", "app.py", \
-    "--server.port=8501", \
-    "--server.address=0.0.0.0", \
-    "--server.fileWatcherType=none", \
-    "--browser.gatherUsageStats=false"]
+ENTRYPOINT ["uv", "run", "chainlit", "run", "app.py", \
+    "--host", "0.0.0.0", \
+    "--port", "8000"]

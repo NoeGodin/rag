@@ -367,3 +367,5 @@ pyrightconfig.json
 
 chroma_langchain_db/
 .aider*
+.files/
+.chainlit/translations/

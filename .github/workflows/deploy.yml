@@ -50,3 +50,7 @@ jobs:
             --container-registry-url https://${{ env.REGISTRY }} \
             --container-registry-user ${{ github.actor }} \
             --container-registry-password ${{ secrets.GHCR_TOKEN }}
+          az webapp config appsettings set \
+            --name ${{ env.AZURE_WEBAPP_NAME }} \
+            --resource-group rg-rag-dictateurs \
+            --settings WEBSITES_PORT=8000

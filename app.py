@@ -1,29 +1,54 @@
-import streamlit as st
-from core.retrieval import ask_agent
+import os
 
-st.title("DictateurGPT")
+import chainlit as cl
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+from core.retrieve import retrieve
+from core.generate import generate_stream
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
 
-if prompt := st.chat_input("Demander une information sur les dictateurs."):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+@cl.set_starters
+async def set_starters() -> list[cl.Starter]:
+    return [
+        cl.Starter(
+            label="Qui etait Staline ?",
+            message="Qui etait Staline et comment a-t-il pris le pouvoir ?",
+        ),
+        cl.Starter(
+            label="Les regimes totalitaires",
+            message="Quelles sont les caracteristiques communes des regimes totalitaires ?",
+        ),
+        cl.Starter(
+            label="Propagande et controle",
+            message="Comment les dictateurs utilisent-ils la propagande pour maintenir le pouvoir ?",
+        ),
+    ]
 
-    with st.chat_message("assistant"):
-        response_container = st.empty()
-        full_response = ""
 
-        for chunk in ask_agent(prompt, stream=True):
-            if isinstance(chunk, list):
-                chunk = "".join(item["text"] for item in chunk if "text" in item)
+@cl.on_message
+async def on_message(message: cl.Message) -> None:
+    docs = retrieve(message.content)
+    context = "\n\n".join(doc.page_content for doc in docs)
 
-            full_response += chunk
-            response_container.markdown(full_response)
+    msg = cl.Message(content="")
+    await msg.send()
 
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+    for token in generate_stream(context, message.content):
+        await msg.stream_token(token)
+
+    if docs:
+        elements = []
+        seen_sources = set()
+        source_lines = []
+        for doc in docs:
+            name = os.path.basename(doc.metadata.get("source", "inconnu"))
+            if name not in seen_sources:
+                seen_sources.add(name)
+                source_lines.append(f"- {name}")
+                elements.append(
+                    cl.Text(name=name, content=doc.page_content, display="side")
+                )
+
+        msg.elements = elements
+        msg.content += "\n\n---\n**Sources :**\n" + "\n".join(source_lines)
+
+    await msg.update()

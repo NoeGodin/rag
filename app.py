@@ -6,6 +6,23 @@ from core.retrieve import retrieve
 from core.generate import generate_stream
 
 
+@cl.set_starters
+async def set_starters() -> list[cl.Starter]:
+    return [
+        cl.Starter(
+            label="Qui etait Staline ?",
+            message="Qui etait Staline et comment a-t-il pris le pouvoir ?",
+        ),
+        cl.Starter(
+            label="Les regimes totalitaires",
+            message="Quelles sont les caracteristiques communes des regimes totalitaires ?",
+        ),
+        cl.Starter(
+            label="Propagande et controle",
+            message="Comment les dictateurs utilisent-ils la propagande pour maintenir le pouvoir ?",
+        ),
+    ]
+
 
 @cl.on_message
 async def on_message(message: cl.Message) -> None:

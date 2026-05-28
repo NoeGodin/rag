@@ -1,8 +1,17 @@
 # DictateurGPT
 
-Bienvenue sur **DictateurGPT**, assistant specialise sur les **dictateurs** et les **regimes autoritaires**.
+Assistant specialise sur les **dictateurs** et les **regimes autoritaires**, base sur la technique **RAG** (Retrieval-Augmented Generation).
 
-Posez vos questions sur l'histoire des regimes totalitaires, les leaders autocratiques, les mecanismes du pouvoir absolu et les consequences de ces regimes.
+## Fonctionnement
+
+L'application recherche dans un corpus de documents (articles Wikipedia, publications academiques) les passages les plus pertinents par rapport a votre question, puis genere une reponse basee uniquement sur ces sources.
+
+## Etudiants
+
+- JOUGLA Maxime
+- ZEHREN William
+- TEA Steven
+- GODIN Noe
 
 ---
 

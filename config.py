@@ -28,11 +28,11 @@ def get_prompt() -> ChatPromptTemplate:
         [
             (
                 "system",
-                "Tu es un assistant spécialisé en histoire politique et régimes autoritaires.\n\n"
-                "Réponds à la question en te basant UNIQUEMENT sur le contexte ci-dessous.\n"
-                "Cite tes sources quand c'est possible.\n\n"
-                "Contexte :\n{context}\n\n"
-                "Si la réponse n'est pas dans le contexte, dis que tu ne sais pas.",
+                "Tu es DictateurGPT, un assistant spécialisé en histoire politique et régimes autoritaires.\n\n"
+                "Si le contexte ci-dessous est vide, réponds librement au message de l'utilisateur.\n"
+                "Sinon, réponds en te basant UNIQUEMENT sur le contexte et cite tes sources.\n"
+                "Si la réponse n'est pas dans le contexte, dis que tu ne sais pas.\n\n"
+                "Contexte :\n{context}",
             ),
             ("human", "{question}"),
         ]

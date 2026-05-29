@@ -5,6 +5,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 
 from core.retrieve import retrieve
 from core.generate import generate_stream
+from utils.guard import detect_injection, check_output_leak, REFUSAL_MESSAGE, LEAK_REFUSAL
 
 @cl.on_chat_start
 async def on_chat_start() -> None:
@@ -30,6 +31,11 @@ async def set_starters() -> list[cl.Starter]:
 
 @cl.on_message
 async def on_message(message: cl.Message) -> None:
+    # prompt injection protection 1 (regex heuristics)
+    if detect_injection(message.content):
+        await cl.Message(content=REFUSAL_MESSAGE).send()
+        return
+
     docs = retrieve(message.content)
     context = "\n\n".join(doc.page_content for doc in docs)
     history = cl.user_session.get("chat_history")
@@ -42,7 +48,13 @@ async def on_message(message: cl.Message) -> None:
     for token in generate_stream(context, message.content, history):
         await msg.stream_token(token)
         full_response += token
-    
+
+    # prompt injection protection 2 (canary token)
+    if check_output_leak(full_response):
+        msg.content = LEAK_REFUSAL
+        await msg.update()
+        return
+
     history.append(AIMessage(content=full_response))
 
     if docs:

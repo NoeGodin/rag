@@ -11,7 +11,7 @@ This paper develops the empirical and theoretical case that differences in econo
 
 ## Culture and Institutions
 Authors: Alberto Alesina, Paola Giuliano
-Year: 2015 | Citations: 1437
+Year: 2015 | Citations: 1439
 DOI: https://doi.org/10.1257/jel.53.4.898
 
 A growing body of empirical work measuring different types of cultural traits has shown that culture matters for a variety of economic outcomes. This paper focuses on one specific aspect of the relevance of culture: its relationship to institutions. We review work with a theoretical, empirical, and historical bent to assess the presence of a two-way causal effect between culture and institutions. ( JEL D02, D72, I32, J12, Z13)
@@ -20,7 +20,7 @@ A growing body of empirical work measuring different types of cultural traits ha
 
 ## The nature of social dominance orientation: Theorizing and measuring preferences for intergroup inequality using the new SDO₇ scale.
 Authors: Arnold K. Ho, Jim Sidanius, Nour Kteily
-Year: 2015 | Citations: 1116
+Year: 2015 | Citations: 1118
 DOI: https://doi.org/10.1037/pspi0000033
 
 A new conceptualization and measurement of social dominance orientation-individual differences in the preference for group based hierarchy and inequality-is introduced. In contrast to previous measures of social dominance orientation that were designed to be unidimensional, the new measure (SDO7) embeds theoretically grounded subdimensions of SDO-SDO-Dominance (SDO-D) and SDO-Egalitarianism (SDO-E). SDO-D constitutes a preference for systems of group-based dominance in which high status groups forcefully oppress lower status groups. SDO-E constitutes a preference for systems of group-based inequality that are maintained by an interrelated network of subtle hierarchy-enhancing ideologies and social policies. Confirmatory factor and criterion validity analyses confirmed that SDO-D and SDO-E are theoretically distinct and dissociate in terms of the intergroup outcomes they best predict. For the first time, distinct personality and individual difference bases of SDO-D and SDO-E are outlined. We clarify the construct validity of SDO by strictly assessing a preference for dominance hierarchies in general, removing a possible confound relating to support for hierarchy benefitting the ingroup. Consistent with this, results show that among members of a disadvantaged ethnic minority group (African Americans), endorsement of SDO7 is inversely related to ingroup identity. We further demonstrate these effects using nationally representative samples of U.S. Blacks and Whites, documenting the generalizability of these findings. Finally, we introduce and validate a brief 4-item measure of each dimension. This article importantly extends our theoretical understanding of one of the most generative constructs in social psychology, and introduces powerful new tools for its measurement.
@@ -29,7 +29,7 @@ A new conceptualization and measurement of social dominance orientation-individu
 
 ## What Have We Learned about the Resource Curse?
 Authors: Michael L. Ross
-Year: 2014 | Citations: 1094
+Year: 2014 | Citations: 1096
 DOI: https://doi.org/10.1146/annurev-polisci-052213-040359
 
 Since 2001, hundreds of academic studies have examined the “political resource curse,” meaning the claim that natural resource wealth tends to adversely affect a country's governance. There is now robust evidence that one type of mineral wealth, petroleum, has at least three harmful effects: It tends to make authoritarian regimes more durable, to increase certain types of corruption, and to help trigger violent conflict in low- and middle-income countries. Scholars have also made progress toward understanding the mechanisms that lead to these outcomes and the conditions that make them more likely. This essay reviews the evidence behind these claims, the debates over their validity, and some of the unresolved puzzles for future research.
@@ -38,7 +38,7 @@ Since 2001, hundreds of academic studies have examined the “political resource
 
 ## How the Chinese Government Fabricates Social Media Posts for Strategic Distraction, Not Engaged Argument
 Authors: Gary King, Jennifer Pan, Margaret E. Roberts
-Year: 2017 | Citations: 1019
+Year: 2017 | Citations: 1021
 DOI: https://doi.org/10.1017/s0003055417000144
 
 The Chinese government has long been suspected of hiring as many as 2 million people to surreptitiously insert huge numbers of pseudonymous and other deceptive writings into the stream of real social media posts, as if they were the genuine opinions of ordinary people. Many academics, and most journalists and activists, claim that these so-called 50c party posts vociferously argue for the government’s side in political and policy debates. As we show, this is also true of most posts openly accused on social media of being 50c. Yet almost no systematic empirical evidence exists for this claim or, more importantly, for the Chinese regime’s strategic objective in pursuing this activity. In the first large-scale empirical analysis of this operation, we show how to identify the secretive authors of these posts, the posts written by them, and their content. We estimate that the government fabricates and posts about 448 million social media comments a year. In contrast to prior claims, we show that the Chinese regime’s strategy is to avoid arguing with skeptics of the party and the government, and to not even discuss controversial issues. We show that the goal of this massive secretive operation is instead to distract the public and change the subject, as most of these posts involve cheerleading for China, the revolutionary history of the Communist Party, or other symbols of the regime. We discuss how these results fit with what is known about the Chinese censorship program and suggest how they may change our broader theoretical understanding of “common knowledge” and information control in authoritarian regimes.
@@ -47,7 +47,7 @@ The Chinese government has long been suspected of hiring as many as 2 million pe
 
 ## The three pillars of stability: legitimation, repression, and co-optation in autocratic regimes
 Authors: Johannes Gerschewski
-Year: 2013 | Citations: 1001
+Year: 2013 | Citations: 1002
 DOI: https://doi.org/10.1080/13510347.2013.738860
 
 Why do some autocracies remain stable while others collapse? This article presents a theoretical framework that seeks to explain the longevity of autocracies by referring to three pillars of stability: legitimation, repression, and co-optation. These three causal factors are derived by distilling and synthesizing the main arguments of classic and more recent research efforts. Particular emphasis is paid to re-incorporate legitimation in the explanation of stable autocracies. The article conceptionalizes the three pillars and discusses methods of concrete measurement. It then moves on to explain the stabilization process. How do these pillars develop their stabilizing effect? It is argued that reinforcement processes take place both within and between the pillars. They take the form of exogenous reinforcement, self-reinforcement, and reciprocal reinforcement. To illustrate the inner logic of these processes, I draw on empirical examples. I also state what we would need to observe empirically and how we can approach the three pillars methodically. A theoretical framework of this nature has two advantages: it is able to take the complexity of autocratic regimes into account while remaining parsimonious enough to be applicable to all autocratic regimes, irrespective of their subtype; and it integrates a static view to explain stability, with the emphasis on the underlying stabilization mechanisms and facilitates within-case and cross-case comparisons.
@@ -65,7 +65,7 @@ Scholars of international relations usually argue that democracies are better ab
 
 ## Information Avoidance
 Authors: Russell Golman, David Hagmann, George Loewenstein
-Year: 2017 | Citations: 805
+Year: 2017 | Citations: 806
 DOI: https://doi.org/10.1257/jel.20151245
 
 We commonly think of information as a means to an end. However, a growing theoretical and experimental literature suggests that information may directly enter the agent's utility function. This can create an incentive to avoid information, even when it is useful, free, and independent of strategic considerations. We review research documenting the occurrence of information avoidance, as well as theoretical and empirical research on reasons why people avoid information, drawing from economics, psychology, and other disciplines. The review concludes with a discussion of some of the diverse (and often costly) individual and societal consequences of information avoidance. (JEL D82, D83)
@@ -119,7 +119,7 @@ If democracy is to have any of the good effects said to justify it, it must be s
 
 ## Informational Autocrats
 Authors: Sergei Guriev, Daniel Treisman
-Year: 2019 | Citations: 473
+Year: 2019 | Citations: 474
 DOI: https://doi.org/10.1257/jep.33.4.100
 
 In recent decades, dictatorships based on mass repression have largely given way to a new model based on the manipulation of information. Instead of terrorizing citizens into submission, “informational autocrats” artificially boost their popularity by convincing the public they are competent. To do so, they use propaganda and silence informed members of the elite by co-optation or censorship. Using several sources, including a newly created dataset on authoritarian control techniques, we document a range of trends in recent autocracies consistent with this new model: a decline in violence, efforts to conceal state repression, rejection of official ideologies, imitation of democracy, a perceptions gap between the masses and the elite, and the adoption by leaders of a rhetoric of performance rather than one aimed at inspiring fear.
@@ -146,7 +146,7 @@ International relations scholars increasingly debate when and how international 
 
 ## Busting the “Princelings”: The Campaign Against Corruption in China’s Primary Land Market*
 Authors: Ting Chen, James Kai‐sing Kung
-Year: 2018 | Citations: 433
+Year: 2018 | Citations: 434
 DOI: https://doi.org/10.1093/qje/qjy027
 
 Using data on over a million land transactions during 2004-2016 where local governments are the sole seller, we find that firms linked to members of China's supreme political elites-the Politburo-obtained a price discount ranging from 55.4% to 59.9% compared with those without the same connections. These firms also purchased slightly more land. In return, the provincial party secretaries who provided the discount to these "princeling" firms are 23.4% more likely to be promoted to positions of national leadership. To curb corruption, President Xi Jinping stepped up investigations and strengthened personnel control at the province level. Using a spatially matched sample (e.g., within a 500-meter radius), we find a reduction in corruption of between 42.6% and 31.5% in the provinces either targeted by the central inspection teams or whose party secretary was replaced by one appointed by Xi. Accordingly, this crackdown on corruption has also significantly reduced the promotional prospects of those local officials who rely on supplying a discount to get ahead.
@@ -164,7 +164,7 @@ What underlying long-term conditions set the stage for the Arab Spring? In recen
 
 ## Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa
 Authors: Axel Dreher, Andreas Fuchs, Brad Parks
-Year: 2018 | Citations: 393
+Year: 2018 | Citations: 394
 DOI: https://doi.org/10.1093/isq/sqx052
 
 Chinese "aid" is a lightning rod for criticism. Policy-makers, journalists, and public intellectuals claim that Beijing uses its largesse to cement alliances with political leaders, secure access to natural resources, and create exclusive commercial opportunities for Chinese firms-all at the expense of citizens living in developing countries. We argue that much of the controversy about Chinese "aid" stems from a failure to distinguish between China's Official Development Assistance (ODA) and more commercially oriented sources and types of state financing. Using a new database on China's official financing commitments to Africa from 2000 to 2013, we find that the allocation of Chinese ODA is driven primarily by foreign policy considerations, while economic interests better explain the distribution of less concessional flows. These results highlight the need for better measures of an increasingly diverse set of non-Western financial activities.

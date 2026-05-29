@@ -1,0 +1,121 @@
+# Censure d'Internet
+Source: Wikipedia (fr)
+URL: https://fr.wikipedia.org/wiki/Censure_d%27Internet
+
+La censure d'Internet, appelée aussi cybercensure, désigne les limitations de l'information disponible par l'intermédiaire de ce réseau, pratiquée en général au niveau des États, parfois à l'encontre des droits de l'homme.
+En effet, bien que la Déclaration universelle des droits de l'homme fasse de l'accès à l'information un droit indéniable (article 19), certains États ou entreprises semblent, comme pour d'autres médias, vouloir réguler Internet. Dans certains cas, l'État limite la propagande et autres publications qui n'ont pas un but informatif mais politique ou personnel ; par exemple, les infox (fake news), en nette croissance, et limités en France par la Loi contre la manipulation de l'information, ou les incitations à la haine raciale tombant sous le coup du Pacte international relatif aux droits civils et politiques. Dans d'autres cas, ce contrôle gouvernemental est en claire violation du droit à l'information et certaines associations, comme Reporters sans frontières, accusent ces États de censure. Entre 1999 et 2004, cette association s'est même fait l'écho d'une augmentation spectaculaire du filtrage d'Internet.
+
+## Techniques
+Les technologies employées peuvent être le blocage IP par routeur ou la redirection DNS. Des gouvernements peuvent bloquer les contenus du Web qui leur déplaisent, tout en bénéficiant néanmoins de ce qu'ils considèrent comme les avantages d'Internet. En décembre 2015, le code d'erreur HTTP 451 est officialisé pour permettre aux sites web d'indiquer lorsque le contenu d'une page web a été censuré. Plusieurs États interdisent toutefois son utilisation, via une obligation de silence.
+D'après RSF, des pays comme l'Ouzbékistan créent des miroirs modifiés. Ainsi, pour l'internaute, l'accès aux sites des dissidents politiques ne semble pas être bloqué. Les autorités ouzbèkes copieraient les sites controversés, puis les modifieraient afin de saper ou d'affaiblir les prises de positions interdites. Les internautes ouzbeks accédant à ces sites consultent alors des copies falsifiées. Ce type de manipulation sera peut-être décelée par un expert, mais elle est extrêmement difficile à détecter par l'internaute lambda. D'autres informations dans l'article Filtrage d'Internet.
+
+## Dans le monde
+Dans le monde, la censure en ligne se fait de plus en plus fréquente, souvent à l'aide de techniques sophistiquées. Les motivations, buts, et effets de la censure d'Internet varient selon les pays. Les contenus contenant des images liées au nazisme ou à la négation de l'holocauste par exemple sont bloqués de différentes manières et à différents niveaux en France et en Allemagne. La pédopornographie et les discours de haine sont bloqués dans la plupart des pays dans le monde.
+En fait, de nombreux pays à travers le monde, dont certaines démocraties qui soutiennent fortement la liberté d'expression et la liberté de la presse, s'engagent à lutter contre certains contenus montrés sur Internet. La censure d'Internet en Chine est parmi les plus restrictives au monde, le gouvernement bloquant l'accès à de nombreux sites dont des sites de partage ou des réseaux sociaux comme Facebook, Twitter et YouTube ou des sites de discussion sur le dalaï-lama par exemple.
+
+### Rapports
+Des informations détaillées de la censure d'Internet pays par pays sont fournies par des organisations telles que OpenNet Initiative, Reporters sans frontières, Freedom House, ou le Département d'État des États-Unis.
+
+#### Reporters sans frontières
+En 2006, Reporters sans frontières (RSF) publie une liste dite d'« ennemis d'Internet », « pour dénoncer ces pays qui contrôlent ce qui devrait être un espace de liberté ».
+
+#### Prédateurs numériques de la liberté de la presse
+En 2020. RSF publie une liste de vingt organisations ou administrations qui compromettent le travail des journalistes. Parmi elles, six États sont accusés de cybercensure : la Chine, l'Égypte, l'Inde, l'Iran, la Russie et le Venezuela.
+
+#### OpenNet Initiative
+Jusqu'en 2010, OpenNet Initiative a répertorié le filtrage Internet effectué par les gouvernements de plus d'une quarantaine de pays dans le monde. Le degré de filtrage dans 26 pays en 2007, et dans 25 pays en 2009, a été classé en trois catégories : politique, sociale, et sécurité. Sur 41 pays classés, sept d'entre eux n'ont montré aucun signe de restriction dans aucune des trois catégories (l'Égypte, la France, l'Allemagne, l'Inde, l'Ukraine, le Royaume-Uni et les États-Unis) tandis qu'un, la Chine, effectuait des filtrages importants dans les trois catégories. Treize opéraient un filtrage important dans une ou plusieurs des catégories citées précédemment, et 34 étaient engagés dans le filtrage, à des niveaux différents, d'une ou plusieurs des catégories.
+
+## Principaux opérateurs de services Web
+La plupart des principaux opérateurs de services Web se réservent le droit de supprimer ou pré-filtrer le contenu publié au travers de leurs services, parfois sans donner une liste spécifique des conditions à respecter. Les opérateurs donnent parfois une liste générale vague des raisons pouvant entraîner un blocage. Les expressions « à notre entière discrétion », « sans préavis », et « pour d'autres raisons » sont communément utilisées dans les termes des contrats d'utilisation des services. Les moteurs de recherche retirent souvent de leurs résultats des sites dont le contenu est jugé indésirable : pédophilie, racisme, œuvres protégées par le droit d'auteur… le filtrage différant d'un pays à l'autre. Ainsi, les sites allemand et français de Google, contrairement au site américain, excluent un certain nombre de pages diffusant des idées d'extrême droite. Plusieurs moteurs allemands ont signé en février 2005 un « code de bonne conduite » proposé par l'association FSM (Freiwillige Selbstkontrolle Multimedia-Diensteanbieter), s'engageant ainsi à respecter une « liste noire » établie à partir de signalements faits par les internautes.
+
+### Monopole
+Au cours du premier semestre 2014, Google a dépensé 9,5 millions de dollars pour faire du lobbying, soit plus que presque toute autre entreprise. Selon Marc Rotenberg (en), président du Electronic Privacy Information Center, Google finance un grand nombre de groupes de réflexion axés sur la politique d'Internet et des télécommunications. Cette stratégie a réduit au silence les critiques contre l'entreprise au cours des dernières années. D'après Barry Lynn de la New America Foundation (en), « Google est très agressif en jetant son argent autour de Washington et de Bruxelles, puis en tirant les cordes […] Les gens ont peur de Google maintenant ». Toujours selon Lynn, Google essaye de « censurer les journalistes et les chercheurs qui luttent contre les monopoles dangereux ». À la suite d'une publication louant les sanctions de l'Union européenne contre Google, Barry Lynn a été licencié de la New America Foundation et sa publication a été temporairement supprimée en raison d'un « problème interne non intentionnel ». La New America Foundation est un think tank de Washington qui a reçu plus de 21 millions de dollars de Google. La New America Foundation est perçue comme une voix qui compte au sein de la gauche américaine.
+En 2016, Eric Schmidt, ancien PDG de Google, dirige un conseil consultatif sur l'innovation au Pentagone.
+Durant la campagne présidentielle américaine, après que Hillary Clinton ait présenté un « programme technologique » qui semblait conçu sur mesure pour faire plaisir à la Silicon Valley, Elizabeth Warren dénonce Google, Apple et Amazon qui, selon elle, utilisent leur taille pour « éliminer la concurrence ».
+En avril 2017, l'auteur et chercheur Jonathan Taplin s’inquiète dans le New York Time du danger que représentent les cinq plus grands groupes Internet américains. Il cite alors Louis Brandeis pour qui « dans une société démocratique, l'existence de grands centres de pouvoir privé est dangereuse pour la liberté du peuple ». Selon Taplin, les autorités américaines « devraient décider assez rapidement si Google, Facebook et Amazon sont des monopoles naturels qui doivent être réglementés, ou si nous autorisons le statu quo à continuer, en prétendant que ces monolithes ne causent pas de dégâts à notre vie privée et à la démocratie ». Dans un ouvrage publié également en 2017, il affirme que les cinq plus grandes entreprises du monde que sont Apple, Google, Microsoft, Amazon et Facebook abusent de leurs positions de monopole et utilisent le lobbying pour étouffer la concurrence. Il dénonce également l'augmentation de la concentration du pouvoir entre les mains de ces quelques géants. Toujours selon Taplin, Google, Facebook et Amazon bénéficient maintenant d'un pouvoir politique comparable sinon supérieur aux grandes entreprises pharmaceutiques ou pétrolières, ce qui rend encore plus difficile la recherche de solutions à ce problème. Certaines rumeurs laissaient en 2017 penser que Mark Zuckerberg pourrait pousser le mélange des genres jusqu'à être candidat en 2020 pour les élections présidentielles américaines pour le parti démocrate. En 2020, ces rumeurs se sont avérées inexactes.
+En septembre 2017, le réseau social Gab.ai a intenté un procès contre Google qu'il accuse de violer les lois antitrust fédérales en ayant banni l'application du Google Play Store. À cette occasion, Andrew Torba, chef de la direction de Gab.ai, a déclaré « Google est la plus grande menace pour la libre circulation de l'information ». Google a déjà du payé une amende de 2,7 milliards de dollars de la Commission européenne pour violation des lois antitrust européennes en raison du fait que la société faisait injustement promouvoir ses propres services de comparaison d'achats au détriment de ses concurrents.
+En plus de Gab, Google a déjà supprimé l'accès au Google Play Store à de nombreuses entreprises, parmi lesquelles Disconnect qui a porté plainte auprès de l'Union européenne, les applications AdBlock Plus en 2013 et AdBlock Fast en 2016 et d'une manière générale Google crée systématiquement des obstacles pour les utilisateurs Android pour télécharger d'autres magasins d'applications depuis Google Play.
+
+### Censure
+Lors de l'élection présidentielle française de 2017, Facebook a annoncé avoir supprimé plus de 30 000 comptes.
+À la suite du rassemblement « Unite the Right » à Charlottesville en 2017, de nombreux opérateurs de services Web ont mis en place des mesures de suppression de contenu et bloqué l'accès à leurs services par des individus ciblés, des groupes d’individus et des entreprises. La liste suivante donne un aperçu et n’est pas exhaustive :
+Airbnb, OkCupid et Facebook ont supprimé les comptes de certains des organisateurs de l'événement de Charlottesville, des comptes individuels et collectifs, ainsi que des organisations entières. Airbnb a notamment publié un communiqué disant que « la violence, le racisme et la haine démontrés par les néonazis, les suprématistes alt-right et blancs ne devraient pas avoir de place dans ce monde ». Après le rassemblement, Google retire l’application Gab de Google Play. Twitter a suspendu un nombre inconnu d'utilisateurs, y compris des comptes populaires associés au forum de discussion 4chan ouvertement fascistes ou politiquement incorrect. PayPal a coupé les fonds de l'organisation du nationaliste blanc Richard Spencer, qui a ensuite perdu son hôte Web, Squarespace. Spotify a même supprimé la musique « suprémaciste blanche » de sa bibliothèque.
+Ce que cet incident a mis en lumière, est que Internet est dans les faits un ensemble de services de base. La plupart de ces services sont détenus et gérés par des sociétés privées, qui hébergent le contenu et donnent aux utilisateurs la possibilité de le consulter ou d’en créer de nouveaux. Si ces fournisseurs de services de base ne veulent pas de quelque chose sur Internet, ils peuvent le censurer et le faire disparaître d'Internet dans le monde entier. Ce contrôle d'Internet est dans les faits concentré dans les mains de quelques entreprises massives qui font tout pour que le public n'en soit pas conscient. À la suite de la mise en place de cette censure, l’éditorialiste Tucker Carlson s’est inquiété de l’absence de contrôle de ces opérateurs de services Web et a proposé que les autorités publiques s'assurent que Google n’entrave plus la libre circulation de l'information. Selon Carlson, « Google est en 2017 la société la plus puissante de l'histoire du monde. Google contrôle la réalité et a déjà démontré une volonté troublante de fausser cette réalité à des fins idéologiques ». Réagissant à un blocage des revenus grâce aux contenus publicitaires de centaines de vidéos sur Youtube, SkyNews écrit « c'est de l'intimidation. Le débat n'existe plus ».
+Mis sous pression pour mettre un terme à l’hébergement du site The Daily Stormer, le chef de la direction de Cloudflare, Matthew Prince, a finalement accepté et retiré le site de ses serveurs. Après coup, dans un mail envoyé à ses employés, il écrit « C'était une décision arbitraire, et qui n'était pas conforme aux politiques énoncées par la société […] Je me suis réveillé de mauvaise humeur et j'ai décidé que quelqu'un ne devrait pas être autorisé à être sur Internet […] Personne ne devrait avoir ce pouvoir ». Un de ces employé lui a alors demandé « Est-ce le jour où l'Internet meurt? ». Les géants du Web détiennent un quasi-monopole sur le flux d'informations et, en tant que tel, sont en mesure de manipuler le discours public.
+L’Electronic Frontier Foundation a exprimé ses inquiétudes face à cette série de « décisions arbitraires » menée par les géants du web.
+Fin septembre 2017, Gab a été informé que son hébergeur menaçait de ne plus accueillir le site Web. De nouvelles révélations ont montré que en débit de ses postures anti haine, Google suggère aux annonceurs de cibler les utilisateurs avec des sujets comme « quartiers en ruines de Noirs » et « contrôle juif des banques ».
+En octobre 2017, Twitter fait supprimer de son réseau les publicités pour Russia Today et Sputnik. En novembre de la même année, Google décide de déclasser Russia Today et Sputnik dans ses algorithmes de façon à rendre ces médias plus difficiles d'accès pour les internautes.
+
+### Parades techniques
+Une partie des sites d’extrême droite ayant perdu leur hébergement est maintenant disponible sur le Dark web. Des ingénieurs politiquement engagés à droite ont annoncé la création de la Free Speech Tech Alliance avec pour objectifs le développement d'outils permettant de contourner la censure des géants du web. Le développement des technologies Blockchain sont pressenties pour la construction du Web 3.0 qui échapperait à la censure en supprimant le besoin de centralisation du traitement des données.
+
+### Image
+Prenons l’exemple des emojis par exemple, le Consortium Unicode décide de leurs significations officielles. Cependant en ligne l'utilisation des emojis est incontrôlable et imprévisible. Selon le contexte de la phrase, la signification du rôle de l’emoji peut également être amplifiée et/ou modifiée.
+Par exemple, l’aubergine et le revolver sont deux emojis controversés qui ont été censurés .
+C’est sous l’influence de différentes communautés (institutions, utilisateurs, justice…) que des « gestionnaires » peuvent modifier/supprimer des emojis, afin de répondre à leurs responsabilités et satisfaire leurs utilisateurs (comme l’a fait Apple avec l’emoji revolver).
+Aujourd’hui, l'engouement autour des emojis devient un marché avec des start-ups spécialisées dans le brand sticker visant à fournir aux marques leurs propres emoji que les internautes ne pourront pas transposer ou détourner.
+En 2019, Microsoft supprime de sa police Segoe le rendu des hiéroglyphes égyptiens représentant des phallus, depuis qu’Unicode intègre le bloc des hiéroglyphes égyptiens.
+
+## Mesures étatiques
+Dans un article publié en septembre 2011, L'Humanité informe que « tous les dictateurs ont acheté leurs technologies de censure à d'importantes entreprises occidentales ».
+
+### Algérie
+Le site TSA a été bloqué en 2017.
+Algérie Part est bloqué en 2018.
+Dans le contexte des manifestations de 2019 en Algérie, TSA est de nouveau bloqué en juin 2019, tout comme le mois suivant Inter-lignes et ObservAlgerie, puis Algérie patriotique en août. Quelques jours plus tard, YouTube et les services Google sont à leur tour bloqués pendant quelques heures.
+
+### Cameroun
+Entre janvier et avril 2017, Internet est coupé dans les deux régions anglophones du Cameroun en proie à une contestation. Cette coupure est la plus longue de l'histoire du continent africain.
+
+### Chine
+Entre 2015 et 2017, la Chine a ordonné la fermeture de plus de 13 000 sites Internet et de millions de comptes sur les médias sociaux. L'accès à Facebook, au moteur de recherche Google et à de nombreux médias étrangers est aussi interdit. En septembre 2017, l'administration chinoise du cyberespace décide que les modérateurs de groupes de discussion sur Internet sont pénalement responsables en cas de diffusion d'un contenu « vulgaire, non civilisé, pornographique, incitant au terrorisme, ainsi que faux, violent ou colportant des rumeurs ». En mai 2019, Wikipedia, déjà censurée en mandarin, est bloquée en chine dans toutes les langues.
+
+### Cuba
+Les Cubains sont peu équipés en matériel informatique (3,3 ordinateurs pour 100 habitants, c'est-à-dire l'un des taux les plus faibles du monde) et il n'existe qu'un seul opérateur dans le pays, la société ETEC SA. L'ouverture d'une ligne Internet est soumise à l'autorisation des autorités de l'île. L'utilisation d'Internet ne doit pas « compromettre la sécurité d'État », ni aller contre « les lois et principes moraux du pays » ; ces motifs sont suffisamment flous pour couper arbitrairement un accès à Internet. Les cybercafés sont surveillés et trop coûteux pour la population. Les clients sont dans l'obligation de décliner leur identité. La recherche de mots-clés jugés « subversifs » par le régime entraîne la fermeture du programme. Les dissidents tels que Guillermo Fariñas (qui a reçu le prix Cyberliberté de RSF en 2006) luttent pour la liberté d'expression et d'information sur Internet.
+
+### États-Unis
+En 2009, le Département du Trésor des États-Unis a ordonné la fermeture de plus de 80 sites Internet qui faisaient du commerce avec Cuba et violaient ainsi la législation sur les sanctions économiques des USA envers Cuba.
+En novembre 2010, l'agence Immigration and Customs Enforcement (ICE) a saisi des noms de domaines dont les activités étaient contraires aux lois américaines. Ces sites Internet ne sont donc plus accessibles pour personne, peu importe le lieu de résidence. Ces sites « interdits » sont principalement des sites proposant des produits de contrefaçon.
+
+### Libye
+Information rendue publique en 2011 : « Une entreprise française, filiale de Bull, fournissait des technologies de contrôle des communications à Kadhafi », il s'agit d'Amesys.
+
+### Russie
+En février 2018, la Russie annonce son intention de créer un "Internet souverain", capable de fonctionner de façon indépendante du reste du monde. Le projet est présenté comme une réponse russe aux menaces croissantes de cyberattaque, mais il pourrait renforcer le contrôle de l'état sur Internet et faciliter la censure du réseau.
+
+### Suisse
+En mars 2017, la section suisse du Chaos Computer Club accuse l'Université de Fribourg de censurer son réseau Internet. Précédemment en 2014, l'Université de Zurich avait du renoncer à ce type de censure sous la pression des étudiants.
+En 2018, lors d'un référendum au sujet des casinos en ligne, plusieurs associations comme le Parti pirate, le Chaos Computer Club Suisse et l’Internet Society Suisse dénonce le risque de censure d'Internet. Malgré ces craintes, la loi est votée, l’accès depuis la Suisse aux sites de jeux d’argent installés à l’étranger est interdit.
+
+### Turquie
+En 2021, le magazine d’enquête ProPublica dévoile que la direction de Facebook a cédé aux pressions de la Turquie lors de la campagne turque contre les forces kurdes syriennes en 2018. Alors que le gouvernement de Recep Tayyip Erdoğan menaçait l’entreprise de représailles, Sheryl Sandberg, la directrice des opérations de Facebook, aurait décidé de bloquer la page officielle des forces kurdes syriennes (YPG) en Turquie pour ne pas perdre ce marché important.
+
+### Union européenne
+L'Union européenne envisage de mettre en place un filtrage d'Internet afin de contrôler les documents téléchargés par les internautes. Le député européen Felix Reda et GitHub évoquent une menace pour le logiciel libre.
+
+## Parade technique (partielle)
+Le logiciel Psiphon permet à un internaute résidant dans un pays censurant Internet d'accéder à Internet sous certaines conditions.
+Le projet Peekabooty, lancé en 2002, semble une alternative pour les internautes des pays pratiquant la censure. Le logiciel est en fait un navigateur qui permettrait de surfer anonymement via un ingénieux système d'encapsulage-décapsulage. La création du logiciel a été annoncée par le groupe de hackers Cult of the Dead Cow et fonctionnerait sur un système distribué de type Gnutella (aussi connu par des logiciels de Peer-to-peer, fonctionnant sur le principe de redistribution de l'information par tous les ordinateurs hébergeant Peekabooty). Le tout sera couplé avec des dispositifs de chiffrement.
+Le déploiement de sites miroir rend beaucoup plus difficile la censure d'un site web. Ce procédé fut utilisé pour assurer l'accès aux informations publiées par WikiLeaks durant le Cablegate.
+
+### Articles connexes
+Censure de Wikipédia
+Filtrage d'Internet
+Blocage de Wikipédia
+Internet sans frontières
+Picidae, un serveur permettant de contourner la censure d'Internet.
+Prix Cyberliberté
+Logiciel de filtrage
+Effet Streisand - du nom de Barbra Streisand (qui tenta de faire interdire la diffusion de photos de sa maison)
+Erreur HTTP 451
+Shadow banning - blocage (en) total ou en partie d'une communauté en ligne d'un utilisateur, ou du contenu qu'il produit, de telle sorte que celui-ci n'en ait pas conscience
+Film documentaire :
+
+Une contre-histoire de l'Internet (2013)
+
+### Liens externes
+
+(en) Localized Google search result exclusions - Harvard Law School, 26 octobre 2002
+(en) Internet censorship wiki
+
+ Portail du droit   Portail de la sécurité des systèmes d'information   Portail d’Internet   Portail de la liberté d’expression

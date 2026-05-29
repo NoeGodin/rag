@@ -1,9 +1,10 @@
 """
 Collecte de sources académiques sur les dictateurs.
 Sources : Wikipedia (articles détaillés) + OpenAlex (papers open-access).
+Liste des dictateurs : assets/dictators.txt
+  (téléchargée le 2026-05-29 depuis https://en.everybodywiki.com/List_of_dictators)
 """
 
-import os
 import time
 from pathlib import Path
 
@@ -16,54 +17,35 @@ logger = get_logger(__name__)
 
 ASSETS_DIR = Path("assets")
 
-# Liste des dictateurs et sujets connexes pour le corpus
-DICTATORS = [
-    "Adolf Hitler",
-    "Joseph Stalin",
-    "Mao Zedong",
-    "Benito Mussolini",
-    "Pol Pot",
-    "Francisco Franco",
-    "Augusto Pinochet",
-    "Fidel Castro",
-    "Kim Il-sung",
-    "Kim Jong-il",
-    "Idi Amin",
-    "Saddam Hussein",
-    "Muammar Gaddafi",
-    "Robert Mugabe",
-    "Nicolae Ceaușescu",
-    "Josip Broz Tito",
-    "Ferdinand Marcos",
-    "François Duvalier",
-    "Mobutu Sese Seko",
-    "Than Shwe",
-]
+# Liste des dictateurs chargée depuis le fichier local
+# Source : https://en.everybodywiki.com/List_of_dictators (téléchargée le 2026-05-29)
+DICTATORS_FILE = Path("data") / "dictators.txt"
 
-RELATED_TOPICS = [
-    "Totalitarisme",
-    "Autoritarisme",
-    "Fascisme",
-    "Nazisme",
-    "Stalinisme",
-    "Maoïsme",
-    "Culte de la personnalité",
-    "Répression politique",
-    "Propagande nazie",
-    "Grandes Purges",
-    "Révolution culturelle",
-    "Shoah",
-    "Goulag",
-    "Khmers rouges",
-    "Police secrète",
-    "Dictature militaire",
-    "Parti unique",
-    "Génocide",
-    "Coup d'État",
-    "Terreur rouge",
-    "Apartheid",
-    "Junte militaire",
-]
+
+def load_dictators() -> list[str]:
+    """Charge la liste des dictateurs depuis assets/dictators.txt."""
+    names: list[str] = []
+    for line in DICTATORS_FILE.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            names.append(line)
+    logger.info(f"dictators.txt: {len(names)} dictateurs chargés")
+    return names
+
+# Sujets connexes chargés depuis le fichier local
+# Source : catégories Wikipedia FR (téléchargées le 2026-05-29)
+TOPICS_FILE = Path("data") / "related_topics.txt"
+
+
+def load_related_topics() -> list[str]:
+    """Charge les sujets connexes depuis assets/related_topics.txt."""
+    topics: list[str] = []
+    for line in TOPICS_FILE.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            topics.append(line)
+    logger.info(f"related_topics.txt: {len(topics)} sujets chargés")
+    return topics
 
 
 def fetch_wikipedia_articles(language: str = "fr") -> list[Path]:
@@ -77,24 +59,35 @@ def fetch_wikipedia_articles(language: str = "fr") -> list[Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     saved_files: list[Path] = []
-    all_titles = DICTATORS + RELATED_TOPICS
+    dictators = load_dictators()
+    topics = load_related_topics()
+    all_titles = dictators + topics
 
     for title in all_titles:
-        page = wiki.page(title)
-        if not page.exists():
-            logger.warning(f"Wikipedia: article '{title}' introuvable en '{language}'")
-            continue
+        try:
+            page = wiki.page(title)
+            if not page.exists():
+                logger.warning(f"Wikipedia: article '{title}' introuvable en '{language}'")
+                continue
 
-        filename = title.replace(" ", "_").replace("/", "_") + ".txt"
-        filepath = output_dir / filename
+            filename = title.replace(" ", "_").replace("/", "_") + ".txt"
+            filepath = output_dir / filename
 
-        content = _format_wiki_page(page)
+            # Skip si déjà téléchargé
+            if filepath.exists():
+                saved_files.append(filepath)
+                logger.debug(f"Wikipedia: {title} — déjà téléchargé, skip")
+                continue
 
-        filepath.write_text(content, encoding="utf-8")
-        saved_files.append(filepath)
-        logger.info(f"Wikipedia: {title} → {filepath} ({len(content)} chars)")
+            content = _format_wiki_page(page)
+            filepath.write_text(content, encoding="utf-8")
+            saved_files.append(filepath)
+            logger.info(f"Wikipedia: {title} → {filepath} ({len(content)} chars)")
 
-        time.sleep(0.5)  # politesse envers l'API
+            time.sleep(1)  # rate limit
+        except Exception as e:
+            logger.error(f"Wikipedia: erreur pour '{title}': {e}")
+            time.sleep(5)  # pause plus longue après erreur
 
     logger.info(f"Wikipedia: {len(saved_files)} articles sauvegardés")
     return saved_files
@@ -135,6 +128,12 @@ def fetch_openalex_papers(max_papers: int = 100) -> list[Path]:
     """Récupère des abstracts de papers open-access depuis OpenAlex."""
     output_dir = ASSETS_DIR / "openalex"
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Skip si déjà téléchargé
+    existing = list(output_dir.glob("*.txt"))
+    if existing:
+        logger.info(f"OpenAlex: {len(existing)} fichiers déjà présents, skip")
+        return existing
 
     queries = [
         "dictator authoritarianism political regime",

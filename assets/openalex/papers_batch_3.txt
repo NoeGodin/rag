@@ -29,7 +29,7 @@ The intersections and conversations between feminist geography and political geo
 
 ## J’accuse! Does Naming and Shaming Perpetrators Reduce the Severity of Genocides or Politicides?1
 Authors: Matthew Krain
-Year: 2012 | Citations: 305
+Year: 2012 | Citations: 306
 DOI: https://doi.org/10.1111/j.1468-2478.2012.00732.x
 
 This study tests the effectiveness of naming and shaming by transnational advocacy networks in reducing the severity of ongoing instances of genocide or politicide. I argue that naming and shaming should force perpetrators to reduce the severity of these ongoing atrocities in order to shift the spotlight, save their reputation, reframe their identity, maintain international legitimacy and domestic viability, and ease pressure placed on them by states or IOs. I test whether naming and shaming by NGOs, the media, and IOs significantly reduces the severity of the killing. Ordered logit analyses of ongoing genocides and politicides from 1976 to 2008 reveal that naming and shaming by Amnesty International, the Northern media, and the UNCHR have significant ameliorative effects on the severity of the most extreme atrocities. Transnational advocacy networks have the potential, through naming and shaming, to lead to life-saving changes in these murderous policies.
@@ -101,7 +101,7 @@ Abstract: This article explores the manner in which ethical concerns have been a
 
 ## Dilemmas of Expanding Transitional Justice, or Forging the Nexus between Transitional Justice and Development
 Authors: Ramakrishnan Mani
-Year: 2008 | Citations: 169
+Year: 2008 | Citations: 170
 DOI: https://doi.org/10.1093/ijtj/ijn030
 
 ∗It is timely that in just its second year of publication, the International Journal of Transitional Justice (IJTJ) has chosen to focus this special issue on the nexus between transitional justice and development. This is an indication of the salience of the issues of development generally and social justice specifically to the process of seeking transitional justice in societies moving out of conflict or other forms of crisis and repression. The number of articles received for consideration in this special issue and the range of seminal topics they raise serve to underline the pressing need to consider concerns of development and social justice as experienced and expressed by both scholars and practitioners. In introducing this special issue, I want to highlight four areas of inquiry that scholars, advocates and practitioners of both transitional justice and development must consider if either field is to achieve its intended goals. The articles in this issue explore many of these four areas in greater depth, with potent illustrative examples that draw on a range of cases, as outlined below. Thefirstthornyquestionis:Cantransitionaljustice(TJ)todayaffordnottoconcern itself directly with social injustice and patterns of inequality, discrimination and marginalization that were underlying causes of a conflict and that inflicted major suffering and victimization on vast swathes of a population? How can (or should) TJ have a more direct impact on reducing social and economic inequality? Second, should TJ measures cost less and deliver more? For impoverished countries, TJ often represents a costly luxury in a highly resource-constrained environment where all aspects of social, economic and political life need to be rebuilt and development is a priority. In this context, TJ often comes to represent a trade-off of sorts between justice or development, rather than promoting development with justice. Third, should TJ concern itself directly with war economies and corruption, particularly the exploitation of natural and mineral resources, as these are often perpetrated by the same war criminals ‐ and with the same abusive, violent and exploitative means and devastating effect on victims ‐ as the war crimes that historically fall within the purview of TJ?
@@ -155,7 +155,7 @@ ABSTRACT The political economy of violence in Central America is widely perceive
 
 ## The Fundamental Institutions of China's Reforms and Development
 Authors: Chenggang Xu
-Year: 2011 | Citations: 2554
+Year: 2011 | Citations: 2557
 DOI: https://doi.org/10.1257/jel.49.4.1076
 
 China's economic reforms have resulted in spectacular growth and poverty reduction. However, China's institutions look ill-suited to achieve such a result, and they indeed suffer from serious shortcomings. To solve the “China puzzle,” this paper analyzes China's institution—a regionally decentralized authoritarian system. The central government has control over personnel, whereas subnational governments run the bulk of the economy; and they initiate, negotiate, implement, divert, and resist reforms, policies, rules, and laws. China's reform trajectories have been shaped by regional decentralization. Spectacular performance on the one hand and grave problems on the other hand are all determined by this governance structure. (JEL O17, O18, O43, P21, P25, P26)
@@ -164,7 +164,7 @@ China's economic reforms have resulted in spectacular growth and poverty reducti
 
 ## Understanding Conspiracy Theories
 Authors: Karen M. Douglas, Joseph E. Uscinski, Robbie M. Sutton
-Year: 2019 | Citations: 1475
+Year: 2019 | Citations: 1479
 DOI: https://doi.org/10.1111/pops.12568
 
 Scholarly efforts to understand conspiracy theories have grown significantly in recent years, and there is now a broad and interdisciplinary literature. In reviewing this body of work, we ask three specific questions. First, what factors are associated with conspiracy beliefs? Our review of the literature shows that conspiracy beliefs result from a range of psychological, political, and social factors. Next, how are conspiracy theories communicated? Here, we explain how conspiracy theories are shared among individuals and spread through traditional and social media platforms. Next, what are the societal risks and rewards associated with conspiracy theories? By focusing on politics and science, we argue that conspiracy theories do more harm than good. We conclude by suggesting several promising avenues for future research.

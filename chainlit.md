@@ -15,4 +15,4 @@ L'application recherche dans un corpus de documents (articles Wikipedia, publica
 
 ---
 
-*Projet universitaire — RAG (Retrieval-Augmented Generation)*
+*Projet universitaire — RAG (Retrieval-Augmented Generation) — v2.0.0*

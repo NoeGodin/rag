@@ -99,6 +99,18 @@ a {
   background-color: var(--bg-dark) !important;
 }
 
+/* Fix inline loading cursor to match avatar size */
+.inline-block-loading-cursor,
+.loading-cursor {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  box-sizing: border-box !important;
+}
+
 /* Hide "follow system" theme toggle option */
 [data-testid="theme-system"],
 button[value="system"] {

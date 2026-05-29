@@ -130,6 +130,12 @@ def fetch_openalex_papers(max_papers: int = 100) -> list[Path]:
     output_dir = ASSETS_DIR / "openalex"
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Skip si déjà téléchargé
+    existing = list(output_dir.glob("*.txt"))
+    if existing:
+        logger.info(f"OpenAlex: {len(existing)} fichiers déjà présents, skip")
+        return existing
+
     queries = [
         "dictator authoritarianism political regime",
         "totalitarianism fascism political repression",

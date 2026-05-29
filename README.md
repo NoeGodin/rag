@@ -1,6 +1,6 @@
 # Projet RAG Local (Retrieval-Augmented Generation)
 
-Pour plus de détails techniques, consultez le fichier `EXPLICATION_PROJET.txt`.
+Pour plus de détails techniques, consultez le fichier `WORKFLOW.md`.
 
 ## Prérequis
 
@@ -20,11 +20,25 @@ Pour plus de détails techniques, consultez le fichier `EXPLICATION_PROJET.txt`.
    uv sync
    ```
 
+3. Configurez les variables d'environnement :
+   ```bash
+   cp .env.example .env
+   # Remplissez FAL_KEY, QDRANT_URL et QDRANT_API_KEY
+   ```
+
 ## 🛠️ Utilisation
 
-### Étape 1 : Ingestion des documents
+### Etape 1 : Collecte des sources (optionnel)
 
-Placez vos documents PDF (et autres extensions si prises en charge) dans le dossier `assets/`. Puis lancez le script d'ingestion pour les analyser et créer la base de données vectorielle locale. Avec `uv`, exécutez :
+Télécharge les articles Wikipedia et les papers OpenAlex pour chaque entrée dans `data/dictators.txt` et `data/related_topics.txt`. Les articles déjà téléchargés sont skip automatiquement.
+
+```bash
+uv run python -m core.sources
+```
+
+*Note : Ne lancez cette commande que si vous ajoutez de nouveaux dictateurs ou sujets dans `data/`. Les articles sont versionnés dans `assets/` et déjà inclus dans le dépôt.*
+
+### Etape 2 : Ingestion dans Qdrant
 
 ```bash
 uv run python -m core.ingestion
@@ -32,14 +46,12 @@ uv run python -m core.ingestion
 
 *Note : Ne lancez cette commande qu'une seule fois ou à chaque fois que vous ajoutez/modifiez de nouveaux documents dans le dossier assets/.*
 
-### Étape 2 : Lancement de l'interface
+### Etape 3 : Lancement de l'interface
 
 Une fois l'ingestion terminée, vous pouvez démarrer l'interface de discussion (Streamlit) :
 
 ```bash
-uv run streamlit run app.py
-# or 
-streamlit run app.py
+uv run chainlit run app.py
 ```
 
 L'application s'ouvrira automatiquement dans votre navigateur par défaut (généralement à l'adresse `http://localhost:8501`).
@@ -47,9 +59,8 @@ L'application s'ouvrira automatiquement dans votre navigateur par défaut (gén�
 ### Docker 
 
 ```bash
-# Charge d'abord FAL_KEY puis lance le Build
-source .env && export $(cut -d= -f1 .env) && docker build -t rag-app --build-arg FAL_KEY=$FAL_KEY .
+docker build -t rag-app .
 
-# Run the container
-docker run -p 8501:8501 --env-file .env rag-app
+# Run
+docker run -p 8000:8000 --env-file .env rag-app
 ```

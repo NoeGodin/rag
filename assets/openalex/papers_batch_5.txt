@@ -29,7 +29,7 @@ Donors in recent years have made some foreign aid conditional on progress toward
 
 ## Why Does China Allow Freer Social Media? Protests versus Surveillance and Propaganda
 Authors: Bei Qin, David Strömberg, Yanhui Wu
-Year: 2017 | Citations: 353
+Year: 2017 | Citations: 354
 DOI: https://doi.org/10.1257/jep.31.1.117
 
 In this paper, we document basic facts regarding public debates about controversial political issues on Chinese social media. Our documentation is based on a dataset of 13.2 billion blog posts published on Sina Weibo—the most prominent Chinese microblogging platform—during the 2009–2013 period. Our primary finding is that a shockingly large number of posts on highly sensitive topics were published and circulated on social media. For instance, we find millions of posts discussing protests, and these posts are informative in predicting the occurrence of specific events. We find an even larger number of posts with explicit corruption allegations, and that these posts predict future corruption charges of specific individuals. Our findings challenge a popular view that an authoritarian regime would relentlessly censor or even ban social media. Instead, the interaction of an authoritarian government with social media seems more complex.

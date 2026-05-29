@@ -16,8 +16,8 @@ def generate(context: str, question: str) -> str:
     return response.content
 
 
-def generate_stream(context: str, question: str) -> Generator[str, None, None]:
+def generate_stream(context: str, question: str, chat_history: list = []) -> Generator[str, None, None]:
     logger.debug("Streaming response...")
-    for chunk in _chain.stream({"context": context, "question": question}):
+    for chunk in _chain.stream({"context": context, "question": question, "chat_history": chat_history}):
         if chunk.content:
             yield chunk.content

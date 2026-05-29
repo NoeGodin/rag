@@ -1,10 +1,10 @@
 # DictateurGPT
 
-Assistant specialise sur les **dictateurs** et les **regimes autoritaires**, base sur la technique **RAG** (Retrieval-Augmented Generation).
+Assistant spécialisé sur les **dictateurs** et les **régimes autoritaires**, basé sur la technique **RAG** (Retrieval-Augmented Generation).
 
 ## Fonctionnement
 
-L'application recherche dans un corpus de documents (articles Wikipedia, publications academiques) les passages les plus pertinents par rapport a votre question, puis genere une reponse basee uniquement sur ces sources.
+L'application recherche dans un corpus de documents (articles Wikipedia, publications académiques) les passages les plus pertinents par rapport à votre question, puis génère une réponse basée uniquement sur ses sources.
 
 ## Etudiants
 

@@ -1,24 +1,28 @@
 import os
 
 import chainlit as cl
+from langchain_core.messages import AIMessage, HumanMessage
 
 from core.retrieve import retrieve
 from core.generate import generate_stream
 
+@cl.on_chat_start
+async def on_chat_start() -> None:
+    cl.user_session.set("chat_history", [])
 
 @cl.set_starters
 async def set_starters() -> list[cl.Starter]:
     return [
         cl.Starter(
-            label="Qui etait Staline ?",
-            message="Qui etait Staline et comment a-t-il pris le pouvoir ?",
+            label="Qui était Staline ?",
+            message="Qui était Staline et comment a-t-il pris le pouvoir ?",
         ),
         cl.Starter(
-            label="Les regimes totalitaires",
-            message="Quelles sont les caracteristiques communes des regimes totalitaires ?",
+            label="Les régimes totalitaires",
+            message="Quelles sont les caracteristiques communes des régimes totalitaires ?",
         ),
         cl.Starter(
-            label="Propagande et controle",
+            label="Propagande et contrôle",
             message="Comment les dictateurs utilisent-ils la propagande pour maintenir le pouvoir ?",
         ),
     ]
@@ -28,12 +32,18 @@ async def set_starters() -> list[cl.Starter]:
 async def on_message(message: cl.Message) -> None:
     docs = retrieve(message.content)
     context = "\n\n".join(doc.page_content for doc in docs)
+    history = cl.user_session.get("chat_history")
 
     msg = cl.Message(content="")
     await msg.send()
+    history.append(HumanMessage(content=message.content))
 
-    for token in generate_stream(context, message.content):
+    full_response = ""
+    for token in generate_stream(context, message.content, history):
         await msg.stream_token(token)
+        full_response += token
+    
+    history.append(AIMessage(content=full_response))
 
     if docs:
         elements = []

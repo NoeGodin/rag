@@ -117,7 +117,7 @@ language = "fr-FR"
 confirm_new_chat = true
 
 # Description of the assistant. This is used for HTML tags.
-description = "Assistant specialise sur les dictateurs et regimes autoritaires"
+description = "Assistant spécialisé sur les dictateurs et régimes autoritaires"
 
 # Chain of Thought (CoT) display mode. Can be "hidden", "tool_call" or "full".
 cot = "full"

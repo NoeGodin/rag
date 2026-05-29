@@ -13,7 +13,7 @@ function injectContent() {
     '<h2 style="text-align:center;font-size:1.5rem;font-weight:700;color:#d32f2f;' +
     'letter-spacing:0.05em;margin:0.5rem 0 0;">DictateurGPT</h2>' +
     '<p style="text-align:center;color:#999;font-size:0.875rem;max-width:400px;' +
-    'margin:0.25rem auto 0;">Assistant specialise sur les dictateurs et regimes autoritaires</p>';
+    'margin:0.25rem auto 0;">Assistant specialisé sur les dictateurs et régimes autoritaires</p>';
 
   logo.insertAdjacentElement('afterend', container);
 }

@@ -1,497 +1,133 @@
 ================================================================================
-         EXPLICATION COMPLÈTE DU PROJET RAG
-         Dernière mise à jour : 2026-04-30
+         EXPLICATION DU PROJET RAG — Dictateurs & Autocraties
 ================================================================================
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- C'EST QUOI CE PROJET ?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C'EST QUOI CE PROJET ?
 
-RAG = Retrieval-Augmented Generation.
+  RAG = Retrieval-Augmented Generation.
 
-Principe : au lieu de demander directement à un LLM (qui ne connaît pas tes
-documents internes), on fait deux choses :
-
-  1. On cherche dans une base vectorielle les morceaux de texte pertinents par
-     rapport à la question.
+  1. On cherche dans une base vectorielle (Qdrant) les morceaux de texte
+     pertinents par rapport à la question.
   2. On les envoie au LLM comme "contexte" pour qu'il génère une réponse
-     basée UNIQUEMENT sur ces documents.
+     basée sur ces documents.
 
-Résultat : un chatbot local qui répond à partir de tes PDFs, tourne 100% en
-local (aucune donnée ne part sur internet), et dit "je ne sais pas" si la
-réponse n'est pas dans les documents.
+  Résultat : un chatbot spécialisé sur les dictateurs et régimes autoritaires
+  qui répond à partir d'articles Wikipedia et de papers académiques.
 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- STACK TECHNIQUE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STACK TECHNIQUE
 
-  Composant         | Outil utilisé
-  ──────────────────|──────────────────────────────────────────────
-  Interface UI      | Streamlit  (app.py)
-  LLM local         | Ollama — modèle llama3.1
-  Embeddings        | Ollama — modèle nomic-embed-text
-  Base vectorielle  | ChromaDB (persistée dans ./chroma_langchain_db)
-  Orchestration     | LangChain (LCEL — LangChain Expression Language)
-  Chargement PDFs   | PyPDFLoader via DirectoryLoader
+  Composant         | Outil
+  ------------------|----------------------------------------------
+  Interface UI      | Chainlit (app.py)
+  LLM               | llama-4-maverick via FAL.run
+  Embeddings        | text-embedding-3-small via FAL.run (dim 1536)
+  Base vectorielle  | Qdrant Cloud (collection "dictateurs")
+  Orchestration     | LangChain (LCEL)
   Reranking         | BM25 via rank_bm25
+  Sources           | Wikipedia FR + OpenAlex (papers)
+  Déploiement       | Docker + GitHub Actions + Azure Web App
 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- STRUCTURE DES FICHIERS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PIPELINE DE DONNÉES
 
-  app.py                    → Point d'entrée Streamlit, UI du chat
-  config.py                 → Toute la configuration (modèles, splitter, prompt)
-  core/
-    ingestion.py            → Pipeline d'ingestion des PDFs
-    retrieval.py            → Orchestration : retrieve() + generate()
-    retrieve.py             → Récupération des docs depuis ChromaDB
-    retrieval_strategies.py → Définition des stratégies SIMILARITY vs MMR
-    generate.py             → Appel au LLM pour générer la réponse
-  utils/
-    rerank.py               → Reranking BM25 des résultats
-    project_filter.py       → Détection du projet mentionné dans la query
-    pdf_to_txt.py           → Export des PDFs en .txt pour debug
-    logger.py               → Logger stdout formaté
-    timer.py                → Context manager pour mesurer les temps
-  assets/                   → Dossier où déposer les PDFs à ingérer
-  chroma_langchain_db/      → Base vectorielle persistée sur disque
+  data/dictators.txt        (260 noms)
+  data/related_topics.txt   (83 sujets)
+          |
+          v
+  core/sources.py           télécharge les articles Wikipedia + OpenAlex
+          |
+          v
+  assets/wikipedia/*.txt    (330 articles)
+  assets/openalex/*.txt     (85 papers)
+          |
+          v
+  core/ingestion.py         chunk (1000 chars) → embed (FAL API) → upsert Qdrant
+          |
+          v
+  Qdrant Cloud              ~16 000 vecteurs
 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- ÉTAPE 1 — INGESTION (une seule fois, ou quand tu ajoutes des docs)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PIPELINE DE REQUÊTE (à chaque question)
 
-Fichier : core/ingestion.py
-Commande : python core/ingestion.py
-
-Ce qui se passe étape par étape :
-
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  1. CHARGEMENT DES PDFs                                                 │
-  │     DirectoryLoader parcourt assets/**/*.pdf                            │
-  │     Chaque page devient un Document LangChain avec métadonnées :        │
-  │       - source : chemin du fichier PDF                                  │
-  │       - page   : numéro de page (commence à 0)                          │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  2. EXPORT .TXT (debug)                                                 │
-  │     pdf_to_txt() regroupe les pages par fichier source et écrit un      │
-  │     fichier .txt à côté de chaque PDF, avec un header "===== SLIDE N"  │
-  │     pour chaque page. Utile pour inspecter le texte extrait.            │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  3. CHUNKING (découpage)                                                │
-  │     RecursiveCharacterTextSplitter coupe les documents en chunks de     │
-  │     1000 caractères max, avec 200 caractères de chevauchement.          │
-  │                                                                         │
-  │     Pourquoi un chevauchement ?                                         │
-  │     → Pour ne pas couper une phrase à la limite d'un chunk et perdre    │
-  │       le contexte. Les 200 derniers caractères d'un chunk réapparaissent│
-  │       au début du suivant.                                              │
-  │                                                                         │
-  │     add_start_index=True → chaque chunk sait à quel offset du document │
-  │     original il commence.                                               │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  4. MÉTADONNÉE source_stem                                              │
-  │     Pour chaque chunk, on ajoute metadata["source_stem"] qui est juste  │
-  │     le nom du fichier sans extension ni chemin.                         │
-  │     Ex : "assets/rapport_2024.pdf" → source_stem = "rapport_2024"      │
-  │     Utile pour filtrer par projet dans la retrieve.                     │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  5. EMBEDDING + STOCKAGE dans ChromaDB                                  │
-  │     Chaque chunk est converti en vecteur (liste de nombres) par         │
-  │     nomic-embed-text via Ollama. Ce modèle transforme le texte en       │
-  │     768 dimensions représentant le "sens" sémantique du texte.          │
-  │                                                                         │
-  │     Ces vecteurs sont stockés dans la collection "arb" de ChromaDB,     │
-  │     persistée sur disque dans ./chroma_langchain_db                     │
-  │                                                                         │
-  │     IMPORTANT : add_documents() ne vérifie pas les doublons. Si tu     │
-  │     réingères les mêmes PDFs, les chunks seront en double.              │
-  └─────────────────────────────────────────────────────────────────────────┘
+  Utilisateur tape une question
+          |
+          v
+  app.py : détection prompt injection (utils/guard.py)
+          |
+          v
+  core/retrieve.py : recherche vectorielle dans Qdrant
+    - similarity_search_with_relevance_scores (seuil 0.3)
+    - 20 chunks candidats récupérés
+    - rerank BM25 → 5 chunks finals
+          |
+          v
+  core/generate.py : envoi du contexte + question au LLM
+    - prompt système en français
+    - streaming token par token vers Chainlit
+          |
+          v
+  app.py : affichage réponse + sources
 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- ÉTAPE 2 — RETRIEVAL (à chaque question de l'utilisateur)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SIMILARITY SEARCH
 
-Fichier principal : core/retrieve.py
-Appelé par : core/retrieval.py → ask_agent()
-
-Ce qui se passe :
-
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  A. DÉTECTION DU PROJET (project_filter.py)                             │
-  │                                                                         │
-  │     Au démarrage, retrieve.py charge tous les "source_stem" connus     │
-  │     depuis ChromaDB (ex: ["rapport_2024", "spec_projet_X", "guide"])   │
-  │                                                                         │
-  │     detect_project_in_query() tokenise la question de l'utilisateur,   │
-  │     retire les mots courants (stop words : "le", "la", "pour"...),     │
-  │     garde les mots de 4+ caractères, trie par longueur décroissante,   │
-  │     et cherche si un token de la question est contenu dans un stem.    │
-  │                                                                         │
-  │     Exemple : question = "Comment fonctionne rapport_2024 ?"           │
-  │     → token "rapport_2024" est dans le stem "rapport_2024"            │
-  │     → filtre activé : on ne cherche que dans les chunks de ce fichier  │
-  │                                                                         │
-  │     Si aucun match → pas de filtre, on cherche dans tous les docs.     │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  B. CONSTRUCTION DU RETRIEVER (retrieval_strategies.py)                 │
-  │                                                                         │
-  │     Deux stratégies disponibles (RETRIEVAL_TYPE dans config.py) :      │
-  │                                                                         │
-  │     ▸ SIMILARITY (défaut actuel)                                        │
-  │       Recherche par similarité cosinus pure.                            │
-  │       → Retourne les K chunks les plus proches du vecteur de la query. │
-  │       Rapide, simple, efficace.                                         │
-  │                                                                         │
-  │     ▸ MMR (Maximal Marginal Relevance)                                  │
-  │       Voir section dédiée plus bas.                                     │
-  │                                                                         │
-  │     Dans les deux cas, RETRIEVAL_K_FETCH = 10 chunks sont récupérés   │
-  │     (avant le rerank qui réduit à RETRIEVAL_K = 2).                    │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  C. RECHERCHE VECTORIELLE dans ChromaDB                                 │
-  │                                                                         │
-  │     La question est convertie en vecteur (par nomic-embed-text).       │
-  │     ChromaDB calcule la distance entre ce vecteur et tous les chunks   │
-  │     stockés (cosinus ou L2 selon la config).                            │
-  │     Les 10 chunks les plus proches sont retournés.                      │
-  │                                                                         │
-  │     Si un filtre projet est actif, ChromaDB ne compare qu'aux chunks   │
-  │     dont metadata["source_stem"] est dans la liste des stems matchés.  │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  D. RERANK BM25 (utils/rerank.py)                                       │
-  │                                                                         │
-  │     Si RERANK_ENABLED = True (défaut), les 10 chunks sont réordonnés   │
-  │     par BM25 avant d'être tronqués à RETRIEVAL_K = 2.                  │
-  │                                                                         │
-  │     Voir section dédiée plus bas.                                       │
-  └─────────────────────────────────────────────────────────────────────────┘
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- ÉTAPE 3 — GÉNÉRATION (à chaque question)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Fichier : core/generate.py
-Appelé par : core/retrieval.py
-
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  1. ASSEMBLAGE DU CONTEXTE                                              │
-  │     Les N chunks retenus (après rerank) sont concaténés en un seul     │
-  │     bloc de texte séparé par des doubles sauts de ligne.               │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  2. CONSTRUCTION DU PROMPT (config.py → get_prompt())                  │
-  │                                                                         │
-  │     Le prompt est un ChatPromptTemplate avec deux messages :            │
-  │                                                                         │
-  │     [SYSTEM]                                                            │
-  │     "You are an AI assistant.                                           │
-  │      Answer the question using ONLY the context below.                  │
-  │      Context: {context}                                                 │
-  │      If the answer is not in the context, say you don't know."         │
-  │                                                                         │
-  │     [HUMAN]                                                             │
-  │     "{question}"                                                        │
-  │                                                                         │
-  │     Le LLM est CONTRAINT de ne répondre qu'à partir du contexte.       │
-  │     Il ne peut pas utiliser ses connaissances générales.                │
-  └─────────────────────────────────────────────────────────────────────────┘
-               ↓
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  3. APPEL AU LLM via Ollama (llama3.1)                                  │
-  │                                                                         │
-  │     Mode stream : le LLM envoie la réponse token par token → Streamlit │
-  │     l'affiche en temps réel (comme ChatGPT).                           │
-  │                                                                         │
-  │     Mode invoke : attend la réponse complète. Utilisé si stream=False.  │
-  │                                                                         │
-  │     La chaîne LCEL : get_prompt() | get_llm()                          │
-  │     Le pipe | est une composition fonctionnelle LangChain.              │
-  └─────────────────────────────────────────────────────────────────────────┘
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- C'EST QUOI LA SIMILARITY SEARCH ?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-La recherche par similarité (search_type="similarity") est l'approche de base.
-
-Comment ça marche :
-
-  Question → nomic-embed-text → vecteur_question (768 dimensions)
-
-  Pour chaque chunk stocké dans ChromaDB :
-    chunk_i → vecteur_chunk_i (768 dimensions)
-
-  On calcule la similarité cosinus entre vecteur_question et chaque vecteur :
+  La question est convertie en vecteur (1536 dimensions).
+  Qdrant calcule la similarité cosinus avec chaque chunk stocké.
+  Les K chunks les plus proches sont retournés.
 
     similarité = cos(θ) = (A · B) / (||A|| × ||B||)
+    1 = identique, 0 = sans rapport
 
-    cos = 1   → vecteurs identiques (même sens)
-    cos = 0   → vecteurs orthogonaux (sujets sans rapport)
-    cos = -1  → vecteurs opposés
 
-  Les K chunks avec le cosinus le plus élevé sont retournés.
+MMR (Maximal Marginal Relevance)
 
-Avantage : rapide, simple, efficace pour trouver les passages les plus proches
-           sémantiquement de la question.
+  Équilibre pertinence et diversité.
+  Au lieu de retourner les K plus proches (potentiellement redondants),
+  MMR pénalise les chunks trop similaires à ceux déjà sélectionnés.
 
-Inconvénient : si plusieurs chunks très similaires parlent du même sujet, ils
-               vont tous sortir ensemble (redondance). Le LLM reçoit alors
-               du contexte répétitif au lieu d'informations variées.
+    MMR(chunk) = λ × sim(query, chunk) - (1-λ) × max(sim(chunk, déjà_retenu))
 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- C'EST QUOI MMR (Maximal Marginal Relevance) ?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RERANK BM25
 
-MMR est une stratégie de recherche qui équilibre PERTINENCE et DIVERSITÉ.
+  Deuxième passe de scoring après la recherche vectorielle.
+  BM25 cherche les correspondances exactes de mots-clés (complémentaire
+  à la recherche sémantique).
 
-Formulé par Carbonell & Goldstein (1998), l'idée :
-→ ne pas retourner que les chunks les plus proches si ils se ressemblent trop
-→ choisir des chunks qui sont pertinents ET différents des déjà sélectionnés
+  Pipeline : Qdrant → 20 chunks (vectoriel) → BM25 rerank → 5 chunks finals
 
-Algorithme MMR :
 
-  1. On commence avec la liste de tous les candidats (fetch_k chunks).
-     Dans notre config : fetch_k = RETRIEVAL_K_FETCH * 2 = 20 chunks.
+INGESTION INCRÉMENTALE
 
-  2. On sélectionne le chunk le plus similaire à la query. → chunk #1 retenu.
+  Chaque chunk a un ID déterministe (SHA-256 du contenu + source → UUID).
+  Avant d'embedder, on vérifie dans Qdrant quels IDs existent déjà.
+  Seuls les nouveaux chunks sont embeddés et envoyés → pas de coût inutile.
 
-  3. Pour chaque chunk restant, on calcule un score MMR :
 
-     MMR(chunk_i) = λ × sim(query, chunk_i)
-                  - (1 - λ) × max[ sim(chunk_i, chunk_déjà_retenu) ]
+PROMPT INJECTION PROTECTION
 
-     où sim() est la similarité cosinus,
-     et λ est un paramètre d'équilibre (par défaut 0.5 dans LangChain).
+  Couche 1 : regex sur l'input (patterns de vigil-llm + PayloadsAllTheThings)
+  Couche 2 : canary token dans le system prompt, vérifié dans l'output
 
-     → Le premier terme récompense la pertinence par rapport à la query.
-     → Le second terme pénalise les chunks trop similaires à ceux déjà retenus.
 
-  4. On retient le chunk avec le meilleur score MMR. → chunk #2 retenu.
+PARAMÈTRES CLÉS (config.py)
 
-  5. On répète jusqu'à avoir K chunks.
+  RETRIEVAL_K       = 5           chunks envoyés au LLM (après rerank)
+  RETRIEVAL_K_FETCH = 20          chunks récupérés depuis Qdrant
+  RERANK_ENABLED    = True        activer/désactiver le rerank BM25
+  RETRIEVAL_TYPE    = SIMILARITY  stratégie de search (SIMILARITY ou MMR)
+  RELEVANCE_THRESHOLD = 0.3       score minimum de similarité
+  chunk_size        = 1000        taille max d'un chunk en caractères
+  chunk_overlap     = 200         chevauchement entre chunks consécutifs
+  QDRANT_COLLECTION = "dictateurs"
 
-Exemple concret :
 
-  Tu poses la question "Comment déployer le projet ?"
-  Les 20 candidats incluent 8 chunks très similaires sur le déploiement.
+COMMANDES
 
-  - Similarity pure : retourne les 2 chunks les plus proches, tous les deux
-    sur le déploiement, quasiment identiques → contexte redondant.
-
-  - MMR : retourne 1 chunk sur le déploiement + 1 chunk sur un aspect connexe
-    (ex: prérequis ou configuration) → contexte plus riche.
-
-Dans notre code (retrieval_strategies.py) :
-
-  store.as_retriever(
-      search_type="mmr",
-      search_kwargs={"k": k_fetch, "fetch_k": k_fetch * 2}
-  )
-
-  k       = nombre de chunks à retourner (RETRIEVAL_K_FETCH = 10)
-  fetch_k = pool de candidats initial (ici 20)
-
-Quand utiliser MMR vs Similarity ?
-
-  → SIMILARITY : quand la question est précise et ciblée, que tu veux les
-    passages les plus proches sans te soucier de la diversité.
-
-  → MMR : quand les documents ont des parties redondantes (slides, rapports
-    avec répétitions), ou quand tu veux avoir un contexte plus varié pour
-    les questions ouvertes.
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- C'EST QUOI LE RERANK BM25 ?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Le rerank est une deuxième passe de scoring, après la recherche vectorielle.
-
-Problème que ça résout :
-  La recherche vectorielle est bonne pour le sens général (sémantique), mais
-  elle peut louper des correspondances exactes de mots-clés.
-
-  Exemple : tu cherches "CVE-2024-1337". Les embeddings peuvent trouver des
-  chunks sur la "cybersécurité" en général, mais rater le chunk qui contient
-  littéralement "CVE-2024-1337". BM25 lui, cherche l'exact string.
-
-Approche Hybrid = vectoriel + BM25 (ce qu'on fait ici).
-
-Comment fonctionne BM25 Okapi (utils/rerank.py) :
-
-  BM25 = Best Match 25, variante de TF-IDF avec normalisation par longueur.
-
-  Formule simplifiée pour un terme t dans un document d :
-
-    score(t, d) = IDF(t) × [ TF(t,d) × (k1 + 1) ]
-                           ────────────────────────────
-                           [ TF(t,d) + k1 × (1 - b + b × |d|/avgdl) ]
-
-  où :
-    TF(t,d)  = fréquence du terme t dans le document d
-    IDF(t)   = inverse document frequency (rare = plus important)
-    |d|      = longueur du document d (en tokens)
-    avgdl    = longueur moyenne des documents
-    k1, b    = paramètres de saturation (défauts : k1=1.5, b=0.75)
-
-  Le score final d'un document = somme des scores pour tous les termes de la query.
-
-Ce qu'on fait dans notre code :
-
-  1. On prend les 10 chunks retournés par la recherche vectorielle.
-  2. On tokenise chaque chunk (lower + split).
-  3. On instancie BM25Okapi avec ces 10 chunks comme corpus.
-  4. On calcule le score BM25 pour chaque chunk vis-à-vis de la query.
-  5. On trie par score décroissant.
-  6. On retourne les 2 meilleurs chunks (RETRIEVAL_K = 2).
-
-Attention : ce BM25 est local au mini-corpus des 10 chunks récupérés,
-pas sur l'ensemble de la base vectorielle. C'est un reranker léger.
-
-Le pipeline complet avec les chiffres de config :
-
-  ChromaDB → 10 chunks (vectoriel)
-           → BM25 rerank
-           → 2 chunks finals (envoyés au LLM)
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- PARAMÈTRES CLÉS (config.py)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  RETRIEVAL_K       = 2    → Nombre de chunks envoyés au LLM (après rerank)
-  RETRIEVAL_K_FETCH = 10   → Nombre de chunks récupérés depuis ChromaDB
-  RERANK_ENABLED    = True → Activer/désactiver le rerank BM25
-  RETRIEVAL_TYPE    = SIMILARITY → Stratégie de search (SIMILARITY ou MMR)
-  chunk_size        = 1000 → Taille max d'un chunk en caractères
-  chunk_overlap     = 200  → Chevauchement entre chunks consécutifs
-  Collection Chroma = "arb"→ Nom de la collection vectorielle
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- FLUX COMPLET QUAND L'UTILISATEUR POSE UNE QUESTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  Utilisateur tape "Comment fonctionne le rapport_2024 ?"
-         │
-         ▼
-  app.py → ask_agent(query, stream=True)
-         │
-         ▼
-  retrieve(query) dans core/retrieve.py
-    │
-    ├── detect_project_in_query("rapport_2024", [...stems...])
-    │     → match trouvé : "rapport_2024"
-    │     → filter = {"source_stem": {"$in": ["rapport_2024"]}}
-    │
-    ├── build_retriever(store, SIMILARITY, k=10, filter=...)
-    │     → retriever ChromaDB en mode similarité cosinus
-    │
-    ├── retriever.invoke("Comment fonctionne le rapport_2024 ?")
-    │     → nomic-embed-text encode la query en vecteur
-    │     → ChromaDB cherche les 10 chunks les plus proches
-    │       (uniquement dans les chunks de rapport_2024)
-    │     → retourne 10 Documents
-    │
-    └── rerank(query, 10 docs)
-          → BM25Okapi score chaque chunk sur les mots de la query
-          → trie par score décroissant
-          → retourne les 2 meilleurs
-         │
-         ▼
-  context = chunk1.page_content + "\n\n" + chunk2.page_content
-         │
-         ▼
-  generate_stream(context, query) dans core/generate.py
-    │
-    ├── prompt = [SYSTEM: "réponds uniquement depuis le contexte" + context]
-    │            [HUMAN: "Comment fonctionne le rapport_2024 ?"]
-    │
-    └── llama3.1.stream(prompt)
-          → tokens envoyés un par un à Streamlit
-         │
-         ▼
-  app.py affiche la réponse progressivement dans l'UI
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- DÉTAILS DES UTILITAIRES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-utils/logger.py
-  Logger Python standard (module logging) configuré pour sortir sur stdout.
-  Niveau DEBUG → tout est loggé (timers, scores BM25, chunks récupérés...).
-  Format : "2026-04-30 10:00:00 [DEBUG] core.retrieve — ..."
-
-utils/timer.py
-  Context manager qui mesure et logge le temps d'exécution d'un bloc.
-  Exemple : "chargement PDF — 1.234s", "retrieve [similarity] — 0.456s"
-  Utile pour identifier les goulots d'étranglement.
-
-utils/pdf_to_txt.py
-  Lors de l'ingestion, génère un fichier .txt à côté de chaque PDF.
-  Chaque page est séparée par "===== SLIDE N =====".
-  Sert uniquement à inspecter visuellement le texte extrait par PyPDFLoader.
-  N'est pas utilisé dans le pipeline de retrieval.
-
-utils/project_filter.py
-  get_source_stem() : extrait le nom de fichier sans extension depuis un path.
-  detect_project_in_query() : heuristique de détection de projet dans la query.
-    - Filtre les stop words (liste française + anglaise codée en dur)
-    - Garde les mots de 4+ caractères
-    - Trie par longueur décroissante (les mots longs sont plus discriminants)
-    - Cherche si un mot de la query est sous-chaîne d'un stem connu
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- COMPARAISON SIMILARITY vs MMR vs RERANK
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  Méthode     | Critère principal | Diversité | Exactitude mots-clés | Vitesse
-  ────────────|───────────────────|───────────|──────────────────────|────────
-  Similarity  | sens sémantique   | non       | faible               | rapide
-  MMR         | sens + diversité  | oui       | faible               | moyen
-  BM25 seul   | mots exacts       | non       | forte                | rapide
-  Hybrid (✓)  | sens + exactitude | selon MMR | forte                | moyen
-
-  Notre pipeline utilise : Similarity (ou MMR) + BM25 rerank = hybrid.
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- POUR CHANGER LA STRATÉGIE DE RECHERCHE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  Dans config.py, modifier :
-
-    RETRIEVAL_TYPE = RetrievalType.SIMILARITY  # ← actuel
-    RETRIEVAL_TYPE = RetrievalType.MMR         # ← passer en MMR
-
-  Pour désactiver le rerank BM25 :
-    RERANK_ENABLED = False
-
-  Pour ajuster le nombre de chunks retournés au LLM :
-    RETRIEVAL_K = 2  # ← augmenter donne plus de contexte mais ralentit le LLM
+  uv run python -m core.sources                              télécharger les sources
+  uv run python -m core.ingestion                            ingérer dans Qdrant
+  uv run python -m core.ingestion delete assets/wikipedia/X.txt  supprimer une source
+  uv run chainlit run app.py                                 lancer l'app
 
 ================================================================================

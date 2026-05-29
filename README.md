@@ -56,7 +56,15 @@ uv run chainlit run app.py
 
 L'application s'ouvrira automatiquement dans votre navigateur par défaut (généralement à l'adresse `http://localhost:8501`).
 
-### Docker 
+### Supprimer une source de Qdrant
+
+Pour retirer un dictateur ou un sujet de la base vectorielle :
+
+```bash
+uv run python -m core.ingestion delete assets/wikipedia/Adolf_Hitler.txt
+```
+
+### Docker
 
 ```bash
 docker build -t rag-app .

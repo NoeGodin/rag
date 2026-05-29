@@ -93,5 +93,33 @@ def ingest() -> None:
     logger.info("Ingestion terminée")
 
 
+def delete_source(source: str) -> None:
+    """Supprime tous les chunks d'une source de Qdrant."""
+    from qdrant_client.models import Filter, FieldCondition, MatchValue
+
+    client = get_qdrant_client()
+    before = client.get_collection(QDRANT_COLLECTION).points_count
+
+    client.delete(
+        collection_name=QDRANT_COLLECTION,
+        points_selector=Filter(
+            must=[FieldCondition(key="metadata.source", match=MatchValue(value=source))]
+        ),
+    )
+
+    after = client.get_collection(QDRANT_COLLECTION).points_count
+    deleted = before - after
+    logger.info(f"Supprimé {deleted} chunk(s) pour '{source}' ({before} → {after})")
+
+
 if __name__ == "__main__":
-    ingest()
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "delete":
+        if len(sys.argv) < 3:
+            print("Usage: python -m core.ingestion delete <source>")
+            print("Exemple: python -m core.ingestion delete assets/wikipedia/Adolf_Hitler.txt")
+            sys.exit(1)
+        delete_source(sys.argv[2])
+    else:
+        ingest()

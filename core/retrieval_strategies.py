@@ -1,6 +1,6 @@
 from enum import Enum
 
-from langchain_chroma import Chroma
+from langchain_qdrant import QdrantVectorStore
 from langchain_core.retrievers import BaseRetriever
 
 
@@ -10,7 +10,7 @@ class RetrievalType(str, Enum):
 
 
 def build_retriever(
-    store: Chroma,
+    store: QdrantVectorStore,
     retrieval_type: RetrievalType,
     k_fetch: int,
 ) -> BaseRetriever:

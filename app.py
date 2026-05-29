@@ -58,19 +58,22 @@ async def on_message(message: cl.Message) -> None:
     history.append(AIMessage(content=full_response))
 
     if docs:
-        elements = []
-        seen_sources = set()
-        source_lines = []
+        source_chunks: dict[str, list[str]] = {}
         for doc in docs:
             name = os.path.basename(doc.metadata.get("source", "inconnu"))
-            if name not in seen_sources:
-                seen_sources.add(name)
-                source_lines.append(f"- {name}")
-                elements.append(
-                    cl.Text(name=name, content=doc.page_content, display="side")
-                )
+            source_chunks.setdefault(name, []).append(doc.page_content)
+
+        elements = []
+        source_lines = []
+        for name, chunks in source_chunks.items():
+            source_lines.append(f"- {name}")
+            elements.append(
+                cl.Text(name=name, content="\n\n---\n\n".join(chunks), display="side")
+            )
 
         msg.elements = elements
         msg.content += "\n\n---\n**Sources :**\n" + "\n".join(source_lines)
+    else:
+        msg.content += "\n\n⚠️ *Cette réponse provient de mes connaissances générales et non des sources internes du RAG.*"
 
     await msg.update()

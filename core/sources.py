@@ -20,7 +20,7 @@ ASSETS_DIR = Path("assets")
 
 # Liste des dictateurs chargée depuis le fichier local
 # Source : https://en.everybodywiki.com/List_of_dictators (téléchargée le 2026-05-29)
-DICTATORS_FILE = ASSETS_DIR / "dictators.txt"
+DICTATORS_FILE = Path("data") / "dictators.txt"
 
 
 def load_dictators() -> list[str]:
@@ -35,7 +35,7 @@ def load_dictators() -> list[str]:
 
 # Sujets connexes chargés depuis le fichier local
 # Source : catégories Wikipedia FR (téléchargées le 2026-05-29)
-TOPICS_FILE = ASSETS_DIR / "related_topics.txt"
+TOPICS_FILE = Path("data") / "related_topics.txt"
 
 
 def load_related_topics() -> list[str]:
@@ -65,21 +65,30 @@ def fetch_wikipedia_articles(language: str = "fr") -> list[Path]:
     all_titles = dictators + topics
 
     for title in all_titles:
-        page = wiki.page(title)
-        if not page.exists():
-            logger.warning(f"Wikipedia: article '{title}' introuvable en '{language}'")
-            continue
+        try:
+            page = wiki.page(title)
+            if not page.exists():
+                logger.warning(f"Wikipedia: article '{title}' introuvable en '{language}'")
+                continue
 
-        filename = title.replace(" ", "_").replace("/", "_") + ".txt"
-        filepath = output_dir / filename
+            filename = title.replace(" ", "_").replace("/", "_") + ".txt"
+            filepath = output_dir / filename
 
-        content = _format_wiki_page(page)
+            # Skip si déjà téléchargé
+            if filepath.exists():
+                saved_files.append(filepath)
+                logger.debug(f"Wikipedia: {title} — déjà téléchargé, skip")
+                continue
 
-        filepath.write_text(content, encoding="utf-8")
-        saved_files.append(filepath)
-        logger.info(f"Wikipedia: {title} → {filepath} ({len(content)} chars)")
+            content = _format_wiki_page(page)
+            filepath.write_text(content, encoding="utf-8")
+            saved_files.append(filepath)
+            logger.info(f"Wikipedia: {title} → {filepath} ({len(content)} chars)")
 
-        time.sleep(0.5)  # rate limit
+            time.sleep(1)  # rate limit
+        except Exception as e:
+            logger.error(f"Wikipedia: erreur pour '{title}': {e}")
+            time.sleep(5)  # pause plus longue après erreur
 
     logger.info(f"Wikipedia: {len(saved_files)} articles sauvegardés")
     return saved_files

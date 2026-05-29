@@ -5,7 +5,6 @@ Liste des dictateurs : assets/dictators.txt
   (téléchargée le 2026-05-29 depuis https://en.everybodywiki.com/List_of_dictators)
 """
 
-import os
 import time
 from pathlib import Path
 

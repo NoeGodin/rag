@@ -8,7 +8,7 @@ from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams
+from qdrant_client.http.models import Distance, VectorParams
 
 from core.retrieval_strategies import RetrievalType
 from utils.guard import get_canary_token
@@ -122,5 +122,3 @@ def get_text_splitter() -> TextSplitter:
     )
 
 
-def openrouter_api_key() -> str:
-    return os.getenv("FAL_KEY")

@@ -29,6 +29,33 @@ STACK TECHNIQUE
   Déploiement       | Docker + GitHub Actions + Azure Web App
 
 
+STRUCTURE DES FICHIERS
+
+  Fichier                        | Rôle
+  -------------------------------|----------------------------------------------
+  app.py                         | Point d'entrée Chainlit, UI du chat
+  config.py                      | Configuration centrale (LLM, embeddings, Qdrant, prompt)
+  core/retrieve.py               | Recherche vectorielle dans Qdrant + filtrage par score
+  core/generate.py               | Appel au LLM, streaming de la réponse
+  core/ingestion.py              | Ingestion : chunk → embed → upsert Qdrant + suppression
+  core/sources.py                | Téléchargement Wikipedia FR + OpenAlex
+  core/retrieval_strategies.py   | Enum des stratégies de recherche (SIMILARITY / MMR)
+  utils/guard.py                 | Détection prompt injection (regex) + canary token
+  utils/rerank.py                | Reranking BM25 des résultats
+  utils/logger.py                | Configuration du logger
+  utils/timer.py                 | Context manager pour mesurer les temps d'exécution
+  data/dictators.txt             | Liste des 260 dictateurs (source: EverybodyWiki)
+  data/related_topics.txt        | Liste des 83 sujets connexes (source: catégories Wikipedia FR)
+  assets/wikipedia/*.txt         | Articles Wikipedia téléchargés (corpus)
+  assets/openalex/*.txt          | Papers académiques OpenAlex (corpus)
+  public/custom.css              | Thème CSS custom (rouge autoritaire)
+  public/avatars/dictateurgpt.png| Avatar du chatbot
+  .chainlit/config.toml          | Configuration Chainlit (nom, langue, thème)
+  Dockerfile                     | Image Docker pour déploiement Azure
+  .github/workflows/deploy.yml   | CI/CD GitHub Actions → Azure Web App
+  .env                           | Variables d'environnement (FAL_KEY, QDRANT_URL, QDRANT_API_KEY)
+
+
 PIPELINE DE DONNÉES
 
   data/dictators.txt        (260 noms)

@@ -18,6 +18,9 @@ def retrieve(query: str) -> list[Document]:
                 results = _store.similarity_search_with_relevance_scores(
                     query, k=RETRIEVAL_K_FETCH
                 )
+                # for doc, score in results:
+                #     print(f"[SCORE={score:.3f}] {doc.page_content[:80]}...")
+
             docs = [doc for doc, score in results if score >= RELEVANCE_THRESHOLD]
 
         case RetrievalType.MMR:

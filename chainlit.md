@@ -8,4 +8,6 @@ Assistant spécialisé sur les **dictateurs** et les **régimes autoritaires**.
 - TEA Steven
 - GODIN Noe
 
-*v2.0.2*
+---
+
+*Projet universitaire — RAG (Retrieval-Augmented Generation) — v2.0.3*

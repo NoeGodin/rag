@@ -19,7 +19,7 @@ RETRIEVAL_K = 5
 RETRIEVAL_K_FETCH = 20
 RERANK_ENABLED = True
 RETRIEVAL_TYPE = RetrievalType.SIMILARITY
-RELEVANCE_THRESHOLD = 0.3  # score minimum de similarité pour inclure un document
+RELEVANCE_THRESHOLD = 0.72  # score minimum de similarité pour inclure un document
 
 FAL_KEY = os.environ["FAL_KEY"]
 FAL_BASE_URL = "https://fal.run/openrouter/router/openai/v1"

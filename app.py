@@ -5,11 +5,40 @@ from langchain_core.messages import AIMessage, HumanMessage
 
 from core.retrieve import retrieve
 from core.generate import generate_stream
-from utils.guard import detect_injection, check_output_leak, REFUSAL_MESSAGE, LEAK_REFUSAL
+from utils.guard import (
+    detect_injection,
+    check_output_leak,
+    REFUSAL_MESSAGE,
+    LEAK_REFUSAL,
+)
+from core.retrieval_strategies import RetrievalType
+from config import RETRIEVAL_TYPE
+
 
 @cl.on_chat_start
 async def on_chat_start() -> None:
     cl.user_session.set("chat_history", [])
+
+    # Création du panneau de conf
+    values = [e.value for e in RetrievalType]
+    try:
+        initial_index = values.index(RETRIEVAL_TYPE.value)
+    except ValueError:
+        initial_index = 0
+
+    settings = await cl.ChatSettings(
+        [
+            cl.input_widget.Select(
+                id="retrieval_type",
+                label="Stratégie de Recherche Vectorielle",
+                values=values,
+                initial_index=initial_index,
+            )
+        ]
+    ).send()
+
+    cl.user_session.set("retrieval_type", RetrievalType(settings["retrieval_type"]))
+
 
 @cl.set_starters
 async def set_starters() -> list[cl.Starter]:
@@ -36,7 +65,9 @@ async def on_message(message: cl.Message) -> None:
         await cl.Message(content=REFUSAL_MESSAGE).send()
         return
 
-    docs = retrieve(message.content)
+    retrieval_type = cl.user_session.get("retrieval_type", RETRIEVAL_TYPE)
+
+    docs = retrieve(message.content, retrieval_type=retrieval_type)
     context = "\n\n".join(doc.page_content for doc in docs)
     history = cl.user_session.get("chat_history")
 
@@ -77,3 +108,11 @@ async def on_message(message: cl.Message) -> None:
         msg.content += "\n\n⚠️ *Cette réponse provient de mes connaissances générales et non des sources internes du RAG.*"
 
     await msg.update()
+
+
+@cl.on_settings_update
+async def setup_agent(settings: dict) -> None:
+    cl.user_session.set("retrieval_type", RetrievalType(settings["retrieval_type"]))
+    await cl.Message(
+        content=f"Stratégie de recherche mise à jour : {settings['retrieval_type']}"
+    ).send()

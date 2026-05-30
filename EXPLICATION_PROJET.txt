@@ -144,7 +144,7 @@ PARAMÈTRES CLÉS (config.py)
   RETRIEVAL_K_FETCH = 20          chunks récupérés depuis Qdrant
   RERANK_ENABLED    = True        activer/désactiver le rerank BM25
   RETRIEVAL_TYPE    = SIMILARITY  stratégie de search (SIMILARITY ou MMR)
-  RELEVANCE_THRESHOLD = 0.3       score minimum de similarité
+  RELEVANCE_THRESHOLD = 0.72      score minimum de similarité
   chunk_size        = 1000        taille max d'un chunk en caractères
   chunk_overlap     = 200         chevauchement entre chunks consécutifs
   QDRANT_COLLECTION = "dictateurs"

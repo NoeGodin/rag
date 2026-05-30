@@ -139,7 +139,6 @@ Kim Il-sung
 Kim Jong-il
 Kim Jong-un
 Syngman Rhee
-Park Chung-hee
 Chun Doo-hwan
 Kaysone Phomvihane
 Khamtai Siphandon
@@ -278,7 +277,6 @@ Emílio Garrastazu Médici
 Abdrabbuh Mansour Hadi
 Dos Santos
 J. P. Ouedraogo
-Tudjman
 Majano Ramos
 Barrientos Ortuna
 Somsanith Vongkotrattana
@@ -338,7 +336,6 @@ Jigme Khesar Namgyel Wangchuck
 Zlatko Tomčić
 El-Atassi, N.
 Fidel Sánchez Hernández
-Francois Bozize
 Rabah Bitat
 Konstantin Chernenko
 Gyanendra Shahi
@@ -494,7 +491,6 @@ Birendra of Nepal
 Park Chung Hee
 Lionel Zinsou
 Thein Sein
-Sardar Mohammad Daud Khan
 Heng Samrin
 Marcelo Caetano
 Ahmad Mansour Al-Ahmad Al-Sabah
@@ -553,7 +549,6 @@ Abdou Diouf
 Velasco Alvarado
 Ernesto de la Guardia
 Abdul Fattah Ismail
-Anastasio Somoza Garcia
 Justin Lekhanya
 Adam Gierek
 Takele Uma Banti
@@ -565,7 +560,6 @@ Ngouabi
 Kurmanbek Bakiyev
 Frank Bainimarama
 Faure Gnassingbe
-Boumedienne
 Lyonpo Khandu Wangchuk
 Mohammad Yusuf
 Lokendra Bahadur Chand
@@ -587,7 +581,6 @@ Evren
 Lyonpo Kinzang Dorji
 Ali Nassir Hassani
 Eduard Shevardnadze
-Ayatollah Khomeini
 Julius Maada Bio
 Gilles Andriamahazo
 Swart

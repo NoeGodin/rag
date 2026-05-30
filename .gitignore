@@ -369,3 +369,5 @@ chroma_langchain_db/
 .aider*
 .files/
 .chainlit/translations/
+
+data/wiki_cache.json

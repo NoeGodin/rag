@@ -8,4 +8,4 @@ Assistant spécialisé sur les **dictateurs** et les **régimes autoritaires**.
 - TEA Steven
 - GODIN Noe
 
-*v2.0.1*
+*v2.0.2*

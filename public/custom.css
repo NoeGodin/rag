@@ -63,8 +63,8 @@ button[type="submit"]:hover,
 }
 
 /* User message bubble */
-.user-message {
-  background-color: #2a1515 !important;
+.bg-accent {
+  background-color: var(--input-bg) !important;
   border: 1px solid var(--border) !important;
 }
 
@@ -124,4 +124,15 @@ a {
 [data-testid="theme-system"],
 button[value="system"] {
   display: none !important;
+}
+
+/* Put README dialog content and close button down so they
+   are not hidden behind the browser address bar */
+@media (max-width: 640px) {
+  div[role="dialog"] {
+    padding-top: max(env(safe-area-inset-top, 0px), 5rem) !important;
+  }
+  div[role="dialog"] > button:last-child {
+    top: max(env(safe-area-inset-top, 0px), 5rem) !important;
+  }
 }

@@ -7,6 +7,15 @@
   --surface: #1a1010;
   --text: #e0d6d6;
   --border: #3a2020;
+  --input-bg: #2c2c2c;
+}
+
+:root.light {
+  --bg-dark: #f5f0f0;
+  --surface: #ffffff;
+  --text: #1a1010;
+  --border: #e0d0d0;
+  --input-bg: #ffffff;
 }
 
 /* Global background */
@@ -25,14 +34,14 @@ header,
 }
 
 /* Chat input */
-.composer-container,
-.MuiOutlinedInput-root {
-  background-color: var(--surface) !important;
-  border: 1px solid var(--border) !important;
+#message-composer,
+#message-composer textarea {
+  background-color: var(--input-bg) !important;
 }
 
-.MuiOutlinedInput-root:focus-within {
-  border-color: var(--primary-light) !important;
+#message-composer textarea {
+  background-color: var(--input-bg) !important;
+  border-color: var(--border) !important;
 }
 
 /* Send button */
@@ -54,8 +63,8 @@ button[type="submit"]:hover,
 }
 
 /* User message bubble */
-.user-message {
-  background-color: #2a1515 !important;
+.bg-accent {
+  background-color: var(--input-bg) !important;
   border: 1px solid var(--border) !important;
 }
 
@@ -115,4 +124,15 @@ a {
 [data-testid="theme-system"],
 button[value="system"] {
   display: none !important;
+}
+
+/* Put README dialog content and close button down so they
+   are not hidden behind the browser address bar */
+@media (max-width: 640px) {
+  div[role="dialog"] {
+    padding-top: max(env(safe-area-inset-top, 0px), 5rem) !important;
+  }
+  div[role="dialog"] > button:last-child {
+    top: max(env(safe-area-inset-top, 0px), 5rem) !important;
+  }
 }

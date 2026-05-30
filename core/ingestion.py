@@ -16,7 +16,9 @@ MAX_RETRIES = 3
 
 def _deterministic_id(doc: Document) -> str:
     """SHA-256 hash de page_content + source → ID stable pour upsert."""
-    content = doc.page_content + doc.metadata.get("source", "")
+    # Normalisation pour convertir les paths Windows (avec '\') en paths Linux (avec '/')
+    path = doc.metadata.get("source", "").replace("\\", "/")
+    content = doc.page_content + path
     hash_bytes = hashlib.sha256(content.encode()).digest()[:16]
     return str(uuid.UUID(bytes=hash_bytes))
 

@@ -8,7 +8,7 @@ from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 from qdrant_client import QdrantClient
-from qdrant_client.http.models import Distance, VectorParams
+from qdrant_client.http.models import Distance, VectorParams, PayloadSchemaType
 
 from core.retrieval_strategies import RetrievalType
 from utils.guard import get_canary_token
@@ -86,6 +86,11 @@ def get_vector_store() -> QdrantVectorStore:
                 size=EMBEDDING_DIMENSION,
                 distance=Distance.COSINE,
             ),
+        )
+        client.create_payload_index(
+            collection_name=QDRANT_COLLECTION,
+            field_name="metadata.source",
+            field_schema=PayloadSchemaType.KEYWORD,
         )
     return QdrantVectorStore(
         client=client,

@@ -1,0 +1,73 @@
+assets/wikipedia/Empress_Dowager_Cixi.txt 76482
+assets/wikipedia/Bashar_al-Assad.txt 96163
+assets/wikipedia/Nikita_Khrushchev.txt 99347
+assets/wikipedia/Florez_Aguilar.txt EN not found
+assets/wikipedia/J._P._Ouedraogo.txt EN not found
+assets/wikipedia/Majano_Ramos.txt EN not found
+assets/wikipedia/Barrientos_Ortuna.txt EN not found
+assets/wikipedia/Ntombe_Thwala.txt EN not found
+assets/wikipedia/Arias,_A..txt EN not found
+assets/wikipedia/Moshtaque_Ahmed.txt EN not found
+assets/wikipedia/Shick_Gutierrez.txt EN not found
+assets/wikipedia/Saleh_al-Hashidi.txt EN not found
+assets/wikipedia/Thanon_Kittakachorn.txt EN not found
+assets/wikipedia/Park_Choong_Hoon.txt EN not found
+assets/wikipedia/Mao_Tse-Tung.txt 81762
+assets/wikipedia/Mutalibov.txt EN not found
+assets/wikipedia/An-Nahayan.txt EN not found
+assets/wikipedia/Mahatir_Bin_Mohammad.txt EN not found
+assets/wikipedia/Ibn_Abdullah-Hashim.txt EN not found
+assets/wikipedia/Rios_Montt.txt 45764
+assets/wikipedia/Atassi,_L..txt EN not found
+assets/wikipedia/El-Atassi,_N..txt EN not found
+assets/wikipedia/Laureanco_Gomez.txt EN not found
+assets/wikipedia/Kou_Abhay_Og_Long.txt EN not found
+assets/wikipedia/Ruiz_Cortines.txt 44685
+assets/wikipedia/Khalifah_Ath-Thani.txt EN not found
+assets/wikipedia/Siphandon.txt EN not found
+assets/wikipedia/Rahmen_Aref.txt EN not found
+assets/wikipedia/Mojadidi.txt EN not found
+assets/wikipedia/Mullah_Omar.txt 43702
+assets/wikipedia/Nazarbaev.txt 72809
+assets/wikipedia/Georghiu-Dej.txt EN not found
+assets/wikipedia/Choi_Kuy_Hay.txt EN not found
+assets/wikipedia/Ahmed_Ath-Thani.txt EN not found
+assets/wikipedia/Ben_Khedda.txt EN not found
+assets/wikipedia/Kpormapkor.txt EN not found
+assets/wikipedia/Iskandrov.txt EN not found
+assets/wikipedia/Wijetunge.txt EN not found
+assets/wikipedia/Faisal_of_Saudi_Arabia.txt 51473
+assets/wikipedia/Subhuza_II.txt EN not found
+assets/wikipedia/Amad_Al_Thani.txt EN not found
+assets/wikipedia/Dizarevic.txt EN not found
+assets/wikipedia/Djuranovic.txt EN not found
+assets/wikipedia/Jabir_As-Sabah.txt EN not found
+assets/wikipedia/Spiljac.txt EN not found
+assets/wikipedia/Al-Hamadi.txt EN not found
+assets/wikipedia/Phounsavanh.txt EN not found
+assets/wikipedia/Karrim_Kassem.txt EN not found
+assets/wikipedia/Isa_Ibn_Al-Khalifah.txt EN not found
+assets/wikipedia/Cantave.txt EN not found
+assets/wikipedia/Duvalier,_Jean-.txt EN not found
+assets/wikipedia/Abdul-Ilah.txt EN not found
+assets/wikipedia/Ngouabi.txt EN not found
+assets/wikipedia/Sher_Bahdur_Deuba.txt EN not found
+assets/wikipedia/Ali_Nassir_Hassani.txt EN not found
+assets/wikipedia/Demichelli.txt EN not found
+assets/wikipedia/Phomivan.txt EN not found
+assets/wikipedia/dit_M'Bare.txt EN not found
+assets/wikipedia/Khahn.txt EN not found
+assets/wikipedia/Mengistu_Marriam.txt EN not found
+assets/wikipedia/Farouk_of_Egypt.txt 101204
+assets/wikipedia/Abdallah_Yakta.txt EN not found
+assets/wikipedia/Ionannides.txt EN not found
+assets/wikipedia/Ulukalala_Lavaka_Ata_(Tupou_VI).txt EN not found
+assets/wikipedia/Salem_Aref.txt EN not found
+assets/wikipedia/Rafael_Trujillo_(son).txt EN not found
+assets/wikipedia/Krishna_Prasad_Bhatterai.txt EN not found
+assets/wikipedia/Remon_Cantero.txt EN not found
+assets/wikipedia/Mahendra_of_Nepal.txt 75474
+assets/wikipedia/Qaddafi.txt 103435
+assets/wikipedia/Rojas_Pinillia.txt EN not found
+assets/wikipedia/Ochab.txt EN not found
+assets/wikipedia/Enforced_disappearance.txt 71070

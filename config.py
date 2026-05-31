@@ -30,7 +30,6 @@ QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 QDRANT_COLLECTION = "dictateurs"
 EMBEDDING_DIMENSION = 1536  # text-embedding-3-small
 
-
 def get_prompt() -> ChatPromptTemplate:
     return ChatPromptTemplate.from_messages(
         [
@@ -109,6 +108,15 @@ def get_llm() -> ChatOpenAI:
         default_headers=FAL_HEADERS,
     )
 
+def get_translator_llm() -> ChatOpenAI:
+    return ChatOpenAI(
+        model="meta-llama/llama-3.1-8b-instruct",
+        base_url=FAL_BASE_URL,
+        api_key="fal",
+        temperature=0.1,
+        request_timeout=80,
+        default_headers=FAL_HEADERS,
+    )
 
 def get_loader() -> DirectoryLoader:
     return DirectoryLoader(

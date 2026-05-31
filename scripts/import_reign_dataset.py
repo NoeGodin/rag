@@ -37,7 +37,7 @@ NON_PERSON_KEYWORDS = [
 
 SESSION = requests.Session()
 SESSION.headers.update({
-    "User-Agent": "UniversityRAGProject/1.1 (william.zehren@utc.fr)"
+    "User-Agent": "UniversityRAGProject/1.1 (john.pork@utc.fr)"
 })
 
 

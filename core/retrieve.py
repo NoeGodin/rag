@@ -51,6 +51,17 @@ def generate_queries(original_query: str) -> list[str]:
     return queries
 
 
+def _filter_by_threshold(query: str, docs: list[Document]) -> list[Document]:
+    """Filtre les documents sous le seuil de pertinence RELEVANCE_THRESHOLD"""
+    if not docs or RELEVANCE_THRESHOLD <= 0:
+        return docs
+    scored = _store.similarity_search_with_relevance_scores(query, k=RETRIEVAL_K_FETCH)
+    score_map = {d.page_content: s for d, s in scored}
+    filtered = [d for d in docs if score_map.get(d.page_content, 0.0) >= RELEVANCE_THRESHOLD]
+    logger.debug(f"Threshold: {len(docs)} → {len(filtered)} docs (seuil={RELEVANCE_THRESHOLD})")
+    return filtered
+
+
 def retrieve(
     query: str, retrieval_type: RetrievalType = RETRIEVAL_TYPE
 ) -> list[Document]:
@@ -74,7 +85,7 @@ def retrieve(
                         "fetch_k": RETRIEVAL_K_FETCH * 2,
                     },
                 )
-                docs = retriever.invoke(query)
+                docs = _filter_by_threshold(query, retriever.invoke(query))
 
         case RetrievalType.RAG_FUSION:
             with timer("retrieve [RAG-Fusion]"):
@@ -88,7 +99,7 @@ def retrieve(
                     search_type="similarity", search_kwargs={"k": RETRIEVAL_K_FETCH}
                 )
                 all_results = retriever.batch(queries)
-                docs = reciprocal_rank_fusion(all_results, top_n=RETRIEVAL_K_FETCH)
+                docs = _filter_by_threshold(query, reciprocal_rank_fusion(all_results, top_n=RETRIEVAL_K_FETCH))
 
     logger.info(f"{len(docs)} document(s) récupérés (mode: {retrieval_type.value})")
     for i, doc in enumerate(docs[:5]):

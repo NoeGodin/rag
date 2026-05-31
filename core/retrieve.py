@@ -6,6 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from config import (
     get_vector_store,
     get_llm,
+    get_embeddings,
     RETRIEVAL_K_FETCH,
     RERANK_ENABLED,
     RELEVANCE_THRESHOLD,
@@ -51,6 +52,21 @@ def generate_queries(original_query: str) -> list[str]:
     return queries
 
 
+def generate_hypothetical_document(query: str) -> str:
+    llm = get_llm()
+    prompt = ChatPromptTemplate.from_messages([
+        (
+            "system",
+            "Tu es un expert en histoire politique et régimes autoritaires. "
+            "Génère un paragraphe encyclopédique factuel qui répondrait directement à la question. "
+            "Écris uniquement le contenu, sans introduction ni conclusion.",
+        ),
+        ("user", "{query}"),
+    ])
+    chain = prompt | llm | StrOutputParser()
+    return chain.invoke({"query": query})
+
+
 def _filter_by_threshold(query: str, docs: list[Document]) -> list[Document]:
     """Filtre les documents sous le seuil de pertinence RELEVANCE_THRESHOLD"""
     if not docs or RELEVANCE_THRESHOLD <= 0:
@@ -86,6 +102,13 @@ def retrieve(
                     },
                 )
                 docs = _filter_by_threshold(query, retriever.invoke(query))
+
+        case RetrievalType.HYDE:
+            with timer("retrieve [HyDE]"):
+                hypo_doc = generate_hypothetical_document(query)
+                logger.debug(f"HyDE hypothetical doc: {hypo_doc[:200]}...")
+                hypo_vector = get_embeddings().embed_query(hypo_doc)
+                docs = _store.similarity_search_by_vector(hypo_vector, k=RETRIEVAL_K_FETCH)
 
         case RetrievalType.RAG_FUSION:
             with timer("retrieve [RAG-Fusion]"):

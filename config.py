@@ -1,11 +1,13 @@
 from langchain_openai import ChatOpenAI
 import os
 
+from chonkie import SemanticChunker
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from chonkie.refinery import OverlapRefinery
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams, PayloadSchemaType
@@ -27,8 +29,9 @@ FAL_HEADERS = {"Authorization": f"Key {FAL_KEY}"}
 
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-QDRANT_COLLECTION = "dictateurs"
+QDRANT_COLLECTION = "dictateurs_semantic"
 EMBEDDING_DIMENSION = 1536  # text-embedding-3-small
+
 
 def get_prompt() -> ChatPromptTemplate:
     return ChatPromptTemplate.from_messages(
@@ -108,6 +111,7 @@ def get_llm() -> ChatOpenAI:
         default_headers=FAL_HEADERS,
     )
 
+
 def get_translator_llm() -> ChatOpenAI:
     return ChatOpenAI(
         model="meta-llama/llama-3.1-8b-instruct",
@@ -117,6 +121,7 @@ def get_translator_llm() -> ChatOpenAI:
         request_timeout=80,
         default_headers=FAL_HEADERS,
     )
+
 
 def get_loader() -> DirectoryLoader:
     return DirectoryLoader(
@@ -132,4 +137,23 @@ def get_text_splitter() -> TextSplitter:
         chunk_size=1000,
         chunk_overlap=200,
         add_start_index=True,
+    )
+
+
+def get_semantic_chunker() -> SemanticChunker:
+    # Modèle plus robuste pour les textes longs
+    return SemanticChunker(
+        embedding_model="all-MiniLM-L6-v2",
+        threshold=0.5,
+        chunk_size=256,
+        min_sentences_per_chunk=1,
+    )
+
+
+def get_overlap_refinery() -> OverlapRefinery:
+    return OverlapRefinery(
+        tokenizer="character",
+        context_size=200,  # Rajoute 200 caractères de chevauchement pour sécuriser le contexte
+        method="prefix",
+        merge=True,
     )

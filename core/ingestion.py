@@ -4,7 +4,14 @@ import uuid
 
 from langchain_core.documents import Document
 
-from config import get_vector_store, get_loader, get_text_splitter, get_qdrant_client, QDRANT_COLLECTION
+from config import (
+    get_vector_store,
+    get_loader,
+    get_semantic_chunker,
+    get_overlap_refinery,
+    get_qdrant_client,
+    QDRANT_COLLECTION,
+)
 from utils.logger import get_logger
 from utils.timer import timer
 
@@ -28,7 +35,7 @@ def _get_existing_ids(client, ids: list[str]) -> set[str]:
     existing: set[str] = set()
     # Qdrant scroll avec filtre par IDs, par batch
     for i in range(0, len(ids), 100):
-        batch_ids = ids[i:i + 100]
+        batch_ids = ids[i : i + 100]
         results = client.retrieve(
             collection_name=QDRANT_COLLECTION,
             ids=batch_ids,
@@ -39,13 +46,38 @@ def _get_existing_ids(client, ids: list[str]) -> set[str]:
     return existing
 
 
+def _prepare_documents(docs: list[Document], chunker, refinery) -> list[Document]:
+    """Découpe les documents en batch avec Chonkie et affine avec l'Overlap Refinery."""
+    all_splits = []
+
+    # Extraire tous les textes pour le batch
+    texts = [doc.page_content for doc in docs]
+
+    # Traitement par batch ultra rapide
+    batch_results = chunker.chunk_batch(texts)
+
+    # Reconstruire les objets Document de LangChain
+    for doc, chunks in zip(docs, batch_results):
+        # Affinage : Ajouter un chevauchement entre les chunks d'un même document
+        refined_chunks = refinery.refine(chunks)
+
+        for chunk in refined_chunks:
+            # metadata.copy() est important pour ne pas écraser les références
+            all_splits.append(
+                Document(page_content=chunk.text, metadata=doc.metadata.copy())
+            )
+    return all_splits
+
+
 def ingest() -> None:
     with timer("chargement documents"):
         docs = get_loader().load()
     logger.info(f"Ingestion — {len(docs)} pages chargées")
 
     with timer("split"):
-        all_splits = get_text_splitter().split_documents(docs)
+        chunker = get_semantic_chunker()
+        refinery = get_overlap_refinery()
+        all_splits = _prepare_documents(docs, chunker, refinery)
     logger.info(f"{len(all_splits)} chunks créés")
 
     ids = [_deterministic_id(doc) for doc in all_splits]
@@ -65,7 +97,9 @@ def ingest() -> None:
             new_docs.append(doc)
             new_ids.append(doc_id)
 
-    logger.info(f"{len(existing_ids)} chunks déjà dans Qdrant — {len(new_docs)} nouveaux à ingérer")
+    logger.info(
+        f"{len(existing_ids)} chunks déjà dans Qdrant — {len(new_docs)} nouveaux à ingérer"
+    )
 
     if not new_docs:
         logger.info("Rien à ingérer, tout est à jour")
@@ -76,19 +110,25 @@ def ingest() -> None:
     with timer("embedding + stockage"):
         vector_store = get_vector_store()
         for i in range(0, len(new_docs), BATCH_SIZE):
-            batch_docs = new_docs[i:i + BATCH_SIZE]
-            batch_ids = new_ids[i:i + BATCH_SIZE]
+            batch_docs = new_docs[i : i + BATCH_SIZE]
+            batch_ids = new_ids[i : i + BATCH_SIZE]
             batch_num = i // BATCH_SIZE + 1
 
             for attempt in range(1, MAX_RETRIES + 1):
                 try:
                     vector_store.add_documents(documents=batch_docs, ids=batch_ids)
-                    logger.info(f"Batch {batch_num}/{total_batches} ingéré ({len(batch_docs)} chunks)")
+                    logger.info(
+                        f"Batch {batch_num}/{total_batches} ingéré ({len(batch_docs)} chunks)"
+                    )
                     break
                 except Exception as e:
-                    logger.warning(f"Batch {batch_num} — tentative {attempt}/{MAX_RETRIES} échouée: {e}")
+                    logger.warning(
+                        f"Batch {batch_num} — tentative {attempt}/{MAX_RETRIES} échouée: {e}"
+                    )
                     if attempt == MAX_RETRIES:
-                        logger.error(f"Batch {batch_num} — abandon après {MAX_RETRIES} tentatives")
+                        logger.error(
+                            f"Batch {batch_num} — abandon après {MAX_RETRIES} tentatives"
+                        )
                     else:
                         time.sleep(5 * attempt)
 
@@ -120,7 +160,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "delete":
         if len(sys.argv) < 3:
             print("Usage: python -m core.ingestion delete <source>")
-            print("Exemple: python -m core.ingestion delete assets/wikipedia/Adolf_Hitler.txt")
+            print(
+                "Exemple: python -m core.ingestion delete assets/wikipedia/Adolf_Hitler.txt"
+            )
             sys.exit(1)
         delete_source(sys.argv[2])
     else:

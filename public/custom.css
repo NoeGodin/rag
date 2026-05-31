@@ -80,6 +80,11 @@ button[type="submit"]:hover,
   border-left: 2px solid var(--primary) !important;
 }
 
+/* Source element link hover */
+.element-link:hover {
+  background-color: hsl(0, 0%, 40%) !important;
+}
+
 /* Links */
 a {
   color: var(--primary-light) !important;
